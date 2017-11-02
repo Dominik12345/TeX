@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+Zustand $x:[0,T] \to \mathbb{R}^2$ und bekannter Input $u(t) = t^2$.
+
+Parameter $0 \lesssim \gamma_1,\gamma_2 \lesssim 1$ und $\beta \approx 1$
+
+Nominales Model:
+\begin{equation*}
+\tilde{f}(x,u) = \begin{pmatrix}
+- \gamma_1 x_1 + u \\
+- \gamma_2 x_2 + \beta x_1 
+\end{pmatrix}
+\end{equation*}
+komplett beobachtbar bzw. $h(x)=(x_1,x_2)^\text{T}=(y_1,y_2)^\text{T}$
+\\\\
+Um Daten zu generieren:
+\begin{align*}
+w_1 (t) &= 0 \\
+w_2 (t) &= t^4\\
+\\
+\gamma_1 &= 1.5 \\
+\gamma_2 &= 0.5 \\
+\beta &= 0.8 \\
+x(0) &= \begin{pmatrix} 5\\3 \end{pmatrix}
+\end{align*}
+
+\end{document}

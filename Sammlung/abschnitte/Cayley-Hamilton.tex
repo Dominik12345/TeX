@@ -1,0 +1,144 @@
+\begin{theorem}[Cayley-Hamilton] \label{theorem:cayley-hamilton}
+Without proof we know that for any $n\times n$ square matrix $A$ over a ring (e.g. 
+polynomial rings) there exists a matrix $\adj{A}$ such that
+\begin{equation}
+A \adj{A} = \adj{A}A = \det{A} \mathbb{1} \quad .
+\end{equation}
+Now let $B = \adj{(\lambda \mathbb{1}-A)}$, thus
+\begin{equation}
+B(\lambda \mathbb{1} -A)= \det{(\lambda \mathbb{1}-A)} \mathbb{1} ) = P(\lambda) \mathbb{1}
+\end{equation}
+where $P(\lambda)$ is the characteristic polynomial of $A$. Since $B$ is a matrix over the 
+polynomial ring in $\lambda$ we can write $B = \sum_i^{{n-1}} \lambda^i B_i$ and 
+\begin{equation}
+P(\lambda) \mathbb{1} = \lambda^n B_{n-1}+ \sum\limits_{i=1}^n-1 \lambda^i \left(B_{i-1}-AB_i \right) - AB_0 \quad .
+\end{equation}
+Obviously we also have
+\begin{equation}
+P(\lambda) \mathbb{1} = \lambda^n \mathbb{1} + c_{n-1} \lambda^{n-1} + \ldots + \lambda 
+c_1 \mathbb{1} + c_0 \mathbb{1}
+\end{equation}
+and by equating coefficients we get
+\begin{equation}
+c_0 \mathbb{1}=-AB_0 \quad , \quad B_{n-1} = \mathbb{1} 
+\quad \text{and }\quad B_{i-1}-AB_i = c_i\mathbb{1} \quad .
+\end{equation}
+If we define $P(A) = \sum_{i=0}^n c_i A^i $ we get
+\begin{equation}
+P(A) = 0
+\end{equation}
+which is the Cayley-Hamilton theorem. 
+\end{theorem}
+
+\begin{corollary}[\ref{theorem:cayley-hamilton}]
+\begin{enumerate}
+\item  \label{corollary:cayley-hamilton:item:1}
+	\begin{equation}
+	\forall N\geq n \quad \exists \{a_i\} \quad | \quad 
+	A^{N} = \sum\limits_{i=0}^{n-1} d_i A^i  
+	\end{equation}
+\item Multiplying a $n\times m$ matrix $B$ and a $r\times n$ matrix $C$ we also get 
+	\begin{equation}
+	C A^N B = \sum\limits_{i=0}^{n-1} d_i C A^i B
+	\end{equation}
+\item \label{corollary:cayley-hamilton:item:3}
+	If there is a $p \leq n$ and
+	\begin{equation}
+	A^p = \sum\limits_{i=1}^{p-1} d_i A^i 
+	\end{equation}
+	then \ref{corollary:cayley-hamilton:item:1} holds for $N \geq p$. We write 
+	$p_\text{CH}$ for the smallest value of $p$ that fulfils this equation.
+\item If there is a $p$ such that \ref{corollary:cayley-hamilton:item:3} holds, then
+	\begin{equation}
+	\rank{[CB,CAB,\ldots,CA^{p-1}B]} =\rank{[CB,CAB,\ldots,CA^{p-1}B,CA^pB]} \, . 
+	\end{equation}
+\end{enumerate}
+\end{corollary}
+
+\begin{theorem}[Luenberg]
+If each column of $A^pB$ is linearly dependent on the columns of $[B,BA,\ldots,BA^{p-1}]$ 
+we can write
+\begin{equation}
+A^p B = \sum\limits_{i=0}^{p-1} A^i B D_i
+\end{equation}
+with matrices $D_i$. Multiplying with $A$ yields
+\begin{equation}
+A^{p+1} B = \sum\limits_{i=0}^{p-2} A^{i+1} B D_i + A^p B D_{p-1}
+\end{equation}
+which again shows, that every column of $A^{p+1}B$ is linearly dependent on the columns of
+$[B,BA,\ldots,BA^{p-1}]$. With this equality we can define 
+\begin{equation}
+M_p = [\mathbb{1},A,A^2,\ldots,A^{p-1}]
+\end{equation}
+and get
+\begin{equation}
+\rank{M_{p+1} B} = \rank{M_p B} \Leftrightarrow A^{p'} = \sum\limits_{i=0}^{p-1} A^i B D_i 
+\quad \forall p' \geq p \quad .
+\end{equation}
+This means that as soon as the rank of $M_p$ stops to increase while $p \to p+1$, further 
+increment of $p$ will produce no linearly independent columns. We write $p_\text{L}$ for 
+the smallest value of $p$ that will produce the maximum rank.
+\end{theorem}
+
+Comparing the two theorems we see that 
+\begin{itemize}
+\item The Cayley-Hamilton corollary holds for $C M_p B$ and shows that the rank will not 
+increase over the rank of $C M_n B$ an that, if $A^p = \sum_{i=0}^{p-1} d_iA^i$, the rank 
+will not increase any more. 
+\item The Luenberg theorem only holds for $M_p B$ and shows that if the columns of $A^p B$ 
+linearly depend on the columns of $M_p$, the rank will not increase any more.
+\end{itemize}
+We can conclude that the minimal $p$ obtained by the Luenberg theorem is smaller or equal 
+to the minimal $p$ of the Cayley-Hamilton theorem.
+
+\begin{example}
+\begin{equation}
+A = \begin{pmatrix}
+1 & 0 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0
+\end{pmatrix} 
+\quad , \quad
+A^2 = \begin{pmatrix}
+1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 0 & 1
+\end{pmatrix}
+\quad , \quad 
+B = \mathbb{1}
+\end{equation}
+The $M_p$ matrices are
+\begin{equation}
+M_1 = \mathbb{1} \quad , \quad  M_2 = [\mathbb{1}, A] \quad , 
+\quad  M_3 = [\mathbb{1}, A , A^2] \quad .
+\end{equation}
+Obviously $\rank{M_1} = 3$ and $\rank{M_2}=\rank{M_3}=3$. With Luenberg we immediately get 
+a minimal $p_\text{L} = 1$ since the columns of $M_1$ are the canonical basis. Because 
+$\mathbb{1}$, $A$ and $A$ are linearly independent, there is no minimal 
+$p_\text{CH}$ but $p_\text{CH}=n=3$ which is ensured by the Cayley-Hamilton theorem. 
+\\
+As soon as we add a matrix $C$ the Luenberg calculation is not longer valid. 
+\begin{equation}
+A = \begin{pmatrix}
+0&0&0\\1&0&0\\0&1&0
+\end{pmatrix}
+\quad , \quad
+A^2 = \begin{pmatrix}
+0&0&0\\0&0&0\\1&0&0
+\end{pmatrix}
+\quad , \quad B = \begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\quad , \quad C = \begin{pmatrix}
+1&0&0 \\ 0&0&1
+\end{pmatrix}
+\end{equation}
+Calculation yields 
+\begin{equation}
+M_1 = \left[\begin{pmatrix} 1 \\0 \end{pmatrix}\right] 
+\tab 
+M_2 =\left[\begin{pmatrix} 1 \\0 \end{pmatrix},\begin{pmatrix} 0 \\0 \end{pmatrix}\right] 
+\tab M_3 = 
+\left[\begin{pmatrix} 1 \\0 \end{pmatrix},\begin{pmatrix} 0 \\0 \end{pmatrix},
+\begin{pmatrix} 0 \\1 \end{pmatrix}\right] \quad .
+\end{equation}
+We see that, thought $\rank{M_1} = \rank{M_2} < \rank{M_3}$. Illegitimate use of the 
+Luenberg calculation would lead to $p_\text{L}=1$
+
+\end{example}

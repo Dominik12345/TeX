@@ -1,0 +1,74 @@
+\section{Monomials}\label{section:Monom}
+%Is it possible to chose a $w:[0,t]\to \mathbb{R}^m$ in such a way, that 
+%\begin{equation}
+%v_l := \int\limits_0^t \frac{(t-\tau)^2}{l !} w(\tau) \td \tau \quad l =
+%0,1,\ldots ,n
+%\end{equation}
+%can be a arbitrary set of vectors in $\mathbb{R}^m$?
+%\\
+%So see that this is possible we do a shift in variables $T:=t-\tau$ and $W(T):= w(t-T)/l!$ 
+%to get
+%\begin{equation}
+%v_l = \int\limits_0^t T^l W(T) \td T \quad .
+%\end{equation}
+%This is equivalent to 
+%\begin{equation}
+%\int\limits_0^t \begin{pmatrix}
+%W_1(T) & T W_1(T) & \hdots & T^n W_1(T) \\
+%W_2(T) & T W_2(T) & \hdots & T^n W_2(T) \\
+%\vdots & \vdots   &  \ddots      &  \vdots    \\
+%W_m(T) & T W_m(T) & \hdots & T^n W_m(T)
+%\end{pmatrix}
+%\td T = V
+%\end{equation}
+%where $V_{ij}$ is the $i$-th component of $v_j$. We can make the Ansatz 
+%\begin{equation}
+%W_i(T) = \sum\limits_{k=0}^F X^i_k T^k 
+%\end{equation}
+%then
+%\begin{equation}
+%V_{ij} = \int\limits_0^t T^j W_i(T) \td T 
+%= \int\limits_0^t \sum\limits_{k=0}^F X^i_k T^{k+j} \td T 
+%= \sum\limits_{k=0}^F X^i_k \frac{1}{k+j+1} t^{k+j+1}
+%\end{equation}
+A compilation of integral lemmas, not rigorously proved.
+\begin{lemma}
+Let $w:[0,t_\text{f}]\to \mathbb{R}^m$ be Riemann integrable. 
+\begin{equation}
+\int\limits_0^t w(\tau)\,\td \tau =0 \quad \forall t\in [0,t_\text{f}] \quad \Rightarrow 
+\quad w \equiv 0
+\end{equation}
+\begin{proof}
+Define $\Delta t = t_\text{f}/N$ sufficient small and $N_t$ such that $N_t \Delta t = t$. 
+Then 
+\begin{equation}
+\lim_{N\to \infty} \Delta t \sum\limits_{k=0}^{N_t}  w(k \Delta t) = 0 \quad \forall N_t
+\end{equation}
+which means
+\begin{align}
+w(0) &= 0 \\
+w(0)+w(\Delta t) = w(\Delta t) &= 0\\
+w(0)+w(\Delta t) + w(2\Delta t)= w(2\Delta t) &= 0 \\
+\vdots   
+\end{align}
+\end{proof}
+\end{lemma}
+\begin{corollary}
+Assume there is a function $w$ such that
+\begin{equation}
+\int\limits_0^t w(\tau) \,\td  \tau = \int\limits_0^t \tau w(\tau) \,\td \tau \quad 
+\forall t
+\end{equation}
+which is equivalent to
+\begin{equation}
+\int\limits_0^t w(\tau)(1-\tau) \, \td \tau = 0 \quad \forall t \quad .
+\end{equation}
+By the preceding lemma we know $w(\tau)(1-\tau)= 0 \, \forall \tau$ and hence 
+$w(t)=0\,\text{a.e.}$ and because $w$ is Riemann integrable $w\equiv 0$. With 
+$\tilde{w}(\tau) = \tau w(\tau)$ we get $\tau w(\tau)(1-\tau)=0\,\forall \tau$. Thus 
+if for any $N$ and for all $t$
+\begin{equation}
+\int\limits_0^t \tau^N w(\tau) \,\td\tau= 0
+\end{equation}
+then $w\equiv 0$.
+\end{corollary}

@@ -1,0 +1,132 @@
+\section{Hidden Input Observability}
+Consider the linear system $\mathcal{S}$
+\begin{align}
+\dot x &= Ax + Bu +Dw \label{eq:dynamics} \tag{$\mathcal{S}1$} \\
+y &= Cx \label{eq:observation} \tag{$\mathcal{S}2$} \\
+x(0) &= x_0 \label{eq:initial_value}\tag{$\mathcal{S}3$}
+\end{align}
+where $x:[0,t_\text{f}]\to \mathbb{R}^n$, $u:[0,t_\text{f}]\to \mathbb{R}^{m'}$, 
+$w:[0,t_\text{f}]\to \mathbb{R}^m$ and $y:[0,t_\text{f}]\to \mathbb{R}^r$. Furthermore 
+$A\in \mathbb{R}^{n\times n}$, $B\in \mathbb{R}^{n\times m'}$, $D\in\mathbb{R}^{n\times m}$ 
+and $C\in\mathbb{R}^{r\times n}$.
+It is well known that
+\begin{equation}
+y(t) = C\e^{At} x_0 + C\int\limits_0^t \e^{A(t-\tau)}\left(Bu(\tau)+Dw(\tau)\right)
+\,\td \tau
+\end{equation}
+is a solution of $\mathcal{S}$.
+
+\begin{definition}[Hidden Input Observability]
+Let $w_1$ and $w_2$ be admissible functions and let $y_1$ and $y_2$ be the solutions 
+of $\mathcal{S}$ with $w_1$ and $w_2$, respectively.
+The system is called \textit{hidden input observable}, if 
+\begin{equation}
+w_1 \neq w_2 \quad \Rightarrow \quad y_1 \neq y_2 \quad .
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Target Controllability] \label{theorem:target_controllability}
+For the system $\mathcal{S}$ with $B=0$ define the matrix
+\begin{equation}
+M_k = [CD,CAD,CA^2D,\ldots,CA^{k-1}D] \quad .
+\end{equation}
+By the Cayley-Hamilton theorem we know that this system is target controllable, i.e. any 
+$y_\text{f}\in\mathbb{R}^r$ can be reached within a finite time interval, if and only if 
+\begin{equation}
+\rank{M_n} = r \quad . \label{eq:rank_condition}
+\end{equation}
+\end{theorem}
+
+\begin{remark}
+Since $M_n$ is a $r \times nm$ matrix, the rank condition \eqref{eq:rank_condition} needs 
+$r \leq nm$. Obviously only $m \leq n$ makes sense and hence $r \leq n^2$.
+\end{remark}
+
+
+We now search for a sufficient or necessary condition for hidden input observability. 
+Let $y_1$ and $y_2$ be solutions of $\mathcal{S}$ with $w_1$ and $w_2$, respectively. If 
+we define $y=y_1-y_2$ and $w=w_1-w_2$, then
+\begin{equation}
+y(t) = C \int\limits_0^t \e^{A(t-\tau)}D w(\tau) \,\td \tau \label{eq:solution_S'}
+\end{equation}
+is a solution of $\mathcal{S}$ with $B=0$ and $x_0=0$. We call this simplified system 
+$\mathcal{S}'$. Furthermore $w_1 \neq w_2 
+\Leftrightarrow w\not\equiv 0$ and for $y$ analogous.
+
+\subsection{necessary condition}
+Assume the system is hidden input observable, i.e. $w\not\equiv 0 \Rightarrow 
+y\not\equiv 0$. 
+\begin{lemma}
+If $\mathcal{S}$ is hidden input observable, then 
+\begin{align}
+&w\not\equiv 0 \Leftrightarrow y\not\equiv 0 \\
+\text{or equivalently} \quad & w \equiv 0 \Leftrightarrow y\equiv 0 \quad .
+\end{align}
+\end{lemma}
+\begin{proof}
+\begin{enumerate}
+\item $w\not\equiv 0 \Rightarrow y\not\equiv 0$ and equivalently $y\equiv 0 \Rightarrow 
+w\equiv 0$ by definition of hidden input 
+observability and $w\equiv 0 \Rightarrow y\equiv 0$ is obvious.
+\item Assume $y\not\equiv 0$ and $w \equiv 0$. The explicit formula 
+\eqref{eq:solution_S'} results in $y\equiv 0$ which is in conflict with the assumption. 
+Thus $y\not\equiv 0 \Rightarrow w \not\equiv 0$.
+\end{enumerate} 
+\end{proof}
+Expanding \eqref{eq:solution_S'} in a power series we get
+\begin{equation}
+y(t) = \sum\limits_{k=0}^\infty CA^kD \int\limits_0^t\frac{(t-\tau)^kw(\tau)}{k!} \td 
+\tau \quad ,
+\end{equation}
+%Since $w$ could be any function in $\mathbb{R}^m$ and because the monomials are linearly 
+%independent we can see that
+%\begin{equation}
+%y \equiv 0 \quad \text{if and only if} \quad C A^k D v_k = 0 \,\forall v_k 
+%\in \mathbb{R}^m \,\text{and}\, k=0,1,\ldots 
+%\end{equation}
+%and thus
+%\begin{equation}
+%y\not\equiv 0 \quad \Rightarrow \quad \exists k \, | \, \kernel{CA^kD} = \O
+%\end{equation}
+%that is $\rank{CA^kD}=m$. Each $CA^kD$ is a $r\times m$ matrix, so this is only 
+%possible if $r \geq m$.
+and by the Cayley-Hamilton theorem we know that 
+this is equivalent to
+\begin{equation}
+y(t) = M_n V(t)
+\end{equation}
+with an arbitrary $V:[0,t_\text{f}]\to \mathbb{R}^{nm}$. 
+\begin{lemma}
+We have
+\begin{equation}
+\rank{M_n} = nm .
+\end{equation}
+\begin{proof}
+\begin{enumerate}
+\item Let $V(t) \in \kernel{M_n} \,\forall t$. Then $y \equiv 0 \Rightarrow w\equiv 0 
+\Rightarrow V \equiv 0$.
+\item Now $V \equiv 0$ then $V(t)\in \kernel{M_n}$ because $M_n$ is linear.
+\end{enumerate}
+Hence $\dim{\kernel{M}} = 0$. By the rank theorem 
+\begin{equation}
+f:X\to Y \,\text{linear} \quad \text{then} \quad \dim{V} = \dim{\kernel{f}} + \rank{f}
+\end{equation}
+we see
+\begin{equation}
+M_n:\mathbb{R}^{nm}\to\mathbb{R}^r \tab{and} nm = \rank{M_n} \quad . 
+\end{equation}
+\end{proof}
+\end{lemma}
+\begin{remark}
+The preceding lemma only makes sense if $r \geq nm$ because $\rank{M_n}\leq \min(nm,r)$. 
+The theorem \ref{theorem:target_controllability} needs $r \leq nm$, so that we can 
+conclude: \\
+
+A system $\mathcal{S}$ can be hidden input observable only if $r\geq nm$. \\
+
+A system $\mathcal{S}'$ that is target controllable can belong to a system $\mathcal{S}$ 
+that is hidden input observable only if $r = nm$.
+\end{remark}
+
+
+\subsection{sufficient condition}
