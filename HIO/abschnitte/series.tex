@@ -1,0 +1,61 @@
+\section{Properties of the matrix series}
+A key statement is the Cayley-Hamilton theorem. A proof can be found in 
+\cite{Greub}.
+\begin{theorem}[Cayley-Hamilton]
+	Let $A$ be an $n\times n$ matrix and $\sum_{k=0}^n \tilde{c}_k 
+	\lambda^k $ 
+	the characteristic polynomial. Then
+	\begin{equation}
+	\sum\limits_{k=0}^n \tilde{c}_k A^k = 0 \quad .
+	\end{equation}
+\end{theorem}
+\begin{corollary}
+	\begin{enumerate}
+	\item Each $A^N$, $N\geq n$, can be written as $\sum_{k=0}^{n-1} 
+	c_k A^k$ with some coefficients $\{c_k\}$ that can be 
+	calculated from $\{\tilde{c}_k\}$.
+	\item Multiplying with $C$ and $D$ also shows 
+	\begin{equation}
+	CA^ND = \sum\limits_{k=0}^{n-1} c_k C A^k D
+	\end{equation}
+	for any $N\geq n$.
+	\item For each operator $\Sigma_N (s_k)_{k\in\mathbb{N}_0}= \sum_{k=0}^{N-1} CA^kD 
+	(s_k)_{k\in\mathbb{N}_0} $ with $N
+	\geq 0$ 
+	\begin{equation}
+	\rank{\Sigma_N} = \rank{\Sigma_n} \quad .
+	\end{equation}	 
+	\end{enumerate}
+\end{corollary}
+\begin{lemma}
+	The operator series $\Sigma_N$ converges in norm and $\Sigma_N \longrightarrow \Sigma
+	$.
+\end{lemma}
+\begin{proof}
+	The operator norm is defined by
+	\begin{equation}
+	||\Sigma_N|| := \supremum{|| \Sigma_N (s_k) ||}{||(s_k)||_{l^2} = 1} \quad .
+	\end{equation}
+\end{proof}
+
+
+Again, considering $t>0$ as a fixed point in time and assuming $I^t$ is surjective. We 
+use the shorter notation $(s_k)$ for a series $(s_k)_{k\in\mathbb{N}_0}\in l^2$.
+\begin{theorem}
+	The kernel of $\Sigma$ is infinite dimensional.
+\end{theorem}
+\begin{proof}
+	Define a $l^2$ series by $s_k=\delta_{k,N}$ for a $N\geq n$. Then
+	\begin{equation}
+	\Sigma (s_k) = CA^nD = \sum\limits_{k=0}^{n-1} c_kCA^kD \quad .
+	\end{equation}
+	The $l^2$ series $\hat{s}_k = c_k$ for $k < n$ and $\hat{s}_k = 0$ for $k\geq n$ 
+	leads to the same result, thus 
+	\begin{equation}
+	\linspan{(\hat{s}_k-s_k)} \subset \kernel{\Sigma} \quad .
+	\end{equation}
+	Repeating this argument for each $N\geq n$ it is possible to get arbitrarily many 
+	linearly independent vectors $(\hat{s}_k-s_k)$.
+\end{proof}
+
+Now let $(s_k)(t)$ be a trajectory in $l^2$. 

@@ -1,0 +1,58 @@
+\section{Hidden Input Observability}
+Considering a dynamic system $\mathcal{S}$
+\begin{align}
+\frac{\td x}{\td t} &= Ax(t) + Bu(t) + Dw(t) \\
+y(t) &= Cx(t) \\
+x(0) &= x_0
+\end{align}
+where $x$, $u$, $w$ and $y$ map $[0,T]$ onto $\mathbb{R}^n$, 
+$\mathbb{R}^{m'}$, $\mathbb{R}^m$ and $\mathbb{R}^p$, respectively, and 
+$A$, $B$, $C$, $D$ are matrices of suitable dimensions. The 
+closed form solution for $y$ is
+\begin{equation}
+y_w(t) = C \int\limits_0^t \exp(A(t-\tau)) (Bu(\tau) + Dw(\tau) ) \, \td 
+\tau \quad .
+\end{equation}
+
+\begin{definition}
+If for a system $\mathcal{S}$ the implication
+\begin{equation}
+y_{w}(t) = y_{\hat{w}}(t) \quad \forall t\in [0,T]
+\quad \Rightarrow \quad 
+ w = \hat{w} \quad \text{a.e.}
+\end{equation}
+holds, $\mathcal{S}$ is called \textit{hidden input observable}.
+\end{definition}
+
+
+Due to linearity a system is hidden input observable if and only if 
+\begin{equation}
+\Delta y_w(t) := C\int\limits_0^t \exp(A(t-\tau))Dw(\tau)\,\td\tau = 0 \quad 
+\forall t\in[0,T] \quad \Rightarrow \quad 
+w = 0 \quad \text{a.e.}
+\end{equation}
+
+For the sake of simplicity we will consider only $p=1$. With the 
+definition of the operators
+\begin{equation}
+I^t:L^1([0,T]) \rightarrow l^2 \tab{,} w \mapsto \left( 
+\frac{1}{k!} \int\limits_0^t (t-\tau)^k w(\tau) \, \td\tau
+\right)_{k\in \mathbb{N}_0}
+\end{equation}
+and 
+\begin{equation}
+\Sigma:l^2 \rightarrow \mathbb{R}^p \tab{,} (s_k)_{k\in\mathbb{N}_0}
+\mapsto \sum\limits_{k=0}^\infty C A^k D s_k
+\end{equation}
+we see that 
+\begin{equation}
+\Delta y_w(t) = \Sigma\circ I^t w 
+\end{equation}
+and thus
+\begin{corollary}
+A system is hidden input observable if and only if 
+\begin{equation}
+\ker{\Sigma \circ I^t} = \{0\} \label{eq:introduction:observable}
+\end{equation}
+where we identify the null function as $w=0$ a.e.
+\end{corollary}

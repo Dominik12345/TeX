@@ -1,0 +1,46 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Greub}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ac518eb442a63562c8c7f062a8019adc}{%
+           family={H.},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac518eb442a63562c8c7f062a8019adc}
+      \strng{fullhash}{ac518eb442a63562c8c7f062a8019adc}
+      \strng{bibnamehash}{ac518eb442a63562c8c7f062a8019adc}
+      \strng{authorbibnamehash}{ac518eb442a63562c8c7f062a8019adc}
+      \strng{authornamehash}{ac518eb442a63562c8c7f062a8019adc}
+      \strng{authorfullhash}{ac518eb442a63562c8c7f062a8019adc}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Linear Algebra}
+      \field{year}{1963}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
