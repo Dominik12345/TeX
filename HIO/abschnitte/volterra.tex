@@ -38,7 +38,7 @@ y(t) = \sum\limits_{l=0}^{n-1} CA^lD \int\limits_0^t \phi_l(t,\tau) w(\tau) \, \
 \quad . \label{eq:volterra:y_volterra}
 \end{equation}
 
-\subsection{Scalar Volterra-operator}
+\subsection*{From Volterra- to matrix-equation}
 \begin{definition}
 According to \cite{Heuser} or \cite{Kirsch} the equation
 \begin{equation}
@@ -49,13 +49,16 @@ s<t\}\rightarrow \mathbb{R}$ is called \textit{Volterra integral equation of the
 first kind (V1)} and $K$ is called the \textit{kernel}.
 \end{definition}
 
-Comparing \eqref{eq:volterra:y_volterra} and \eqref{eq:volterra:definition}
-we see that, if $w_i$ denotes the $i$-th component of $w$, we get $m$ V1 equations
+Comparing \eqref{eq:volterra:y_volterra} and 
+\eqref{eq:volterra:definition}
+we see that, if $w_i$ denotes the $i$-th component of $w$, we get $m$ 
+V1 equations
 \begin{equation}
-\int\limits_0^t \phi_l(t,\tau) w_i(\tau) \, \td\tau = z_i(t) \quad .
+\int\limits_0^t \phi_l(t,\tau) w_i(\tau) \, \td\tau = z_{i,l}(t) \quad 
+.
 \label{eq:volterra:solve_z}
 \end{equation}
-Let $z(t)$ be any desired trajectory in $\mathbb{R}^m$ and we want to solve 
+Let $z_l(t)$ be any desired trajectory in $\mathbb{R}^m$ and we want to solve 
 \eqref{eq:volterra:solve_z}. 
 
 \begin{definition}
@@ -82,7 +85,7 @@ K(t,t)f(t) + \int\limits_0^t \frac{\partial K}{\partial t}(t,s) f(s) \, \td s = 
 g}{\td t}(t) \quad
 \end{equation}
 Only if $K(t,t)\neq 0$ we can divide the whole equation by $K(t,t)$ and redefine the 
-Kernel and right hand side to end up with a V2, which has a unique solution.
+kernel and right hand side to end up with a V2, which has a unique solution.
 \end{proof}
 
 Now turning back to \eqref{eq:volterra:solve_z}, we want to apply theorem 
@@ -94,4 +97,87 @@ the kernels $\phi_l$ do not fit to the assumption since
 and comparing to \eqref{eq:volterra:cayley-hamilton_unique} 
 \begin{equation}
 \phi_0(t,t) = 1 \tab{,} \phi_l (t,t) = 0 \tab{for}l=1,2,\ldots,N-1 \quad .
+\label{eq:volterra:phi_zeroes}
 \end{equation}
+
+\begin{example}
+	To show that \eqref{eq:volterra:phi_zeroes} will cause problems especially for the 
+	hidden input observability, consider 
+	\begin{equation}
+	A = \begin{pmatrix}
+	0&0&0\\1&0&0\\0&1&0
+	\end{pmatrix} \tab{,}
+	C = \begin{pmatrix}
+	1&0&0\\0&1&0\\0&0&1
+	\end{pmatrix} \tab{,}
+	D = \begin{pmatrix}
+	1&0\\0&1 \\ 0&0
+	\end{pmatrix} \quad .
+	\end{equation}
+	This yields
+	\begin{equation}
+	\phi_0(t,\tau) = 1 \tab{,} \phi_1(t,\tau)=t-\tau \tab{and} \phi_2(t,\tau)=
+	\frac{(t-\tau)^2}{2} \quad .
+	\end{equation}
+	Choosing $w(\tau)=2\forall \tau$ we get
+	\begin{equation}
+	\int\limits_0^t \phi_1(t,\tau) w(\tau)\,\td\tau = 0 \quad \forall t \quad .
+	\end{equation}
+\end{example}
+
+Assume, we find a set $\left\{A^i \right\}$ with $i$ from an index set $\mathcal{I}$, 
+such that 
+\begin{equation}
+A^k = \sum\limits_{i\in \mathcal{I}}  c_{k,i} A^i \tab{and}
+c_{0,i}\neq 0\forall i\in\mathcal{I} \label{eq:volterra:redef}
+\end{equation}
+which means $\linspan{ \left\{A^i|i\in \mathcal{I} \right\} } = \linspan{ \left\{ 
+A^0,A^1,\ldots,A^{n-1} \right\} }$ and $|\mathcal{I}| > N$.
+
+\begin{example} Consider $n=3$
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+	\end{pmatrix} \tab{,} C = D = \mathbb{1} \quad .
+	\end{equation}
+	It is not possible to solve \eqref{eq:volterra:redef}. Though 
+	$[CD,CAD,CA^2D]$ has rank $n$.
+\end{example}
+\begin{example}
+	The Matrix
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 1 \\ 1 & 0
+	\end{pmatrix}
+	\end{equation}
+	and the set $\left\{ A^1 , A^2, A^3 \right\}$ or equivalently $
+	\mathcal{I}=\{1,2,3\}$ 
+	yields \eqref{eq:volterra:redef} 
+	if we choose \\$c_{0,1} = 1$, $c_{0,2} =1$ and $c_{0,3}=-1$.
+\end{example}
+
+Under an appropriate set $\left\{A^i \right\}$ equation 
+\eqref{eq:volterra:solve_z} has a unique solution and 
+\eqref{eq:volterra:y_volterra} becomes
+\begin{equation}
+y(t) = \sum\limits_{i\in \mathcal{I}} CA^iD z_i(t) \quad . \label{eq:volterra:y_matrix}
+\end{equation}
+
+\subsection*{Properties of the matrix-equation}
+Assume that for a given system the preceding conditions hold. Does $y(t)=0\forall t$ 
+imply $w(t)=0\forall t$? Writing \eqref{eq:volterra:y_matrix} as
+\begin{equation}
+\underbrace{\begin{bmatrix}CA^{i_1}D, CA^{i_2}D,\ldots,CA^{i_{|\mathcal{I}|} } \end{bmatrix}}_{M:\mathbb{R}^{m|\mathcal{I}|}\rightarrow \mathbb{R}^p \, \text{linear with rank}\,
+r \leq p} 
+\begin{bmatrix}
+z_{i_1}(t) \\ z_{i_2}(t) \\ \vdots \\ z_{i_{|\mathcal{I}|}}(t) 
+\end{bmatrix}
+\end{equation}
+we use the dimension formula
+\begin{align}
+&& m|\mathcal{J}| &= \dim{\kernel{M}} + r \\
+&\Rightarrow& m N &< \dim{\kernel{M}} + r \\
+&\Rightarrow& m N &\leq \dim{\kernel{M}} + p \\
+&\Rightarrow& m N - p &\leq \dim{\kernel{M}} \quad .
+\end{align}
+Since $N \geq 1$ 
