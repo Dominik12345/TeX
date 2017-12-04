@@ -78,8 +78,5 @@
     <requires type="dynamic">
       <file>HIO_volterra.bcf</file>
     </requires>
-    <requires type="editable">
-      <file>../bib/bibfile.bib</file>
-    </requires>
   </external>
 </requests>

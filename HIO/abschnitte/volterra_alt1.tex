@@ -1,0 +1,146 @@
+\section{HIO using Volterra-operators}
+Let $w:[0,T]\rightarrow \mathbb{R}^m$, $y:[0,T]\rightarrow \mathbb{R}^p$, 
+$A\in \mathbb{R}^{n\times n}$, $D\in\mathbb{R}^{n\times m}$ and $C\in\mathbb{R}^{p\times 
+n}
+$ such that 
+\begin{equation}
+y(t) = \int\limits_0^t C \exp{\left\{A(t-\tau)\right\}} D w(\tau) \, \td \tau \quad .
+\label{eq:volterra:y}
+\end{equation}
+Due to Cayley-Hamilton
+\begin{equation}
+A^k = \sum\limits_{l=0}^{n-1} c_{k,l} A^l 
+\end{equation}
+with coefficients $c_{k,l}$ that in general are not unique. By choosing $N\leq n$ the 
+smallest number such that
+\begin{equation}
+A^N \in \linspan{\left(A^0,A^1,\ldots,A^{N-1} \right)} \quad ,
+\end{equation}
+the coefficients $c_{k,l}$ count $l=0,1,\ldots,N-1$ and are unique. 
+Expanding the exponential function to its power series we get
+\begin{equation}
+y(t) = \sum\limits_{l=0}^{N-1} CA^lD \Phi_l[w](t)
+\quad . \label{eq:volterra_alt1:y_volterra}
+\end{equation}
+where
+\begin{equation}
+\Phi_l[w](t) :=  \int\limits_0^t \sum\limits_{k=0}^\infty \frac{(t-\tau)^k}{k!} c_{k,l} 
+w(\tau) \, \td\tau \quad .
+\label{eq:volterra_alt1:Phi_l}
+\end{equation}
+\begin{proposition}[Without proof] \label{prop:volterra_alt1:1}
+Each operator $\Phi_l$ is injective, i.e. 
+\begin{equation}
+\Phi_l[w] \equiv 0\quad \quad \Rightarrow  \quad w \equiv 0  \quad .
+\end{equation}
+\end{proposition}
+Here "$\equiv$" denotes equality in function space and $\Phi_l$ operates component-wise 
+on $(w_1,w_2,\ldots,w_m)^\text{T}:[0,T]\rightarrow \mathbb{R}^m$.
+\clearpage
+
+\subsection{Linearly independent HI}
+Consider the simple case $D=\mathbb{1}$ ($m=n$). Then for the $\mu$-th column of $CA^k$ 
+we find
+\begin{equation}
+\left(CA^k \right)_\mu = \sum\limits_{\omega = 1}^n A^k_{\omega\mu} C_\omega
+\end{equation}
+where $A^k_{\omega\mu}$ is the $(\omega\mu)$ component of $A^k$ and $C_\omega$ is the 
+$\omega$-th column of $C$.
+Therefore each column of any $CA^k$ is a linear combination of column vectors 
+$C_\omega$ and thus 
+\begin{equation}
+\rank{[C,CA,CA^2,\ldots,CA^{N-1}]} = \rank{C} \quad .
+\end{equation}
+
+Furthermore we assume the hidden inputs to be  
+linearly independent, i.e.
+\begin{equation}
+\sum\limits_{\mu=1}^n d_\mu w_\mu \equiv 0 \quad \Leftrightarrow \quad 
+d_\mu w_\mu \equiv 0 \quad \forall \mu \quad . 
+\end{equation}
+
+\subsubsection{Nilpotent dynamics}
+Let $A$ be a nilpotent matrix, i.e. there is a regular $n\times n$ matrix $P$ such that
+\begin{equation}
+ A = P^{-1} A_\triangle P
+\end{equation}
+with $A_{\triangle \omega \mu} = 0$ when $\omega \leq \mu$. As a graphical condition this 
+means, that $A$ can be represented by a directed acyclic graph. Inserting in  
+\eqref{eq:volterra_alt1:y_volterra} yields
+\begin{equation}
+y(t) = \sum\limits_{l=0}^{N-1} \underbrace{CP^{-1}}_{\rank{CP^{-1} 
+=\rank{C}} } A^l_\triangle \Phi_l[\underbrace{Pw}_{ \text{lin.indep.}}](t) \quad .
+\end{equation}
+Thus without loss of generality can assume that $A$ is strictly lower 
+triangular and $N=n$. Furthermore we see that \eqref{eq:volterra_alt1:Phi_l} reduces to
+\begin{equation}
+\Phi_l[w_\mu](t) = \int\limits_0^t \frac{(t-\tau)^l}{l!} w_\mu(\tau) \, \td\tau
+\end{equation}
+with the properties
+\begin{equation}
+\frac{\td}{\td t} \Phi_l[w_\mu](t) = \Phi_{l-1}[w_\mu](t)  
+\tab{and} \frac{\td}{\td t} \Phi_0[w_\mu](t) = w_\mu(t)
+\quad ,
+\end{equation}
+and equation \eqref{eq:volterra_alt1:y_volterra} becomes
+\begin{equation}
+y(t) = \sum\limits_{\omega=1}^{n} \underbrace{ \sum\limits_{l=0}^{\omega-1}  
+\sum\limits_{\mu=1}^{\omega-l} 
+ \Phi_l\left[A^l_{\omega\mu} w_\mu \right](t) }_{:=\varphi_\omega(t)} C_\omega \quad .
+\end{equation}
+
+\paragraph{Case: $C$ is regular}
+	Assume the columns of $C$, $\{C_1,C_2,\ldots,C_n\}$ form a linearly independent set 
+	of $\mathbb{R}^p$ vectors. Setting $y\equiv 0$ and equating coefficients we 
+	get
+	\begin{align}
+	&\propto C_1:& & \varphi_1 = \Phi_0 [\underbrace{A^0_{11}}_{=1} w_1 ] \equiv 0 & &
+	\Rightarrow &
+	w_1 \equiv 0  \\
+	&\propto C_2:& &\varphi_2= \Phi_0[\underbrace{A^0_{22}}_{=1} w_2] + 
+	\Phi_1[ A^1_{21} \underbrace{w_1}_{\equiv 0} ] 
+	 \equiv  0 & &
+	\Rightarrow &
+	w_2\equiv 0  \\
+	&\text{etc.}  \notag
+	\end{align}
+	which shows, that such a system is hidden input observable.
+	\begin{example}
+	Consider the system
+	\begin{equation}
+	A =\begin{pmatrix}
+	 2 & -1 & -1 & 0 \\ 2 & -1 & -1 & \nicefrac{1}{2} \\
+	1 & 0 & -\nicefrac12 & -\nicefrac34\\ -2 & 2 & 1 & -\nicefrac12
+	\end{pmatrix} \quad 
+	C = \begin{pmatrix}
+	1 & 0 & 0 & 0 \\ 1 & 1 & 1 & 0  \\ 0& 1 & 1 & 1\\ 0 &1 &1 &0\\ 1 &0&1&1
+	\end{pmatrix} \quad .
+	\end{equation}
+	With the matrix
+	\begin{equation}
+	P = \begin{pmatrix}
+	1 & -\nicefrac12 & -\nicefrac12 &\nicefrac14\\ 0 & \nicefrac12 & 0 &0\\ 0&0&0&
+	\nicefrac12\\ 0& 0&\nicefrac12&-\nicefrac14
+	\end{pmatrix}
+	\end{equation}		
+	we transform the system to
+	\begin{equation}
+	A_\triangle = \begin{pmatrix}
+	0 & 0 &0 &0\\1&0&0&0\\-1&1&0&0\\1&0&-1&0
+	\end{pmatrix}		\quad
+	\hat{C} = \begin{pmatrix}
+	1 & 1 & 0 & 1\\1&3&1&3\\0&2&3&2\\0&2&1&2\\1&1&3&3
+	\end{pmatrix} \quad ,
+	\end{equation}
+	to see that this system is hidden input observable.
+	\end{example}
+	\begin{remark}
+	\begin{itemize}
+	\item To have a set $\{C_1,\ldots,C_n\}$ of linear independent vectors, its crucial 
+	to have $n\leq p$.
+	\item A nilpotent matrix has only one Eigenvalue $0$. Thus also $\trace{A} = 0$ and 
+	$\det{A}=0$ are necessary conditions.
+	\end{itemize}
+	\end{remark}
+	
+\paragraph{$C_Z$ is a linear combination}

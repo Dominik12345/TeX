@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  27 NOV 2017 08:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  4 DEC 2017 16:49
 entering extended mode
 **./HIO_volterra.tex
 (HIO_volterra.tex
@@ -761,8 +761,15 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@postskip=\skip61
 \thm@headsep=\skip62
 \dth@everypar=\toks28
-) ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fourier.s
-ty"
+) ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\nicefrac.st
+y"
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip63
+\L@UnitsRaiseTextstyle=\skip64
+\L@UnitsRaiseScriptstyle=\skip65
+)
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fourier.sty
+"
 Package: fourier 2005/01/01 1.4 fourier-GUTenberg package
 Now handling font encoding FML ...
 ... no UTF-8 mapping file for font encoding FML
@@ -772,11 +779,11 @@ Now handling font encoding FMX ...
 ... no UTF-8 mapping file for font encoding FMX
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
- ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
-y"
+))
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -790,6 +797,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
@@ -1193,7 +1201,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) (abschnitte/volterra.tex
+) (abschnitte/volterra_alt1.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 2.
@@ -1223,40 +1231,49 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 2.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 43.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 31.
  [1
 
 {C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3]) [4] (HIO_volterra.aux)
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 41.
+
+[2
+
+]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 139
+.
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)) [3] (HIO_volterra.aux)
 Package logreq Info: Writing requests to 'HIO_volterra.run.xml'.
 \openout1 = `HIO_volterra.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11376 strings out of 493312
- 187229 string characters out of 3130261
- 594582 words of memory out of 3000000
- 14702 multiletter control sequences out of 15000+200000
- 59937 words of font info for 77 fonts, out of 3000000 for 9000
+ 11227 strings out of 493312
+ 184242 string characters out of 3130261
+ 597713 words of memory out of 3000000
+ 14546 multiletter control sequences out of 15000+200000
+ 56284 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,16n,45p,877b,1555s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,15n,30p,877b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
 <C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fou
 rier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/fourier/fourier-mcl.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/kahl/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/kahl/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users
-/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:
-/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.
-pfb>
-Output written on HIO_volterra.pdf (4 pages, 83260 bytes).
+/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/kahl/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/kahl/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/
+kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/
+Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.p
+fb>
+Output written on HIO_volterra.pdf (3 pages, 75484 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
