@@ -1,0 +1,77 @@
+\input{../header/simple_header.tex}
+\input{../header/derivatives.tex}
+\input{../header/environments.tex}
+
+\begin{document}
+
+Minimiere 
+\begin{equation}
+J = \int\limits_0^T \sum\limits_{k=1}^p |y(t) - h(x(t))|^2 \, \td t + \frac{\alpha_2}{2}
+\int\limits_0^T \sum\limits_{k=1}^n D_{kk} |w_k(t)|^2 \, \td t
+\end{equation}
+unter
+\begin{equation}
+\dot{x}(t) = \tilde{f}(x(t)) + D w(t) \quad .
+\end{equation}
+Dabei ist $D$ eine Diagonalmatrix aus $0$ und $1$ (um bestimmte $w$s zu unterdrücken).
+Die Hamiltonfunktion lautet
+\begin{equation}
+H(x,w,\lambda,t) = \sum\limits_{k=1}^p |y(t) - h(x(t))|^2 + \frac{\alpha_2}{2}\sum\limits_{k=1}^n D_{kk} |w_k(t)|^2 + \sum\limits_{k=1}^n \lambda_k (\tilde{f}_k(x(t) + D_{kk} w_k(t))
+\end{equation}
+mit den kanonischen Gleichungen
+\begin{align}
+&\left. 
+\begin{aligned}
+\frac{\partial H}{\partial x_i} &= -\dot{\lambda}_i \\
+\frac{\partial H}{\partial \lambda_i} &= \dot{x}_i 
+\end{aligned}
+\right\}
+\text{Hamilton Gleichungen} \\
+&\frac{\partial H}{\partial w_i} = 0 \quad \text{Extremale Lösung}  \quad .
+\label{eq:2}
+\end{align}
+Gegeben seien Anfangswerte $x_i(0)=x_{0,i}$.
+Falls $x_i(T)$ frei gelassen werden, folgt $\lambda_i(T)=0$ und aus \eqref{eq:2} für alle 
+$i$ mit $D_{ii}= 1$
+\begin{equation}
+\alpha_2 w_i(t) + \lambda_i(t) = 0 \quad \forall t\in[0,T]
+\end{equation}
+und daher $w_i(T)=0$.
+Werden aber $x_i(T)$ vorgegeben, dann gibt es keine Bedingung an $\lambda_i(T)$. Problem: 
+$x_i(T)$ sind unbekannt bzw. müssen erst ermittelt werden. Die Endwerte $\tilde{x}_i(T)$ 
+des nominalen Modells sind im ersten Iterationsschritt sinnvoll, danach müssten die 
+Endwerte aber mit angepasst werden. Möglicherweise (weiß ich aber nicht sicher) würden 
+sich die Randwerte $x_i(T)$ aber auch beim Iterieren nicht ändern, weil der Startwert 
+dann wieder festgepinnt ist. Alternativ kann man (mit zwei zugedrückten Augen) folgende 
+Rechnung anstellen (vektoriell geschrieben, $\cong$ ist Gleicheit für $\epsilon\to0$):\\
+(Du kannst auch direkt zum Ergebnis springen)\\
+
+
+Sei $h^\dagger$ die Inverse (falls existent) bzw. Pseudoinverse (wie man die definiert muss ich mir noch überlegen) von $h$. Die Messwerte sind $y(t)$. Als Endbedingung nehmen wir $h(x(T)) = y(T)$ bzw. $x(T)=h^\dagger(y(T))$ (ähnlich wie im DEN paper). Sei $
+\epsilon>0$ klein, möglichst so, dass $y(T-\epsilon)$ ein Messwert ist.
+\begin{equation}
+x(T-\epsilon) \cong x(T) - \dot{x}(T) \epsilon = h^\dagger(y(T))-\epsilon 
+\left[ \tilde{f}(h^\dagger(y(T)))-\frac{1}{\alpha_2} \lambda(T) \right]
+\end{equation}
+außerdem
+\begin{equation}
+h^\dagger( y(T-\epsilon) ) \cong h^\dagger (y(T)) - \td h^\dagger_{y(T)} \dot{y}(T)
+\epsilon
+\end{equation}
+dabei ist (glaube ich) $\td h^\dagger_{y(T)}$ die Jacobimatrix bzw. das Differenzial von 
+$h^\dagger$ ausgewertet an $y(T)$.
+Zusammenbauen und nach $\lambda$ umstellen liefert
+\begin{equation}
+\lambda(T) = \alpha_2 \left\{
+\tilde{f}\left(h^\dagger(y(T)) \right) - \td h^\dagger_{y(T)} \dot{y}(T)
+ \right\} \quad .
+\end{equation}
+Wenn man annimmt, dass $y(t)$ prinzipiell differenzierbar ist, kann man $\dot{y}(T)$ 
+numerisch ermittelt, die Inverse bzw. Pseudoinverse sollte kein größeres Problem sein, 
+da man für kleine $\epsilon$ zur Not noch $h$ linearisieren kann und dann die 
+Moore-Penrose Inverse nimmt.
+
+
+
+
+\end{document}

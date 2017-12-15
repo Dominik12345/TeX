@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  15 DEC 2017 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  7 DEC 2017 17:51
 entering extended mode
-**./HIO_volterra.tex
-(HIO_volterra.tex
+**./plottest.tex
+(plottest.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 (../header/simple_header.tex
@@ -1537,14 +1537,7 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pgf
 libraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
-)))) (../header/derivatives.tex)
-(../header/environments.tex
-\c@definition=\count321
-\c@theorem=\count322
-\c@proposition=\count323
-\c@example=\count324
-)
-\c@lemma=\count325
+))))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1555,49 +1548,49 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\englis
 h.lbx"
 File: english.lbx 2017/11/05 v3.8a biblatex localization (PK/JW/AB)
-) (HIO_volterra.aux)
-\openout1 = `HIO_volterra.aux'.
+) (plottest.aux)
+\openout1 = `plottest.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 7.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 3.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 3.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutm.fd"
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 7.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 3.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmsfutm.fd
 "
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 7.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 3.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmxfutm.fd"
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 7.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 3.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\t1futs.fd"
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -1605,27 +1598,27 @@ File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `HIO_volterra.bcf'.
+\openout4 = `plottest.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'HIO_volterra.bbl' found.
-(HIO_volterra.bbl)
-Package biblatex Info: Reference section=0 on input line 7.
-Package biblatex Info: Reference segment=0 on input line 7.
+Package biblatex Info: ... file 'plottest.bbl' not found.
+No file plottest.bbl.
+Package biblatex Info: Reference section=0 on input line 3.
+Package biblatex Info: Reference segment=0 on input line 3.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
+\scratchcounter=\count321
 \scratchdimen=\dimen175
 \scratchbox=\box40
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\nofMPsegments=\count322
+\nofMParguments=\count323
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count329
+\MPscratchCnt=\count324
 \MPscratchDim=\dimen176
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
 \everyMPtoPDFconversion=\toks46
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
@@ -1651,104 +1644,66 @@ G,.JBIG2,.JB2,.eps]
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
- on input line 7.
+ on input line 3.
 
-(abschnitte/volterra_alt1.tex
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
-
-Overfull \hbox (10.1173pt too wide) in paragraph at lines 1--1
-[]\T1/futs/b/n/17.28 HIO us-ing Volterra-operators and lin-early in-de-pen-
- []
-
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 2.
+(C:/Users/kahl/Documents/Images/test.pgf
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 21
+57.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd
 "
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
+(Font)              scaled to size 11.03998pt on input line 2157.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
+(Font)              scaled to size 8.27998pt on input line 2157.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+(Font)              scaled to size 6.43999pt on input line 2157.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2157.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2157.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
+(Font)              scaled to size 11.03998pt on input line 2157.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
+(Font)              scaled to size 8.27998pt on input line 2157.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 31.
- [1
+(Font)              scaled to size 6.43999pt on input line 2157.
+)
+Overfull \hbox (43.62pt too wide) in paragraph at lines 2183--11
+ [][] 
+ []
+
+[1
 
 {C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 62.
-
-[2]
-
-LaTeX Warning: Reference `subsub2' on page 3 undefined on input line 211.
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 217.
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 267--299
-
- []
-
-
-Overfull \hbox (15.86143pt too wide) detected at line 311
-\FML/futm/m/it/12 [] [] \FMS/futm/m/n/12 € [] [] [] \FML/futm/m/it/12 [][] [
-] \FMS/futm/m/n/12 € \FML/futmi/m/it/12 w[] \FMS/futm/m/n/12 € [] \FML/futm/m/i
-t/12 []\FML/futmi/m/it/12 w[] \FMS/futm/m/n/12  \T1/futs/m/n/12 0 \FML/futmi/
-m/it/12 :
- []
-
-[3
-
-]) [4] (HIO_volterra.aux)
-
-LaTeX Warning: There were undefined references.
-
-Package logreq Info: Writing requests to 'HIO_volterra.run.xml'.
-\openout1 = `HIO_volterra.run.xml'.
+(plottest.aux)
+Package logreq Info: Writing requests to 'plottest.run.xml'.
+\openout1 = `plottest.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30798 strings out of 493312
- 727885 string characters out of 3130261
- 1198612 words of memory out of 3000000
- 33772 multiletter control sequences out of 15000+200000
- 56528 words of font info for 78 fonts, out of 3000000 for 9000
+ 30719 strings out of 493312
+ 726845 string characters out of 3130261
+ 1196985 words of memory out of 3000000
+ 33719 multiletter control sequences out of 15000+200000
+ 31983 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,8n,96p,877b,1557s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,7n,96p,873b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
-<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/eu
-ler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/fourier/fourier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/fourier/fourier-mcl.pfb><C:/Users/kahl/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb>
 <C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fou
-rier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/
-utopia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/adobe/utopia/putri8a.pfb>
-Output written on HIO_volterra.pdf (4 pages, 89707 bytes).
+rier-mex.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/fourier/fourier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on plottest.pdf (1 page, 40612 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

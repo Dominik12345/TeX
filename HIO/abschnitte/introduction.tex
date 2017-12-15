@@ -5,9 +5,9 @@ Considering a dynamic system $\mathcal{S}$
 y(t) &= Cx(t) \\
 x(0) &= x_0
 \end{align}
-where $x$, $u$, $w$ and $y$ map $[0,T]$ onto $\mathbb{R}^n$, 
-$\mathbb{R}^{m'}$, $\mathbb{R}^m$ and $\mathbb{R}^p$, respectively, and 
-$A$, $B$, $C$, $D$ are matrices of suitable dimensions. The 
+where $w:[0,T]\rightarrow \mathbb{R}^m$, $y:[0,T]\rightarrow \mathbb{R}^p$, 
+$A\in \mathbb{R}^{n\times n}$, $D\in\mathbb{R}^{n\times m}$ and $C\in\mathbb{R}^{p\times 
+n}$. The 
 closed form solution for $y$ is
 \begin{equation}
 y_w(t) = C \int\limits_0^t \exp(A(t-\tau)) (Bu(\tau) + Dw(\tau) ) \, \td 
@@ -21,11 +21,11 @@ y_{w}(t) = y_{\hat{w}}(t) \quad \forall t\in [0,T]
 \quad \Rightarrow \quad 
  w = \hat{w} \quad \text{a.e.}
 \end{equation}
-holds, $\mathcal{S}$ is called \textit{hidden input observable}.
+holds, $\mathcal{S}$ is called \textit{hidden input observable (HIO)}.
 \end{definition}
 
 
-Due to linearity a system is hidden input observable if and only if 
+Due to linearity a system is HIO if and only if 
 \begin{equation}
 \Delta y_w(t) := C\int\limits_0^t \exp(A(t-\tau))Dw(\tau)\,\td\tau = 0 \quad 
 \forall t\in[0,T] \quad \Rightarrow \quad 

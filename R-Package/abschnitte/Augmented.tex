@@ -1,0 +1,226 @@
+\section{Gradient Method - Preliminaries}
+Let $x:[0,T]\to \mathbb{R}^n$, $w:[0,T]\to \mathbb{R}^n$, $f:\mathbb{R}^n\times 
+\mathbb{R}^n \to \mathbb{R}^n$, $h:\mathbb{R}^n \to \mathbb{R}^p$ and 
+\begin{align}
+\dot{x}(t) &= f(x(t)) + w(t)\\
+y(t) &= h(x) \\
+x(0) &= x_0
+\end{align}
+a dynamic system of the DEN. Let $y:[0,T]\to \mathbb{R}^p$ a data set with continuous 
+time. The cost function which is to be minimized is
+\begin{equation}
+J[x,w,t] = \int\limits_0^T \, \left\{
+\sum\limits_{\mu=1}^p \left|y_\mu(t)-h_\mu(x(t))\right|^2 +\sum\limits_{\nu=1}^n 
+\frac{\alpha_2}{2} \left|w_\nu(t)\right|^2 
+\right\} \, \td t  \quad .
+\end{equation}
+We can solve this problem using the Hamilton formalism with the Hamiltonian
+\begin{equation}
+H(x,w,\lambda,t) = \sum\limits_{\mu=1}^p \left|y_\mu(t)-h_\mu(x)\right|^2 +\sum\limits_{\nu=1}^n 
+\frac{\alpha_2}{2} \left|w_\nu\right|^2
++ \sum\limits_{\rho=1}^n \lambda_\rho (f_\rho(x)+w_\rho)
+  \label{eq:Augmented:Hamiltonian}
+\end{equation}
+and the canonical equations
+\begin{align}
+\left. \nabla_x H \right|_{x(t),w(t),\lambda(t)}(t) &= - \dot{\lambda}(t)
+\label{eq:Augmented:1}\\
+\left. \nabla_\lambda H\right|_{x(t),w(t),\lambda(t)}(t) &= \dot{x}(t) 
+\label{eq:Augmented:2} \\
+\left. \nabla_w H \right|_{x(t),w(t),\lambda(t)}(t) & =0
+\label{eq:Augmented:3}
+\end{align}
+where \eqref{eq:Augmented:1} and \eqref{eq:Augmented:2} ensure the right dynamics and 
+\eqref{eq:Augmented:3} ensures that the solution is extremal. The derivatives are always
+evaluated at a point $x(t),w(t),\lambda(t)$ so we drop the subscripts. The 
+$\nabla$-derivation maps $\nabla_x:h_\mu(x) \mapsto (\nicefrac{\partial}{\partial x_1} h_\mu ,\ldots,\nicefrac{\partial}{\partial x_n}h_\mu(x))^T$. When deriving 
+the canonical equation you also get $\lambda_\rho(T)=0$ if there is no terminal cost 
+and no boundary condition on $x(T)$.
+
+\begin{remark}
+Note that the 
+Hamiltonian is explicitly time dependent via $y(t)$, i.e.
+\begin{equation}
+\frac{\td  H}{\td t}(t) = 
+\frac{\partial H}{\partial t}(t) = \dot{y}(t) \quad . \label{eq:H_t}
+\end{equation}
+\end{remark}
+
+We calculate some derivatives
+\begin{equation}
+\frac{\partial (w_\nu )^2}{\partial w_\kappa} =\delta_{\nu\kappa} \alpha_2 w_\kappa
+\tab{thus} \nabla_w H(t) = \alpha_2 w(t) +\lambda(t)
+\label{eq:Augmented:H_w}
+\end{equation}
+where $\delta_{\nu\kappa}$ is the Kronecker-delta. Furthermore
+\begin{equation}
+\frac{\partial (h_\mu(t) )^2}{\partial x_\kappa}= 2 \frac{\partial h_\mu(t)}{\partial x_\kappa} 
+h_\mu(x) \tab{,} \nabla_x (h_\mu(x))^2 = 2 h_\mu(x) \nabla_x h_\mu(x) 
+\end{equation}
+and the define the Jacobian
+\begin{equation}
+\td h_x = \begin{pmatrix}
+\nabla_x h_1(x)^T \\ \vdots \\ \nabla_x h_p(x)^T 
+\end{pmatrix}
+\tab{to get}
+\nabla_x \sum\limits_{\mu=1}^p (h_\mu(x))^2 = 2 \td h_x^T h(x)
+\end{equation}
+
+Combining \eqref{eq:Augmented:H_w} and \eqref{eq:Augmented:3} yields 
+\begin{equation}
+\alpha_2 w(t) + \lambda(t) = 0 \quad \forall t\in[0,T] \label{eq:wlambda}
+\end{equation}
+and since $\lambda(T)=0$ we get $w(T)=0$. This may be the best solution in the context 
+of optimal control but seems to be very restrictive if we want to identify the hidden 
+inputs $w$ with model uncertainties.\\
+
+One possible reason could be that Hamilton formalism of this problem yields a singular 
+problem, i.e. without the $\alpha_2$ regularisation it would not be possible to solve 
+the problem at all. By adding a convex function $\nicefrac{\alpha_2}{2}|w|^2$ 
+the cost function becomes locally convex, in a vicinity of $w=0$. \\
+
+However it would be highly desirable to consider hidden inputs with $w(T)\neq 0$.
+
+\subsection{Terminal Cost}
+	One way to get $\lambda(T)\neq 0$ is to introduce a terminal cost
+	\begin{equation}
+	V(x) =\Lambda \left|y(T) - h(x) \right|^2
+	\end{equation}
+	with a new regularisation parameter $\Lambda>0$.
+	The cost function becomes
+	\begin{equation}
+	\bar{J}[x,w,t] = J[x,w,t] + V(x(T))
+	\end{equation}
+	and the boundary value
+	\begin{equation}
+	\lambda(T) = \nabla_x V (T)
+	\tab{i.e.}
+	\lambda(T) = - 2 \Lambda \td h^T_x (y(T)-h(x(T))) 	
+	 \quad .
+	\end{equation}
+	Unfortunately, if we assume $|y(T)-h\left(x^{[i]}\right)(T)| \rightarrow 0$ with increasing 
+	iterations $i$, again 
+	$\lambda^{[i]}(T) \rightarrow 0$.
+
+\clearpage	
+\subsection{Linearisation at $T$}
+	Though we define $x,y$ as mappings from $[0,T]$ to some vector spaces, the true 
+	(real world) system will exist over a larger interval of time, so 
+	$\dot{x}(T),\dot{y}(T)$ make sense and even $\lim_{t\to T}\dot{x}(t)=\dot{x}(T)$.\\
+	Consider a small $\epsilon > 0$
+	\begin{equation}
+	x(T-\epsilon) \cong x(T) - \underbrace{\dot{x}(T) \epsilon}_{=:\delta x} 
+	\tab{and}	
+	 y(T-\epsilon) \cong y(T) - \underbrace{\dot{y}(T)\epsilon}_{=:\delta y}
+	\label{eq:lin_x}
+	\end{equation}
+	Here $\cong$ denotes equality when $\epsilon \rightarrow 0$. We linearise $h$ by 
+	\begin{equation}
+	y(T-\epsilon) \cong h(x(T)-\delta x) \cong \underbrace{h(x(T))}_{=y(T)} - \td 
+	h_{x(T)} 
+	\delta x \quad .
+	\end{equation}
+	and by comparison we find
+	\begin{equation}
+	\td h_x \delta x \cong \delta y \quad\Rightarrow\quad \td h_{x(T)} \dot{x}(T) \cong
+	 \dot{y}(T)
+	\end{equation}		
+	
+	Using the systems equations and \eqref{eq:wlambda} we get
+	\begin{equation}
+	\lambda(T) = \alpha_2 \left\{
+	f(x(T))-\dot{x}(T)	
+	 \right\}
+	\end{equation}
+	which would again yield $\lambda^{[0]}(T)=0$ if we initialize it with the nominal 
+	model, since $\dot{x}^{[0]}(t)=f(x^{[0]}(t))$. 
+	If we have a pseudo inverse	$\td h_x^\dagger$ we write	
+	\begin{equation}
+	\hat{\dot{x}}(T) = \td h_{x(T)}^\dagger \dot{y}(T) \quad .
+	\end{equation}
+	We could then define
+	\begin{align}
+	\lambda^{[i]}(T) = \alpha_2\left\{ f\left(x^{[i]}(T)\right) - \td h_{x(T)}^\dagger 
+	\dot{y}
+	(T)  \right\}  
+	\end{align}
+	or equivalently
+	\begin{equation}
+	w^{[i]}(T) = \td h_{x(T)}^\dagger \dot{y}(T) - f\left( x^{[i]}(T) \right) \quad .
+	\label{eq:lin_w}
+	\end{equation}
+	To calculate \eqref{eq:lin_w} we simply have to find an appropriate pseudo inverse 
+	$\td h_x^\dagger$, e.g. the Moore-Penrose inverse $\td h_x^\dagger = \left( \td h_x^T 
+	\td h_x\right )^{-1} \td h_x^T $, and get the derivative $\dot{y}(T)$, e.g. 
+	via \eqref{eq:H_t} as $\dot{y}(T) = \nicefrac{\td}{\td t}H(T)$ or simply by numerical 
+	differentiation.
+	
+\clearpage
+\subsection{Augmented States}
+	Consider an augmented system with states $\underline{x}=(x,w)^T:[0,T]\to 
+	\mathbb{R}^{2n}$, inputs $v:[0,T]\to\mathbb{R}^n$ and dynamics
+	\begin{equation}
+	\dot{\underline{x}} = F\left(\underline{x},v\right) = 
+	\begin{pmatrix}
+	f(P_x \underline{x}) + P_w \underline{x} \\ v
+	\end{pmatrix}
+	\end{equation}
+	where we introduced linear projectors $P_x:\underline{x}\mapsto x$ and $P_w:
+	\underline{x}\mapsto w$ with
+	\begin{equation}
+	\Pi_x:= \frac{\partial P_x \underline{x}}{\partial \underline{x}} = (\mathbb{1}|0) \in \mathbb{R}^{n\times 
+	(n+n)}
+	\tab{and}
+	\Pi_w:= \frac{\partial P_w \underline{x}}{\partial \underline{x}} = (0|\mathbb{1}) \in \mathbb{R}^{n\times 
+	(n+n)} \quad .
+	\end{equation}
+	Calculate some derivatives
+	\begin{equation}
+	\left.\frac{\partial f}{\partial x}\right|_x = \td f_x \tab{thus}
+	\frac{\partial f(P_x\underline{x})}{\partial \underline{x}} = \td f_{P_x
+	\underline{x}} \Pi_x 
+	\end{equation}
+	and 
+	\begin{equation}
+	\frac{\partial F}{\partial \underline{x}} = \begin{pmatrix}
+	\td f_{P_x\underline{x}} \Pi_x + \Pi_w \\ 0
+	\end{pmatrix} \in \mathbb{R}^{2n\times 2n} \tab{and}
+	\frac{\partial F}{\partial v} = \begin{pmatrix}
+	0 \\ \mathbb{1}
+	\end{pmatrix}\in \mathbb{R}^{2n\times n} \quad .
+	\end{equation}
+	Introduce an augmented Hamiltonian with costates $\lambda:[0,T]\to \mathbb{R}^{2n}$
+	\begin{equation}
+	\underline{H}\left(\underline{x},v,\lambda,t\right) = 
+	|| y(t) - h(P_x\underline{x}) ||^2 + \frac{\alpha_2}{2} ||P_w \underline{x}||^2 
+	+ \frac{\beta}{2} ||v||^2 + \sum\limits_{\mu=1}^{2n} \lambda_\mu 
+	F_\mu\left(\underline{x},v\right)
+	\end{equation}
+	and using the Hamilton equations we get
+	\begin{equation}
+	\dot{\lambda}(t) = 2 \Pi_x^T \td h^T_{P_x\underline{x}} (y(t)-h(P_x\underline{x})) 
+	-\Pi_w^T P_w\underline{x}(t) - \left(\Pi_x^T \td f_{P_x\underline{x}} + \Pi_w^T
+	\right) \Pi_x \lambda(t) 
+	\end{equation}
+	multiplying with $\Pi_x$ and $\Pi_w$ yields
+	\begin{align}
+	\Pi_x\dot{\lambda}(t) &= 2 \td h^T_{P_x\underline{x}} (y(t)-h(P_x\underline{x}(t))) 
+	-\td f_{P_x\underline{x}}^T \Pi_x \lambda(t)\\
+	\Pi_w\dot{\lambda}(t) &= -P_w\underline{x}(t) - \Pi_x \lambda(t) \quad .
+	\end{align}
+	These equations reproduce the dynamic of the original system as you can see by 
+	inserting $P_x \underline{x}=x$, and $\Pi_x \lambda(t)$ are the costates of the 
+	original system. The augmented Hamiltonian gives a penalty to the AUCs of $w$ and 
+	$\dot{w}$. Now, the constrain $\lambda(T)=0$ leads to 
+	\begin{equation}
+	v(T) = 0
+	\end{equation}
+	while $\underline{x}(T)$ is free. At the same time we need to know $\underline{x}(0)
+	=(x_0,w_0)^T$ which means that, given $x_0$ as usual, we need a way to estimate 
+	$w_0$.
+	\\
+	
+	One way to determine $w_0$ could again be linearisation at $t=0$, i.e.
+	\begin{equation}
+	w_0 \cong \td h_{x_0}^\dagger \dot{y}(0) - f(x_0) \quad .
+	\end{equation}

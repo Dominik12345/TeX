@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  15 DEC 2017 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  14 DEC 2017 09:32
 entering extended mode
-**./HIO_volterra.tex
-(HIO_volterra.tex
+**./Randwerte.tex
+(Randwerte.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 (../header/simple_header.tex
@@ -1555,8 +1555,8 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\englis
 h.lbx"
 File: english.lbx 2017/11/05 v3.8a biblatex localization (PK/JW/AB)
-) (HIO_volterra.aux)
-\openout1 = `HIO_volterra.aux'.
+) (Randwerte.aux)
+\openout1 = `Randwerte.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -1605,11 +1605,11 @@ File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `HIO_volterra.bcf'.
+\openout4 = `Randwerte.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'HIO_volterra.bbl' found.
-(HIO_volterra.bbl)
+Package biblatex Info: ... file 'Randwerte.bbl' not found.
+No file Randwerte.bbl.
 Package biblatex Info: Reference section=0 on input line 7.
 Package biblatex Info: Reference segment=0 on input line 7.
 
@@ -1653,15 +1653,11 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into
 your preamble.
  on input line 7.
 
-(abschnitte/volterra_alt1.tex
+(abschnitte/Augmented.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
-
-Overfull \hbox (10.1173pt too wide) in paragraph at lines 1--1
-[]\T1/futs/b/n/17.28 HIO us-ing Volterra-operators and lin-early in-de-pen-
- []
-
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 2.
+
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd
 "
@@ -1687,68 +1683,80 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 2.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 2.
+
+Overfull \hbox (10.9191pt too wide) in paragraph at lines 32--39
+\T1/futs/m/n/12 drop the sub-scripts. The $\FMS/futm/m/n/12 r$\T1/futs/m/n/12 -
+derivation maps $\FMS/futm/m/n/12 r[] \T1/futs/m/n/12 : \FML/futmi/m/it/12 h[]\
+T1/futs/m/n/12 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 ) \FMS/futm/m/n/12 7! \T1/f
+uts/m/n/12 ([]/[]\FML/futmi/m/it/12 h[]; [] ; []\T1/futs/m/n/12 /[]\FML/futmi/m
+/it/12 h[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 x\T1/futs/m/n/12 ))[]$.
+ []
+
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 31.
- [1
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 41.
+[1
 
 {C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+
+ []
+
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 62.
-
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 84.
 [2]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 106.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 106.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 106.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 106.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 106.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 106.
+ [3
 
-LaTeX Warning: Reference `subsub2' on page 3 undefined on input line 211.
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 217.
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 267--299
+]
+Underfull \hbox (badness 10000) in paragraph at lines 217--222
 
  []
 
+) [4
 
-Overfull \hbox (15.86143pt too wide) detected at line 311
-\FML/futm/m/it/12 [] [] \FMS/futm/m/n/12 € [] [] [] \FML/futm/m/it/12 [][] [
-] \FMS/futm/m/n/12 € \FML/futmi/m/it/12 w[] \FMS/futm/m/n/12 € [] \FML/futm/m/i
-t/12 []\FML/futmi/m/it/12 w[] \FMS/futm/m/n/12  \T1/futs/m/n/12 0 \FML/futmi/
-m/it/12 :
- []
-
-[3
-
-]) [4] (HIO_volterra.aux)
-
-LaTeX Warning: There were undefined references.
-
-Package logreq Info: Writing requests to 'HIO_volterra.run.xml'.
-\openout1 = `HIO_volterra.run.xml'.
+] (Randwerte.aux)
+Package logreq Info: Writing requests to 'Randwerte.run.xml'.
+\openout1 = `Randwerte.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30798 strings out of 493312
- 727885 string characters out of 3130261
- 1198612 words of memory out of 3000000
- 33772 multiletter control sequences out of 15000+200000
- 56528 words of font info for 78 fonts, out of 3000000 for 9000
+ 30795 strings out of 493312
+ 727410 string characters out of 3130261
+ 1198595 words of memory out of 3000000
+ 33774 multiletter control sequences out of 15000+200000
+ 76193 words of font info for 103 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,8n,96p,877b,1557s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,11n,96p,874b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
-<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/eu
-ler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/fourier/fourier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/fourier/fourier-mcl.pfb><C:/Users/kahl/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb>
 <C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fou
-rier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/
-utopia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/adobe/utopia/putri8a.pfb>
-Output written on HIO_volterra.pdf (4 pages, 89707 bytes).
+rier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/kahl/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/kahl/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/
+kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/
+Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.p
+fb>
+Output written on Randwerte.pdf (4 pages, 84289 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

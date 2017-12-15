@@ -1,0 +1,125 @@
+\section*{Hidden Input Observability}
+Consider a dynamic system $\mathcal{S}$
+\begin{align}
+\frac{\td x_w}{\td t} &= Ax_w(t) + Bu(t) + Dw(t) \\
+y_w(t) &= Cx_w(t) \\
+x_w(0) &= x_0
+\end{align}
+where $x_w$, $u$, $w$ and $y_w$ map $[0,T]$ onto $\mathbb{R}^n$, 
+$\mathbb{R}^{m'}$, $\mathbb{R}^m$ and $\mathbb{R}^p$, respectively, and 
+$A$, $B$, $C$, $D$ are matrices of suitable dimensions. We assume the function $u$ is known 
+and thus called the \textit{known input}, the function $w$ is unknown hence called 
+\textit{unknown input}. The closed form solution for $y_w$ is
+\begin{equation}
+y_w(t) = C \int\limits_0^t \exp(A(t-\tau)) (Bu(\tau) + Dw(\tau) ) \, \td 
+\tau \quad .
+\end{equation}
+
+\begin{definition}
+If for $\mathcal{S}$ the implication
+\begin{equation}
+y_{w}(t) = y_{\hat{w}}(t) \quad \forall t\in [0,T]
+\quad \Rightarrow \quad 
+ w = \hat{w} \quad \text{a.e.}
+\end{equation}
+holds, $\mathcal{S}$ is called \textit{hidden input observable (HIO)}.
+\end{definition}
+
+Our aim is to find necessary or sufficient conditions for the hidden input observability 
+of linear systems.\\
+
+Due to linearity, $\mathcal{S}$ is HIO if and only if
+\begin{equation}
+y(t):=C\int\limits_0^t \exp(A(t-\tau))Dw(\tau)\,\td\tau = 0 \quad 
+\forall t\in[0,T] \quad \Rightarrow \quad 
+w = 0 \quad \text{a.e.} \label{eq:introduction_alt:1}
+\end{equation}
+
+\subsection*{Rearranging the equation}
+By the Cayley-Hamilton theorem, for any $k\in\mathbb{N}_0$ there are coefficients $c_{k,l}$ 
+such that 
+\begin{equation}
+A^k = \sum\limits_{l=0}^{n-1} c_{k,l} A^l \quad .
+\end{equation}
+Defying
+\begin{equation}
+\Phi_l[w](t) :=  \int\limits_0^t \sum\limits_{k=0}^\infty c_{k,l}\frac{(t-\tau)^k}{k!}  
+w(\tau) \, \td\tau 
+\end{equation}
+equation \eqref{eq:introduction_alt:1} can be written as
+\begin{equation}
+y(t) = \sum\limits_{l=0}^{n-1} CA^lD \, \Phi_l[w](t)
+\quad . \label{eq:introduction_alt:operator}
+\end{equation}
+A system is hidden input observable if and only if the linear operator
+\begin{equation}
+\sum\limits_{l=0}^{n-1} C A^l D \, \Phi_l
+\end{equation}
+is injective in the sense that only the $\mathbb{R}^m$ zero function is mapped onto 
+the $\mathbb{R}^p$ zero function.
+
+\subsection*{Connection to target controllability}
+In the literature on optimal control theory it is convenient to introduce the 
+\textit{controllability matrix} \cite{Luenberg},\cite{Barabasi_k-walk}
+\begin{equation}
+M = [CD,CAD,CA^2D,\ldots,CA^{n-1}D] \in \mathbb{R}^{p\times nm} \quad .
+\end{equation}
+\begin{definition}
+If $\rank{M} = p$, then $\mathcal{S}$ is called \textit{target controllable}. 
+Obviously $p\leq nm$ is crucial.
+\end{definition}
+\begin{proposition}[Proof in \cite{Luenberg}]
+If $\mathcal{S}$ is target controllable, then the operator 
+\eqref{eq:introduction_alt:operator} is surjective.
+\end{proposition}
+We can rewrite \eqref{eq:introduction_alt:operator} as
+\begin{equation}
+y(t) = M \begin{bmatrix}
+\Phi_0[w](t) \\ \Phi_1[w](t) \\ \vdots \\ \Phi_{n-1}[w](t)
+\end{bmatrix}
+\end{equation}
+and by the dimension formula we get
+\begin{equation}
+\rank{M} + \dim{\kernel{M}} = nm
+\end{equation}
+and if $\mathcal{S}$ is target controllable
+\begin{equation}
+\dim{\kernel{M}} = nm - p \geq 0 \quad .
+\end{equation}
+
+\subsubsection*{Example}
+Consider the case $p=n=m > 1$ and $C=D=\mathbb{1}$ the identity matrix in 
+$\mathbb{R}^{n\times n}$. Then $\rank{M}=n$ so that the system is target controllable and 
+$\dim{\kernel{nm-p}} > 0$. If we take the zero matrix for $A$, we get coefficients 
+\begin{equation}
+c_{k,l} = \left\{
+\begin{aligned}
+ &1 \quad\text{if} \quad k=l=0 \\ &0 \quad \text{else}
+\end{aligned}
+\right.
+\end{equation}
+and
+\begin{equation}
+y(t) = \int\limits_0^t w(\tau) \, \td \tau
+\end{equation}
+which is a Volterra-equation of the first kind and thus injective.\\
+
+If we closer investigate $M$ we see that the set of
+\begin{equation}
+\begin{bmatrix}
+0 \\ v_1 \\v_2 \\ \vdots \\ v_{n-1} 
+\end{bmatrix}\in \mathbb{R}^{nm}
+\end{equation}
+with arbitrary $v_1,\ldots,v_{n-1}\in\mathbb{R}^m$ is the kernel of $M$. At the same 
+time only
+\begin{equation}\begin{bmatrix}
+\Phi_0[w](t) = \int\limits_0^t w(\tau) \,  \td \tau \\
+\Phi_1[w](t) = 0 \\ \vdots \\ \Phi_{n-1}[w](t) = 0
+\end{bmatrix} =
+\begin{bmatrix}
+v_0 \\ 0 \\ \vdots \\0
+\end{bmatrix} 
+\end{equation}
+with an arbitrary $v_0\in\mathbb{R}^m$ can be reached. Thus $w$ is never mapped onto 
+$\kernel{M}$ and therefore \eqref{eq:introduction_alt:operator} is injective though 
+$M$ is not.
