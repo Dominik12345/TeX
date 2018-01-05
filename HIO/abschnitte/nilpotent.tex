@@ -1,62 +1,37 @@
 \subsubsection{Nilpotent Dynamics}
-Let $A$ be a nilpotent matrix, i.e. there is a regular $n\times n$ matrix $P$ such that
-\begin{equation}
- A = P^{-1} A_\triangle P
-\end{equation}
-with $A_{\triangle \omega \mu} = 0$ when $\omega \leq \mu$. As a graphical condition this 
-means, that $A$ can be represented by a directed acyclic graph. This yields
-\begin{equation}
-y(t) = \sum\limits_{l=0}^{n-1} \underbrace{CP^{-1}}_{\rank{CP^{-1} 
-=\rank{C}} } A^l_\triangle \Phi_l[\underbrace{Pw}_\text{bijection} ](t) \quad .
-\end{equation}
-Thus without loss of generality we can assume that $A$ is strictly lower 
-triangular. Furthermore we see that \eqref{eq:HIO:Phi} reduces to
-\begin{equation}
-\Phi_l[w_\mu](t) = \int\limits_0^t \frac{(t-\tau)^l}{l!} w_\mu(\tau) \, \td\tau \quad .
-\label{eq:HIO:Phi_nil}
-\end{equation}
+	Let $A$ be a nilpotent matrix, i.e. there is a regular $n\times n$ matrix $P$ such 
+	that
+	\begin{equation}
+ 	A = P^{-1} A_\triangle P
+	\end{equation}
+	with $A_{\triangle \omega \mu} = 0$ when $\omega \leq \mu$. As a graphical condition 
+	this means, that $A$ can be represented by a directed acyclic graph. This yields
+	\begin{equation}
+	y(t) = \sum\limits_{l=0}^{n-1} \underbrace{CP^{-1}}_{\rank{CP^{-1} 
+	=\rank{C}} } A^l_\triangle \Phi_l[\underbrace{Pw}_\text{bijection} ](t) \quad .
+	\end{equation}
+	Thus without loss of generality we can assume that $A$ is strictly lower 
+	triangular. Furthermore we see that \eqref{eq:HIO:Phi} reduces to
+	\begin{equation}
+	\Phi_l[w_\mu](t) = \int\limits_0^t \frac{(t-\tau)^l}{l!} w_\mu(\tau) \, \td\tau 
+	= \phi_l[w_\mu](t)
+	\quad .
+	\label{eq:HIO:Phi_nil}
+	\end{equation}
+	or equivalently with the Kronecker-delta $c_{k,l}=\delta_{kl}$.
 
-\begin{lemma}[Without proof]
-The operators defined by \eqref{eq:HIO:Phi_nil} have the properties
-\begin{equation}
-\frac{\td}{\td t} \Phi_l[w_\mu](t) = \Phi_{l-1}[w_\mu](t)  
-\tab{and} \frac{\td}{\td t} \Phi_0[w_\mu](t) = w_\mu(t)
-\quad .
-\end{equation}
-\end{lemma}
+%\begin{lemma}[Without proof]
+%The operators defined by \eqref{eq:HIO:Phi_nil} have the properties
+%\begin{equation}
+%\frac{\td}{\td t} \Phi_l[w_\mu](t) = \Phi_{l-1}[w_\mu](t)  
+%\tab{and} \frac{\td}{\td t} \Phi_0[w_\mu](t) = w_\mu(t)
+%\quad .
+%\end{equation}
+%\end{lemma}
 
-\begin{proposition}
-The operators $\{\Phi_l|l\in\{0,1,\ldots,n-1\}\}$ from a nilpotent matrix form an injective 
-set.
-\end{proposition}
-\begin{proof}
-Let $\{v_{l}\}$ be a set of functions with $l\in\mathcal{L}=\{0,1,\ldots,n-1\}$. Set
-\begin{equation}
-\sum\limits_{l\in\mathcal{L}} \Phi_l[v_l] 
-\equiv 0 \quad . 
-\end{equation}
-Writing this as integral equation
-\begin{equation}
-\int\limits_0^t \sum\limits_{l\in\mathcal{L}}  
- \frac{(t-\tau)^l}{l!} v_l(\tau) \, \td \tau = 0 \quad \forall t\in[0,T]
-\end{equation}
-which means
-\begin{equation}
- \sum\limits_{l\in\mathcal{L}}  
-\frac{(t-\tau)^l}{l!} v_l(\tau) = 0 \quad \forall (t,\tau)
-\in [0,T]\times [0,t] \quad .
-\end{equation}
-Now let $l_\text{min}$ be the smallest $l$ in $\mathcal{L}$. This leads to 
-\begin{equation} 
- \frac{1}{l_\text{min}!} v_l(\tau) = - 
-\sum\limits_{l_\text{min} <l\in\mathcal{L}}  
-\frac{(t-\tau)^{l-l_\text{min}}}{l!}  v_l(\tau) \quad .
-\end{equation}
-Since the left hand side of this equation is independent from $t$, so must the 
-right hand side. Evaluating the derivatives with respect to $t$ leads to 
-\begin{equation}
-v_l(\tau) = 0 \quad \forall \tau \in [0,T]
-\end{equation}
-for all $l\in \mathcal{L}$ separately. This means $\{I_l\}$ is an injective 
-set.
-\end{proof}
+
+	\begin{corollary}[Without proof]
+	The operators $\{\Phi_l|l\in\{0,1,\ldots,n-1\}\}$ from a nilpotent matrix form an 
+	injective set. Thus the simplified version of theorem \ref{theorem:HIO:sufficient} 
+	can be used.
+	\end{corollary}

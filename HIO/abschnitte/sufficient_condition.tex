@@ -1,3 +1,4 @@
+\clearpage
 \subsection{Sufficient Condition}
 In most cases $D=\mathbb{1}$ is an appropriate choice, thus $m=n$ and the $\mu$-th column
 of $CA^k$ can be written as
@@ -18,107 +19,160 @@ where
 \end{equation}
 
 Now choose an index set $\mathcal{I}\subset \{1,2,\ldots,n\}$ such that $\{C_i|i\in
-	\mathcal{I}\}$ are linearly 
-	independent and for any $H\in \mathcal{I}^c:=\{1,2,\ldots,n\}\setminus \mathcal{I}$
-	 there are unique coefficients $
-	\Lambda_i^H$ such that $C_H=\sum_{i\in\mathcal{I}} \Lambda^H_i C_i$. 
-	Furthermore introduce the index sets $\mathcal{H}_i$ such that $H\in \mathcal{H}_i 
-	\Leftrightarrow \Lambda_i^H = 0$ and $\mathcal{H}_i^c:=\mathcal{I}^c\setminus 
-	\mathcal{H}_i$. With this, \eqref{eq:HIO:y_varphi} becomes 
+\mathcal{I}\}$ are linearly 
+independent and for any $H\in \mathcal{I}^c:=\{1,2,\ldots,n\}\setminus \mathcal{I}$
+there are unique coefficients $
+\Lambda_i^H$ such that $C_H=\sum_{i\in\mathcal{I}} \Lambda^H_i C_i$. 
+Furthermore introduce the index sets $\mathcal{H}_i$ such that $H\in \mathcal{H}_i 
+\Leftrightarrow \Lambda_i^H \neq 0$ and. With this, \eqref{eq:HIO:y_varphi} becomes 
 \begin{equation}
 y(t) = \sum\limits_{i\in\mathcal{I}} \left(\varphi_i(t) + \sum\limits_{H\in 
-	\mathcal{H}^c_i}\Lambda^H_i \varphi_H(t) \right) C_i  \quad .
+	\mathcal{H}_i}\Lambda^H_i \varphi_H(t) \right) C_i  \quad .
 \end{equation}
-To get a condition for HIO, let us set $y\equiv 0$ and by equation coefficients 
+To get a condition for HIO, let us set $y\equiv 0$ and by equating coefficients 
 \begin{equation}
-\varphi_i + \sum\limits_{H\in\mathcal{H}_i^c} \varphi_H 
-\equiv 0 \quad \forall i\in\mathcal{I} \quad . \label{eq:HIO:varphi=0}
+\varphi_i + \sum\limits_{H\in\mathcal{H}_i} \varphi_H 
+ = \sum\limits_{l=0}^{n-1} \Phi_l \left[
+\sum\limits_{\mu=1}^n  \left( 
+A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} \Lambda^H_i A^l_{H\mu}
+\right) w_\mu
+\right]
+ \equiv 0 \quad \forall i\in\mathcal{I}  \quad . \label{eq:HIO:varphi=0}
+\end{equation}
+Let us define
+\begin{equation}
+\chi_{i\mu}^l := A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} \Lambda^H_i A^l_{H\mu}
+\quad . \label{eq:HIO:chi}
 \end{equation}
 
 
-\begin{proposition}[Without proof] \label{prop:HIO:Phi_injective}
-Each operator $\Phi_l$ is injective, i.e. 
-\begin{equation}
-\Phi_l[w] \equiv 0\quad \quad \Rightarrow  \quad w \equiv 0  
-\end{equation}
-and $\Phi_0$ is surjective.
-Here "$\equiv$" denotes equality to the zero function and $\Phi_l$ operates 
-component-wise on $(w_1,w_2,\ldots,w_m)^\text{T}:[0,T]\rightarrow \mathbb{R}^m$.
-\end{proposition}
 
-\begin{definition}
-Let $\mathcal{L}$ be an index set. A set 
-\begin{equation}
-\left\{\quad\Phi_l:L^2([0,T])\to L^2([0,T])\quad|\quad l\in\mathcal{L}\quad \right\}
-\end{equation}
-of linear operators is called 
-\textit{injective set}, if for any functions 
-$\{v_l \in L^2([0,T])|l\in\mathcal{L}\}$
-the implication 
-\begin{equation}
-\sum\limits_{l\in\mathcal{L}} 
-\Phi_l\left[v_l \right] \equiv 0 \quad \Rightarrow \quad  
-v_l \equiv 0 \forall l\in \mathcal{L}
-\end{equation}
-holds.
-\end{definition}
+%\begin{proposition}\label{prop:HIO:notinjectiveset}
+%	Let $\{w_\mu|\mu\in\{1,2,\ldots,n\}\}$ be a set of linearly independent functions and 
+%	$\{\phi_k|k\in\mathbb{N}_0\}$ as 
+%	defined in 
+%	\eqref{eq:HIO:Phi}.
+%	\begin{equation}	
+%	\left.\text{If for a } \mu\in\{1,2,\ldots,n\}\exists (i,k)\in \mathcal{I}\times 
+%	\mathbb{N}_0 \right|  
+%	\sum\limits_{l=0}^{n-1} c_{k,l} \left(	
+%	A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} 
+%	\Lambda^H_i A^l_{H\mu}\right) \neq 0 
+%	\end{equation}
+%	then $w_\mu\equiv 0$.
+%\end{proposition}
+%\begin{proof}
+%	Starting with \eqref{eq:HIO:varphi=0} we get for all $i\in\mathcal{I}$
+%	\begin{equation}
+%	\sum\limits_{k=0}^\infty \phi_k \left[ 
+%	\sum\limits_{l=0}^{n-1} c_{k,l} \left(\sum\limits_{\mu=1}^n A^l_{i\mu} w_\mu + 
+%	\sum\limits_{H\in\mathcal{H}_i} \Lambda^H_i\sum\limits_{\mu=1}^n A^l_{H\mu} w_\mu 
+%	\right)
+%	\right] \equiv 0 \quad .
+%	\end{equation}
+%	Using proposition \ref{prop:phi_injectiveset} and linearly independence of $w_\mu$ 
+%	we get 
+%	\begin{equation}
+%	\sum\limits_{l=0}^{n-1} c_{k,l}\left( A^l_{i\mu}  + \sum\limits_{H\in\mathcal{H}_i} 
+%	\Lambda^H_i A^l{H\mu}	
+%	\right) w_\mu \equiv 0 \quad \forall (i,k,\mu)\in \mathcal{I}\times\mathbb{N}_0\times 
+%	\{1,2,\ldots,n\} 
+%	\end{equation}
+%	which means, that if for a given $\mu$ we find a tupel 
+%	$(i,k)\in\mathcal{I}\times\mathbb{N}_0$ 
+%	where the coefficient of $w_\mu$ does not vanish, we know that $w_\mu\equiv 0$.
+%\end{proof}
 
-\begin{proposition}\label{prop:HIO:injectiveset}
-If $\{\Phi_l|l\in\{0,1,\ldots,n-1\}\}$ defined by \eqref{eq:HIO:Phi} is a injective set 
-and if the functions $\{w_\mu\}$ are linearly independent, 
-then:\\
-\begin{equation}
-\begin{aligned}
-&\text{If for a}\quad\mu\in\{1,2,\ldots,n\}\quad \exists \quad (i,l)\in \mathcal{I}\times 
-\{0,1,\ldots,
-n-1\} \\ &\text{such that} \quad A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i^c} 
-\Lambda^H_i A^l_{H\mu} \neq 0 \\ &\text{then}  \quad w_\mu \equiv 0 \quad .
-\end{aligned}
-\end{equation}
+
+
+%\begin{proposition}{}{}%[Simplified version of \ref{prop:HIO:notinjectiveset}]
+%\label{prop:HIO:injectiveset}
+%If $\{\Phi_l|l\in\{0,1,\ldots,n-1\}\}$ defined by \eqref{eq:HIO:Phi} is a injective set 
+%and if the functions $\{w_\mu\}$ are linearly independent, 
+%then:\\
+%\begin{equation}	
+%	\left.\text{If for a } \mu\in\{1,2,\ldots,n\}\exists (i,l)\in \mathcal{I}\times 
+%	\{0,1,\ldots,n-1\} \right|  
+%	A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} 
+%	\Lambda^H_i A^l_{H\mu}\neq 0 
+%	\end{equation}
+%	then $w_\mu\equiv 0$.
+%\end{proposition}
+%\begin{proof}
+%Starting with \eqref{eq:HIO:varphi=0}, we have for all $i\in\mathcal{I}$
+%\begin{equation}
+%\sum\limits_{l=0}^{n-1}\sum\limits_{\mu=1}^n \Phi_l\left[
+%\left(A^l_{i\mu}+\sum\limits_{H\in\mathcal{H}_i} \Lambda_i^H A^l_{H\mu} \right) w_\mu 
+%\right]
+%\equiv 0
+%\end{equation}
+%and by the definition of an injective set and using that the $w_\mu$ are linearly 
+%independent we can treat each $\mu$ separately, 
+%hence each function $w_\mu$ must vanish at all times if
+%\begin{equation}
+%A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} \Lambda^H_i A^l_{H\mu} \neq 0 \quad .
+%\end{equation}
+%Therefore it is sufficient to find one pair $(i,l)\in \mathcal{I}\times 
+%\{0,1,\ldots,n-1\}$ for which this coefficient is not zero to argue, that $w_\mu$ must 
+%be zero at all times.
+%\end{proof}
+
+
+%\begin{theorem}{Sufficient Condition}{TESTTESTTES} \label{theorem:HIO:sufficient}
+%Let $\mathcal{S}$ be the linear dynamic system as defined above. \\
+%Let $\{w_\mu|\mu\in\{1,2,\ldots,n\}\}$ be a set of linearly independent\\ functions and 
+%$\mathcal{M} \subseteq \{1,2,\ldots,n\}$.  
+%According to proposition \ref{prop:HIO:injectiveset}: %\ref{prop:HIO:notinjectiveset} and  
+%\begin{equation}
+%\left.\text{If }\forall \mu\in\mathcal{M}\exists (i,k)\in \mathcal{I}\times 
+%\mathbb{N}_0 \right| \sum\limits_{l=0}^{n-1}c_{k,l}\left( A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} 
+%\Lambda^H_i A^l_{H\mu}\right) \neq 0 
+%\end{equation}
+%respectively, if the operators form an injective set
+%\begin{equation*}
+%\left.\text{If }\forall \mu\in\mathcal{M}\exists (i,l)\in \mathcal{I}\times 
+%\{0,1,\ldots,
+%n-1\} \right|  A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i} 
+%\Lambda^H_i A^l_{H\mu} \neq 0 
+%\end{equation*}
+%then the system is HIO with $n-|\mathcal{M}|$ limitations.
+%\end{theorem}
+%\begin{proof}
+%Due to proposition \ref{prop:HIO:always_injective}, in the case of linear systems we 
+%can use proposition \ref{prop:HIO:injectiveset}, which makes the proof trivial.
+%\end{proof}
+
+%\begin{corollary}{}{}
+%To make an HIO with $m'$ limitations system HIO, we can set $w_\mu\equiv 0$ for all 
+%$\mu\notin\mathcal{M}$ or equivalently adjust the matrix $D$ by setting $D_{\mu\mu}=0$. 
+%\end{corollary}
+
+
+\begin{proposition}{}{} \label{prop:HIO:w=0}
+	Assume $y\equiv 0$ and $\{w_\mu\}$ are linearly independent. If there is an $i\in
+	\mathcal{I}$ such 
+	that $\chi_{i\mu}^l$ \eqref{eq:HIO:chi} can be 
+	separated $\chi^l_{i\mu}=\delta_{ll'}
+	\chi_{i\mu}$ and if $\Phi_{l'}$ is injective, then each $w_\mu$ with $\chi_{i\mu}
+	\neq 0$ 
+	must be the zero function.
 \end{proposition}
 \begin{proof}
-Starting with \eqref{eq:HIO:varphi=0} we have for all $i\in\mathcal{I}$
-\begin{equation}
-\sum\limits_{l=0}^{n-1}\sum\limits_{\mu=1}^n \Phi_l\left[
-\left(A^l_{i\mu}+\sum\limits_{H\in\mathcal{H}_i^c} \Lambda_i^H A^l_{H\mu} \right) w_\mu 
-\right]
-\equiv 0
-\end{equation}
-and by the definition of an injective set, we get for all $i\in\mathcal{I}$ 
-\begin{equation}
-\sum\limits_{\mu=1}^n \left(A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i^c} \Lambda^H_i 
-A^l_{H\mu} \right) w_\mu 
-\equiv 0
-\end{equation}
-and since $\{w_\mu\}$ is a linearly independent set we can treat each $\mu$ separately, 
-hence each function $w_\mu$ must vanish at all times if
-\begin{equation}
-A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i^c} \Lambda^H_i A^l_{H\mu} \neq 0 \quad .
-\end{equation}
-Therefore it is sufficient to find one pair $(i,l)\in \mathcal{I}\times 
-\{0,1,\ldots,n-1\}$ for which this coefficient is not zero to argue, that $w_\mu$ must 
-be zero at all times.
+	Assume there is such an $i$ and $\Phi_{l'}$ is injective. Starting with 
+	\eqref{eq:HIO:varphi=0} we get
+	\begin{equation}
+	\Phi_{l'} \left[ \sum\limits_{\mu=1}^n\chi_{i\mu} w_\mu \right] \equiv 0
+	\quad \Rightarrow \quad 
+	\chi_{i\mu} w_\mu \equiv 0 \quad \forall \mu\in\{1,2,\ldots,n\}
+	\end{equation}
 \end{proof}
 
-\begin{theorem}
-Let $\{\Phi_l|l\in\{0,1,\ldots,n-1\}\}$ defined by \eqref{eq:HIO:Phi} be an injective 
-set and $\{w_\mu|\mu\in\{1,2,\ldots,n\}\}$ linearly independent functions. If
-\begin{equation}
-\left.\forall \mu\in\mathcal{M}\exists (i,l)\in \mathcal{I}\times 
-\{0,1,\ldots,
-n-1\} \right|  A^l_{i\mu} + \sum\limits_{H\in\mathcal{H}_i^c} 
-\Lambda^H_i A^l_{H\mu} \neq 0 
-\end{equation}
-then the system is limited HIO by 
-$n-|\mathcal{M}|$. If $|\mathcal{M}|=n$ then the system is HIO.
+\begin{theorem}{Sufficient Condition}{}
+	If for a system $\mathcal{S}$ the hidden inputs $\{w_\mu \}$ are linearly independent 
+	and if there are enough pairs $(\Phi_l,\chi^l_{i\mu})$ 
+	such that proposition \ref{prop:HIO:w=0} holds and for each $\mu$ there is an 
+	$\chi_{i\mu}\neq 0$, then the system is HIO.
 \end{theorem}
 \begin{proof}
-Using the preceding proposition the proof is trivial.
+	By construction, proposition \ref{prop:HIO:w=0} proves the theorem.
 \end{proof}
-
-
-
-
-
-
-

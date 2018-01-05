@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  15 DEC 2017 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  3 JAN 2018 15:40
 entering extended mode
 **./HIO.tex
 (HIO.tex
@@ -1070,6 +1070,37 @@ LaTeX Font Info:    Redeclaring math accent \dot on input line 255.
 LaTeX Font Info:    Redeclaring math accent \mathring on input line 256.
 \symUfutm=\mathgroup8
 )
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcolorbox
+.sty"
+Package: tcolorbox 2017/09/14 version 4.11 text color boxes
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.
+sty"
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrc
+s.sty"
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
+util-common.tex"
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen113
+\pgfutil@tempdimb=\dimen114
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
+util-common-lists.tex"))
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
+util-latex.def"
+\pgfutil@abb=\box28
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
+rcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfc
+ore.sty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.s
 ty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1091,44 +1122,9 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 .def"
 File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen113
-\Gin@req@width=\dimen114
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
 )
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.s
-ty"
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplots
-.revision.tex")
-Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
-
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer\t
-ikz.sty"
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.
-sty"
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrc
-s.sty"
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
-util-common.tex"
-\pgfutil@everybye=\toks29
-\pgfutil@tempdima=\dimen115
-\pgfutil@tempdimb=\dimen116
-
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
-util-common-lists.tex"))
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
-util-latex.def"
-\pgfutil@abb=\box28
-
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
-rcs.code.tex"
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
-))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
-
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfc
-ore.sty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgf
 sys.sty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\p
@@ -1358,6 +1354,42 @@ Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 gfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks39
+\verbatim@line=\toks40
+\verbatim@in@stream=\read3
+)
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\environ\environ.sty
+"
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\trimspaces\trimspac
+es.sty"
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box35
+\tcb@upperbox=\box36
+\tcb@lowerbox=\box37
+\tcb@phantombox=\box38
+\c@tcbbreakpart=\count304
+\c@tcblayer=\count305
+\tcolorbox@number=\count306
+\tcb@temp=\box39
+\tcb@temp=\box40
+\tcb@temp=\box41
+\tcb@temp=\box42
+\tcb@out=\write6
+\tcb@record@out=\write7
+)
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.s
+ty"
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplots
+.revision.tex")
+Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer\t
+ikz.sty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgffo
 r.sty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfke
@@ -1376,8 +1408,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 code.tex")
 \pgffor@iter=\dimen152
 \pgffor@skip=\dimen153
-\pgffor@stack=\toks39
-\pgffor@toks=\toks40
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
 ))
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\tikz.code.tex"
@@ -1386,7 +1418,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pgf
 libraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count304
+\pgf@plot@mark@count=\count307
 \pgfplotmarksize=\dimen154
 )
 \tikz@lastx=\dimen155
@@ -1395,23 +1427,23 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen158
 \tikzleveldistance=\dimen159
 \tikzsiblingdistance=\dimen160
-\tikz@figbox=\box35
-\tikz@figbox@bg=\box36
-\tikz@tempbox=\box37
-\tikz@tempbox@bg=\box38
-\tikztreelevel=\count305
-\tikznumberofchildren=\count306
-\tikznumberofcurrentchild=\count307
-\tikz@fig@count=\count308
+\tikz@figbox=\box43
+\tikz@figbox@bg=\box44
+\tikz@tempbox=\box45
+\tikz@tempbox@bg=\box46
+\tikztreelevel=\count308
+\tikznumberofchildren=\count309
+\tikznumberofcurrentchild=\count310
+\tikz@fig@count=\count311
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfmo
 dulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count309
-\pgfmatrixcurrentcolumn=\count310
-\pgf@matrix@numberofcolumns=\count311
+\pgfmatrixcurrentrow=\count312
+\pgfmatrixcurrentcolumn=\count313
+\pgf@matrix@numberofcolumns=\count314
 )
-\tikz@expandcount=\count312
+\tikz@expandcount=\count315
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -1421,12 +1453,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 .code.tex"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplots
 core.code.tex"
-\t@pgfplots@toka=\toks41
-\t@pgfplots@tokb=\toks42
-\t@pgfplots@tokc=\toks43
+\t@pgfplots@toka=\toks43
+\t@pgfplots@tokb=\toks44
+\t@pgfplots@tokc=\toks45
 \pgfplots@tmpa=\dimen161
-\c@pgfplots@coordindex=\count313
-\c@pgfplots@scanlineindex=\count314
+\c@pgfplots@coordindex=\count316
+\c@pgfplots@scanlineindex=\count317
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfp
 lotssysgeneric.code.tex"))
@@ -1442,7 +1474,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 mpatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfco
 mpatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count315
+\c@pgfmathroundto@lastzeros=\count318
 ))
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pgf
 plotsutil.code.tex"
@@ -1452,14 +1484,14 @@ cture\pgfplotsliststructure.code.tex")
 cture\pgfplotsliststructureext.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count316
+\c@pgfplotsarray@tmp=\count319
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsmatrix.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numtable
 \pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count317
-\t@pgfplotstable@a=\toks44
+\c@pgfplotstable@counta=\count320
+\t@pgfplotstable@a=\toks46
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsdeque.code.tex")
@@ -1471,7 +1503,7 @@ plotsbinary.data.code.tex"))
 plotsutil.verb.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pgf
 librarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count318
+\c@pgfplotslibrarysurf@no=\count321
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfl
 ibrarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -1508,11 +1540,11 @@ duledecorations.code.tex"
 \pgfdecoratedinputsegmentcompleteddistance=\dimen164
 \pgfdecoratedinputsegmentremainingdistance=\dimen165
 \pgf@decorate@distancetomove=\dimen166
-\pgf@decorate@repeatstate=\count319
+\pgf@decorate@repeatstate=\count322
 \pgfdecorationsegmentamplitude=\dimen167
 \pgfdecorationsegmentlength=\dimen168
 )
-\tikz@lib@dec@box=\box39
+\tikz@lib@dec@box=\box47
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
@@ -1522,7 +1554,7 @@ orations\pgflibrarydecorations.pathmorphing.code.tex"))
 \tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\dec
 orations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count320
+\pgfplots@numplots=\count323
 \pgfplots@xmin@reg=\dimen169
 \pgfplots@xmax@reg=\dimen170
 \pgfplots@ymin@reg=\dimen171
@@ -1539,12 +1571,18 @@ libraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))) (../header/derivatives.tex)
 (../header/environments.tex
-\c@definition=\count321
-\c@theorem=\count322
-\c@proposition=\count323
-\c@example=\count324
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcbtheore
+ms.code.tex"
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.11'
 )
-\c@lemma=\count325
+\c@tcb@cnt@theorem=\count324
+\c@tcb@cnt@definition=\count325
+\c@tcb@cnt@proposition=\count326
+\c@tcb@cnt@corollary=\count327
+\c@tcb@cnt@lemma=\count328
+\c@tcb@cnt@remark=\count329
+\c@tcb@cnt@example=\count330
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1612,21 +1650,21 @@ Package biblatex Info: ... file 'HIO.bbl' found.
 (HIO.bbl)
 Package biblatex Info: Reference section=0 on input line 7.
 Package biblatex Info: Reference segment=0 on input line 7.
-
+ ABD: EveryShipout initializing macros
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
+\scratchcounter=\count331
 \scratchdimen=\dimen175
-\scratchbox=\box40
-\nofMPsegments=\count327
-\nofMParguments=\count328
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count329
+\scratchbox=\box48
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count334
 \MPscratchDim=\dimen176
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks48
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
 ase.sty"
@@ -1646,17 +1684,17 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) ABD: EveryShipout initializing macros
+)
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
  on input line 7.
 
-(abschnitte/introduction_alt2.tex
+(abschnitte/HIO_simple.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 2.
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 3.
 
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd
@@ -1664,62 +1702,53 @@ LaTeX Font Info:    Try loading font information for FML+futmi on input line 2.
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
+(Font)              scaled to size 11.03998pt on input line 3.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
+(Font)              scaled to size 8.27998pt on input line 3.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+(Font)              scaled to size 6.43999pt on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
+(Font)              scaled to size 11.03998pt on input line 3.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
+(Font)              scaled to size 8.27998pt on input line 3.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 19.
+(Font)              scaled to size 6.43999pt on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
 [1
 
-{C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-(abschnitte/sufficient_condition.tex
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
+{C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 38.
+ [2
 
- []
+]
+[3] [4]) [5
 
-) (abschnitte/nilpotent.tex [3])
-Overfull \hbox (5.5195pt too wide) in paragraph at lines 16--16
-[]\T1/futs/m/n/12 J. et al. Gao.   Tar-get con-trol of com-plex net-works. In
-: \T1/futs/m/it/12 Nat. Com-mun. \T1/futs/m/n/12 (2014). 
- []
-
-[4] [5] (HIO.aux)
+] (HIO.aux)
 Package logreq Info: Writing requests to 'HIO.run.xml'.
 \openout1 = `HIO.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30977 strings out of 493312
- 731341 string characters out of 3130261
- 1197957 words of memory out of 3000000
- 33948 multiletter control sequences out of 15000+200000
- 59937 words of font info for 77 fonts, out of 3000000 for 9000
+ 32672 strings out of 493312
+ 776613 string characters out of 3130261
+ 1254660 words of memory out of 3000000
+ 35635 multiletter control sequences out of 15000+200000
+ 50768 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,11n,96p,868b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,10n,96p,868b,1566s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
 <C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fou
 rier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
@@ -1732,7 +1761,7 @@ AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:
 fb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/pu
 tr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/uto
 pia/putri8a.pfb>
-Output written on HIO.pdf (5 pages, 92362 bytes).
+Output written on HIO.pdf (5 pages, 84218 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

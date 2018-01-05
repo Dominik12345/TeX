@@ -1,0 +1,223 @@
+\section*{Hidden Input Observability}
+
+We consider a mapping $L^2([0,T])^{\otimes m}\to L^2([0,T])^{\otimes p}$ defined by 
+\begin{equation}
+y(t) := C \int\limits_0^t \e^{A(t-\tau)} D w(\tau) \, \td \tau \label{eq:y}
+\end{equation}
+where $w:[0,T]\to \mathbb{R}^m$, $y:[0,T]\to \mathbb{R}^p$, $A\in\mathbb{R}^{n\times n}$, 
+$D\in\mathbb{R}^{n\times m}$ and $C\in\mathbb{R}^{p\times n}$. \\
+
+We firstly rewrite the problem by expanding \eqref{eq:y}, 
+\begin{equation}
+y(t) = \sum\limits_{k=0}^\infty CA^kD \int\limits_0^t \frac{(t-\tau)^k}{k!} w(\tau) \, \td 
+\tau \quad .
+\end{equation}
+Writing $(CA^kD)_{.\mu}$ means the $\mu$-th column and $w_\mu$ the $\nu$-th component. We 
+get 
+\begin{equation}
+y(t) = \sum\limits_{k=0}^\infty \sum\limits_{\mu=1}^m \int\limits_0^t \frac{(t-\tau)^k}{k!}
+w_\mu(\tau) \, \td \tau (CA^kD)_{.\mu} 
+\end{equation} 
+and if we only consider the $\nu$-th component of $y$ we get 
+\begin{equation}
+y_\nu(t) = \sum\limits_{k=0}^\infty \sum\limits_{\mu=1}^m \int\limits_0^t 
+\frac{(t-\tau)^k}{k!} w_\mu(\tau) \, \td \tau (CA^kD)_{\nu\mu} \quad .
+\end{equation}
+We introduce the coefficients $c_k^{\mu\nu} : = (C A^k D)_{\nu\mu}$ to get
+\begin{equation}
+y_\nu(t) = \sum\limits_{\mu=1}^m \sum\limits_{k=0}^\infty  c_k^{\mu\nu}  \int\limits_0^t 
+\frac{(t-\tau)^k}{k!} w_\mu(\tau) \,\td\tau
+\quad \forall \nu = 1,2,\ldots , p
+ \quad . \label{eq:y_operator}
+\end{equation}
+Here, it is legit to commute the sums, since the infinite sum over $k$ is absolutely 
+convergent.
+
+\clearpage
+It is now convenient to introduce some operators.
+\begin{definition}{}{}
+	Let $v\in L^2$ be a function and for simplicity we write 
+	$c=(c_k)_{k\in\mathbb{N}_0}$. 
+	\begin{enumerate}
+	\item $\phi_k[v](t):= \int_0^t \frac{(t-\tau)^k}{k!} v(\tau) \, \td \tau $
+	\item $\Phi_c[v] : = \sum_{k=0}^\infty c_k \phi_k[v]$
+	\end{enumerate}
+	We always exclude the sequence $c_k=0\forall k$, since 
+	this obviously produces the operator that maps everything to the zero function and 
+	thus cannot be injective.
+\end{definition}
+We rewrite \eqref{eq:y_operator} as
+\begin{equation}
+y_\nu(t) = \sum\limits_{\mu=1}^m \Phi_{c^{\mu\nu}}[w_\mu](t) 
+\quad \forall \nu =1,2,\ldots , p   \label{eq:y_Phi}
+\end{equation}
+and discuss some properties.
+
+\begin{lemma}{Properties of $\phi_k$}{}
+	\begin{enumerate}
+	\item $\phi_k[v](0) = 0$
+	\item $\frac{\td}{\td t}\phi_0[v](t)=v(t)$ and
+	$\frac{\td}{\td t}\phi_k[v](t) = \phi_{k-1}[v](t)$
+%	\item $\phi_k$ is injective, i.e. $\phi_k[v]\equiv 0 \Rightarrow v\equiv 0$
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	The first property is trivial.\\
+	Computing $\phi_k[v](t+\Delta t)$ yields
+	\begin{equation}
+	\phi_k[v](t+\Delta t) = \int\limits_0^t \frac{(t-\tau + \Delta t)^k}{k!} v(\tau) 
+	\, \td \tau + \int\limits_t^{t+\Delta t}   \frac{(t-\tau + \Delta t)^k}{k!} v(\tau) 
+	\, \td \tau 
+	\end{equation}
+	and using $(t+\Delta t)^k =t^k + k t^{k-1} \Delta t + \mathcal{O}(\Delta t^2)$ for 
+	$k>0$ and $(t+\Delta t)^0 = 1$ and a small $\Delta t$ leads to 
+	\begin{equation}
+	\phi_k[v](t+\Delta t) \simeq \int\limits_0^t \frac{(t-\tau)^k}{k!} v(t) \, \td \tau 
+	+ \Delta t \int\limits_0^t \frac{(t-\tau)^{k-1}}{(k-1)!} v(t) \, \td \tau
+	\end{equation}
+	if $k>0$ and to 
+	\begin{equation}
+	\int\limits_0^t \frac{(t-\tau)^0}{k!} v(t) \, \td \tau +  \Delta t v(t)
+	\end{equation}
+	if $k=0$. Comparing this with the definitions of the operators we get \\
+	$\phi_k[v](t+\Delta t) \simeq \phi_k(t) + \Delta t\phi_{k-1}[v](t)$ and 
+	$\phi_0[v](t+\Delta t) \simeq \phi_0[v](t) + \Delta t v(t)$. Taking the limit 
+	$\Delta t\to 0$ ends the proof of the derivation rules. \\
+%	Setting $\phi_0[v]\equiv 0$ and taking the derivative $v\equiv 0$ shows, that 
+%	$\phi_0$ is injective.
+%	Assuming $\phi_{k-1}$ is injective, we set $\phi_k[v]\equiv 0$. Then also the 
+%	derivative \\
+%	$\frac{\td }{\td t}\phi_k[v]=\phi_{k-1}[v]\equiv 0$ which implies $v\equiv 0$ since 
+%	$\phi_{k-1}$ is injective. This completes the induction.
+\end{proof}
+
+%\begin{lemma}{Unit Sequence}{}
+%	If $c=(1,1,\ldots)$ or any multiple of this, then $\Phi_c$ is injective.
+%\end{lemma}
+%\begin{proof}
+%	Set $\Phi_c[v]=\sum_{k=0}^\infty \phi_k[v] \equiv 0$. Derivation with respect to 
+%	$t$ yields \\$v + \sum_{k=1}^\infty \phi_{k-1}[v]\equiv 0$ and shifting the index 
+%	$k\to k-1$ shows\\ $v + \sum_{k=0}^\infty \phi_k[v]=v+\Phi_c[v]=v\equiv 0$.
+%\end{proof}
+
+\begin{proposition}{}{}
+	Let $v$ be an integrable function and element of $C^\infty(0^-,0^+)$ and let \\
+	$\Phi_c[v]\equiv 0$. Then
+	\begin{equation}
+	\sum\limits_{l=0}^q c_l v^{(q-l)}(0)=0 \quad \forall q \in \mathbb{N}_0 \tag{$\star$}
+	\label{eq:prop1}
+	\end{equation}
+	where $v^{(q)}(0)$ denotes the $q$-th derivative of $v$ at $t=0$.
+\end{proposition}
+\begin{proof}
+	Consider
+	\begin{equation}
+	\Phi_c[v] = c_0 \phi_0[v] + c_1 \phi_1[v] + \ldots + c_{q-1}\phi_{q-1}[v] + 
+	c_q \phi_q[v] + c_{q+1} \phi_{q+1}[v] + \ldots 
+	\end{equation}
+	and the $(q+1)$-th derivative
+	\begin{equation}
+	\left( \frac{\td}{\td t} \right)^{q+1}\Phi_c[v] = c_0 v^{(q)} + c_1 v^{(q-1)} + 
+	\ldots 	+ c_{q-1} v^{(1)} + c_q v^{(0)} + c_{q+1} \phi_0[v] + \ldots
+	\end{equation}
+	for short
+	\begin{equation}
+	\left( \frac{\td}{\td t} \right)^{q+1}\Phi_c[v] = \sum\limits_{l=0}^q c_l v^{(q-l)} 
+	+\sum\limits_{l=0}^\infty c_{q+1+l} \phi_{l}[v] \quad . 
+	\end{equation}
+	Evaluating the latter expression at $t=0$ completes the proof.
+\end{proof}
+
+To illustrate the idea of the following lemma and theorem we write down some 
+instances of \eqref{eq:prop1}: 
+\begin{align*}
+&q = 0& &c_0 v^{(0)} \\
+&q = 1& &c_0 v^{(1)} &&+&&c_1 v^{(0)} \\
+&q = 2& &c_0 v^{(2)} &&+&&c_1 v^{(1)} &&+&&c_2 v^{(0)} \\
+&q = 3& &c_0 v^{(3)} &&+&&c_1 v^{(2)} &&+&&c_2 v^{(1)} && +&&c_3 v^{(0)}\\
+&q = 4& &c_0 v^{(4)} &&+&&c_1 v^{(3)} &&+&&c_2 v^{(2)} && +&&c_3 v^{(1)} &&+&& c_4 
+v^{(0)} \\ 
+&\,\, \vdots && && \ddots && &&\ddots && &&\ddots && &&\ddots && &&\ddots 
+\end{align*}
+For a better readability each $v^{(q)}$ is understood to be evaluated at $t=0$. The 
+structure of this triangle remains the same if $c_0=0$, i.e. the first column vanishes, 
+and if $v^{(0)}=0$, i.e. the diagonal at the top vanishes. 
+
+\begin{lemma}{Induction Step}{}
+	Assume proposition 1 holds and let $c_K$ be the first nonzero coefficient. 
+	If there is a $r\in\mathbb{N}_0$ with $v^{(0)}(0)=
+	v^{(1)}(0)=\ldots= v^{(r-1)}(0)=0$ then $v^{(r)}(0)=0$. 
+\end{lemma}
+\begin{proof}
+	Using \eqref{eq:prop1} with $q = r+K$ yields 
+	\begin{equation}
+	\sum\limits_{l=0}^{r+K} c_l v^{(r+K-l)}(0) = c_K v^{(r)}(0) = 0
+	\end{equation}
+	since all other terms of the sum vanish due to $c_l=0$ or $v^{(l)}=0$. This shows 
+	that also $v^{(r)}(0)=0$.
+\end{proof}
+
+\begin{theorem}{}{}
+	Let $v\in L^2([0,T])\cap C^\infty(0^-,0^+)$ and $c$ a sequence. Then
+	\begin{equation}
+	\Phi_c[v] \equiv 0\quad  \Rightarrow\quad v^{(q)}(0) = 0
+	 \quad \forall q\in\mathbb{N}_0 \quad .
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Let $c_K$ be the first nonzero coefficient. Using \eqref{eq:prop1} with $q=K$ yields 
+	\begin{equation}
+	c_K v^{(0)} = 0 
+	\end{equation}
+	which shows that $v^{(0)}=0$. Using lemma 2 completes the inductive proof.
+\end{proof}
+
+\begin{corollary}{}{}
+	If $v$ can be represented by its Taylor-expansion, then $\Phi_c[v]\equiv 0$ implies 
+	$v\equiv 0$.\\
+	If there is a disjoint union $[0^-,T^+] = I_1\dot{\cap} I_2 \dot{\cap}\ldots$ such 
+	that 
+	$v$ has a valid Taylor-expansion on each interval $I_j=(t_{j-1},t_j)$, we can argue 
+	that $v\equiv 0$ on $I_1$. This leads to $\phi_k[v](t_1)=0$ which allows us to get 
+	a modification of \eqref{eq:prop1}, written out
+	\begin{equation}
+	\sum\limits_{l=0}^q c_l v^{(q-l)}(t_1) = 0 \quad \forall q \in \mathbb{N}_0 \quad .
+	\end{equation}
+	Formally this can again be handled as an inductive proof to show, that $v$ must 
+	vanish on each interval.
+\end{corollary}
+
+\clearpage
+As equation \eqref{eq:y_Phi} shows, we usually do not have a simple $y(t)=\Phi_c[v](t)$ 
+relation but a sum with different sequences $c^{\mu\nu}$ and functions $w_\mu$. Since 
+summation and differentiation are linear operations, we directly get the following 
+extension of proposition 1:
+\begin{proposition}{}{}
+	Let $w_\mu\in L^2([0,T])\cap C^\infty(0^-,0^+)$ for $\mu=1,2,\ldots , m$ and let 
+	$c^\mu$ be sequences. For each $\nu=1,2,\ldots , p$
+	\begin{equation}
+	\sum\limits_{\mu=1}^m \Phi_{c^{\mu\nu}}[w_\mu] \equiv 0 \quad \Rightarrow \quad 
+	\sum\limits_{\mu=1}^m\sum\limits_{l=0}^q c^{\mu\nu}_l w_\mu^{(q-l)}(0) = 0 \quad 
+	\forall q \in \mathbb{N}_0 \tag{$\star\star$} \label{eq:prop2}
+ 	\end{equation}
+\end{proposition}
+\begin{proof}
+	The proof works analogous to that of proposition 1.
+\end{proof}
+
+Whereas theorem 1 holds for any sequence $c$ and function $v$, proposition 2 allows 
+cancellation of different functions $w_\mu$. We shortly demonstrate, that a fully 
+observed system will always be hidden input observable.
+Considering a fully observed system with possible hidden inputs on each state, i.e. 
+$C=D=\mathbb{1}$ and $p=n=m$, we directly get $c_0^{\mu\nu}=\delta_{\mu\nu}$. 
+Inserting this into 
+\eqref{eq:prop2} with $q=0$ yields 
+\begin{equation}
+w_\nu^{(0)} = 0 \tab{for} \nu = 1,2,\ldots , n
+\end{equation}
+Following the idea of lemma 2 we proceed with an induction step to get
+\begin{equation}
+w_\nu^{(q)} = 0 \quad \forall q\in\mathbb{N}_0 \tab{for} \nu = 1,2,\ldots , n \quad .
+\end{equation}
+As argued in corollary 1, if we assume that each $w_\mu$ can be represented by a 
+Taylor series, we know, that this system is hidden input observable.
