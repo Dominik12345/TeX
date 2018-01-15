@@ -1,0 +1,212 @@
+\section{Zero Dynamics}
+We follow the ideas of \cite{•}. The zero dynamics of a linear system $(A,B,C)$ is a set of 
+triplets $(x,u,y):[0,T]\to \mathbb{R}^n\times \mathbb{R}^m \times \mathbb{R}^p$ that solve the 
+system equations and $y\equiv 0$. Assuming we have found such an triplet $(x^*,u^*,0)$, due to 
+linearity we can perturb any other triplet $(x,u,y)$ that solves the system equations since
+$(x+x^*,u+u^*,y)$ again solves the systems equations and produces the same output $y$ as the 
+unperturbed system.
+\begin{definition}{}{}
+	A subset $V$ of $\mathbb{R}^n$ is called $(A,B)$ invariant if
+	\begin{equation}
+	A V \subseteq V + \text{Im}\, B \quad .
+	\end{equation}
+	For the largest $(A,B)$ invariant $V$ we write
+	\begin{equation}
+	\mathfrak{V} = V \cap \kernel{C}\quad .
+	\end{equation}
+\end{definition}
+
+\begin{proposition}{}{}
+	A trajectory $x:[0,T]\to \mathfrak{V}$ that solves the system 
+	equations is part of the zero dynamics of the 
+	corresponding system.
+\end{proposition}
+\begin{proof}
+	Assume $x(0)\in\mathfrak{V}$. We define recursively
+	\begin{align*}
+	A x(0) &= \gamma_0 + \lambda_0 \\
+	A\gamma_{i} &= \gamma_{i+1} + \lambda_{i+1}
+	\end{align*}
+	where each $\gamma_i\in\mathfrak{V}$ and each $\lambda_i\in\text{Im}\, B$. By the 
+	definition of $\mathfrak{V}$ we know that this is possible.
+	We do a short inductive proof to show
+	\begin{equation}
+	A^k (\gamma_0+\lambda_0) = \gamma_k + \sum\limits_{l=0}^k A^l \lambda_{k-l} \quad .
+	\end{equation}		
+	\begin{enumerate}
+		\item $k=0$ is trivial.
+		\item Assume the statement is correct.
+		\begin{align*}
+		A^{k+1}(\gamma_0+\lambda_0) &= A \,A^k(\gamma_0+\lambda_0)
+		= A \left(\gamma_k +\sum\limits_{l=0}^k A^l\lambda_{k-l} \right) 
+		\\
+		&= \gamma_{k+1} + \lambda_{k+1} + \sum\limits_{l=0}^k A^{l+1}\lambda_{k-l} 
+		= \gamma_{k+1} +\lambda_{k+1} + \sum\limits_{l=1}^{k+1} A^{l} 
+		\lambda_{k-(l-1)} \\
+		&= \gamma_{k+1} + \sum\limits_{l=0}^{k+1} A^l \lambda_{k+1-l}
+		\tab{q.e.d.}
+		\end{align*}
+	\end{enumerate}
+
+	Furthermore we know that
+	\begin{equation}
+	x(t) = \e^{At}x(0) + \int\limits_{0}^t \e^{A(t-\tau)} B w(\tau) \, \td \tau 
+	\quad .
+	\end{equation}
+	Expanding the exponentials and shifting the index in the $x(0)$-term yields
+	\begin{equation}
+	x(t) = x(0) + \sum\limits_{k=0}^\infty A^k \left( 
+	\frac{t^{k+1}}{(k+1)!} (\gamma_0+\lambda_0) + \int\limits_0^t \frac{(t-\tau)^k}{k!}
+	Bw(\tau) \, \td\tau
+	\right)
+	\end{equation}
+	and using the letter statement
+	\begin{equation}
+	x(t)=x(0) + \sum\limits_{k=0}^\infty 
+	\left\{ \frac{t^{k+1}}{(k+1)!} 
+	\left( \gamma_k
+	+\sum\limits_{l=0}^k A^l\lambda_{k-l}
+	\right) 
+	+ A^k \int\limits_0^t \frac{(t-\tau)^k}{k!} Bw(\tau) \, \td \tau
+	\right\} \quad .
+	\end{equation}
+	Applying $C$ leads to
+	\begin{equation}
+	y(t) =C\sum\limits_{k=0}^\infty  \left\{ 
+	\frac{t^{k+1}}{(k+1)!}
+	\sum\limits_{l=0}^k A^l \lambda_{k-l} + A^k\int\limits_0^t 
+	\frac{(t-\tau)^k}{k!} B w(\tau) \, \td \tau
+	\right\}
+	\end{equation}
+	At order $C A^{k'}$ we have
+	\begin{equation}
+	\sum\limits_{r=0}^\infty \frac{t^{k'+1+r}}{(k'+1+r)!} \lambda_{r} +
+	\int\limits_0^t 
+	\frac{(t-\tau)^{k'}}{k'!} B w(\tau) \, \td \tau \quad .
+	\end{equation}
+	Since each $\lambda_r$ is element of $\text{Im}\,B$ we may find a 
+	$w$ that suppresses each term in the summation separately. Without 
+	proof we assume that this is always possible.\\
+	As a special case we consider $\text{Im}\, B \subseteq \kernel{C}$, 
+	which makes the problem trivial.
+\end{proof}
+	
+\subsection{Zero Dynamics vs. HIO}
+In the following example we see, that HIO and zero dynamics are closely 
+related but not equivalent.
+
+\begin{example}{}{}
+	Consider a dynamic system with the matrices
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+	\end{pmatrix}		 \tab{,}
+	B = \begin{pmatrix}
+	1 & 0 \\ 0 & 1 \\ 0 & 0
+	\end{pmatrix}
+	\tab{and} C =
+	\begin{pmatrix}
+	1 & 0 & 0 \\ 0 & 1 & 0
+	\end{pmatrix} \quad .
+	\end{equation}
+	For $\mathfrak{V} := \text{span}\{(0,0,1)^T\}$ we find  
+	$A\mathfrak{V}=\text{span}\{(1,0,0)^T\}$ is a subset of 
+	$\text{Im}\, B$ and thus $\mathfrak{V}$ is $(A,B)$-invariant. \\
+	For instance the set
+	\begin{equation}
+	x^*(0) = \begin{pmatrix}
+	0 \\ 0 \\ a
+	\end{pmatrix}
+	\tab{and}
+	w^*(t) = \begin{pmatrix}
+	- a \\
+	0
+	\end{pmatrix}
+	\end{equation}
+	leads to a constant
+	\begin{equation}
+	x^*(t) = \begin{pmatrix}
+	0 \\ 0 \\ a
+	\end{pmatrix}
+	\end{equation}
+	which produces zero output $y=Cx^*$ with nonvanishing hidden inputs 
+	$w^*$. This 
+	shows that the zero dynamics of the system is not trivial. \\
+	At the same time we find that $CB$ is injective which means the 
+	system is HIO and thus zero output should imply zero hidden intput.
+\end{example}
+
+As illustrated by the example, HIO does not imply trivial zero dynamics. 
+The reason for that is, HIO is independent of the initial value 
+$x^*(0)$, whereas the hidden input $w^*$ of the zero dynamics may only 
+work for specific initial values $x^*(0)$. If, for instance, in the above 
+example $x^*(0)$ would not have zeroes in the first two components, 
+it is not possible to find a nontrivial hidden input.
+
+Consider the following example
+\begin{example}{}{}
+	A dynamic system with the matrices
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+	\end{pmatrix}		 \tab{,}
+	B = \begin{pmatrix}
+	1 & 0 \\ 0 & 1 \\ 0 & 0
+	\end{pmatrix}
+	\tab{and} C =
+	\begin{pmatrix}
+	0 & 1 & 0 \\ 0 & 0 & 1
+	\end{pmatrix} \quad .
+	\end{equation}
+	We find
+	\begin{equation}
+	\text{Im}\,B = \text{span} \left\{
+	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,
+	\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
+	\right\} \tab{and}
+	\kernel{C} = \text{span} \left\{
+	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
+	\right\}  \quad .
+	\end{equation}
+	We notice 
+	\begin{equation}
+	A \kernel{C} \subseteq \text{Im}\, B
+	\end{equation}	
+	and therefore clearly see that $\kernel{C}$ is $(A,B)$-invariant.\\
+	The system is not HIO for $CB$ has rank $1$.
+	\end{example}
+	As one can see in the above example, as soon as the image of $A$ restricted to the 
+	kernel of $C$ is a subset of the image of $B$ is nonempty, the zero dynamics are 
+	nontrivial. In the following proposition we show that for not HIO systems this will 
+	always be the case.
+
+\begin{proposition}{HIO is necessary for Trivial Zero Dynamics}{}
+	For a linear system of $(A,B,C)$ 
+	\begin{equation}
+	\text{trivial zero dynamics} \quad \Rightarrow \quad \text{HIO} \quad
+	\end{equation}	
+	or equivalently
+	\begin{equation}
+	\mathfrak{V} = \{0\} \quad \Rightarrow \quad CA^kB\quad \text{injective}
+	\end{equation}
+	for the first nonvanishing $CA^kB$.
+\end{proposition}
+\begin{proof}
+	We show that $\neg$HIO leads to nontrivial zero dynamics.\\
+	Assume for simplicity that $CB \neq 0$ and $B$ injective. 
+	\begin{enumerate}
+	\item $B$ cannot be $0$. Thus $\text{Im}\,B\supset \{0\}$ while $\kernel{B}=\{0\}$. 
+	\item Since $\kernel{CB}\supset
+	\{0\}$ we know that $\text{Im}\, B \cap \kernel{C}\supset \{0\}$. \\
+	Therefore $\kernel{C}\supset \{0\}$.
+	\item If $A$ has full rank, then $\dim{\kernel{CA} }=\dim{\kernel{C}}>0$.\\
+	If $A$ has rank less than $n$, $A$ is not injective hence $CA$ is not 
+	injective. \\
+	In either case $\kernel{CA}\supset \{0\}$. 
+\end{enumerate}		
+	If we now choose
+	\begin{equation}
+	i
+	\end{equation}
+	
+\end{proof}
