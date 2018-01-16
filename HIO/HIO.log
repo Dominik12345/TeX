@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  11 JAN 2018 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  16 JAN 2018 17:58
 entering extended mode
 **./HIO.tex
 (HIO.tex
@@ -1736,66 +1736,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
+Underfull \hbox (badness 10000) in paragraph at lines 10--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--41
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 42.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 50.
 [2
 
 ] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
+Underfull \hbox (badness 10000) in paragraph at lines 207--210
 
  []
 
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
+Underfull \hbox (badness 10000) in paragraph at lines 246--249
 
  []
 
-[7]) [8] (abschnitte/zero_dynamics.tex
+[7]
+Overfull \hbox (3.95097pt too wide) in paragraph at lines 296--333
+\T1/futs/m/n/12 In the fol-low-ing ex-am-ple you can see a com-po-si-tion of tw
+o HIO sys-tems. Though
+ []
 
-LaTeX Warning: Citation '\IeC {\textbullet }' on page 9 undefined on input line
- 2.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 15.
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+[8] [9] [10]
+Overfull \hbox (3.62427pt too wide) detected at line 467
+[] \FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 CD\T1/futs/m/n/12 
+)[] \FMS/futm/m/n/12 Ä [] \FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (\FML/futmi/m/i
+t/12 CAD\T1/futs/m/n/12 )[] \FMS/futm/m/n/12 Ä [] Ä [] \FML/futmi/m/it/12 w[]\T
+1/futs/m/n/12 (\FML/futmi/m/it/12 CA[]D\T1/futs/m/n/12 )[] \FMS/futm/m/n/12 Å \
+T1/futs/m/n/12 0 \FML/futmi/m/it/12 :
+ []
+
+
+Overfull \hbox (0.79166pt too wide) in paragraph at lines 494--499
+[]\T1/futs/m/n/12 Finally we show that the max-i-mum $[][] \FMS/futm/m/n/12 I[]
+ Å f\T1/futs/m/n/12 1\FML/futmi/m/it/12 ; \T1/futs/m/n/12 2\FML/futmi/m/it/12 ;
+ [] ; m\FMS/futm/m/n/12 g$ \T1/futs/m/n/12 is al-ways reached. 
+ []
+
+[11]
+Underfull \hbox (badness 1490) in paragraph at lines 519--523
+[]\T1/futs/m/n/12 If there are a dis-joint unions $[0[]\FML/futmi/m/it/12 ; T[]
+\T1/futs/m/n/12 ] \FMS/futm/m/n/12 Å \FML/futmi/m/it/12 I[][]I[][] []$ \T1/futs
+/m/n/12 such that each
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 519--523
+\FML/futmi/m/it/12 w[]$ \T1/futs/m/n/12 can be rep-re-sented by its Taylor-expa
+nsion on each in-ter-val
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--523
+
+ []
+
+) [12] [13] (abschnitte/zero_dynamics.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 40.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-[9
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
-] [10] [11] [12]) [13] (HIO.aux)
-
-LaTeX Warning: There were undefined references.
+ []
 
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                HIO
-(biblatex)                and rerun LaTeX afterwards.
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
+ []
+
+[14
+
+] [15] [16] [17]) [18] (HIO.aux)
 Package logreq Info: Writing requests to 'HIO.run.xml'.
 \openout1 = `HIO.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32890 strings out of 493312
- 780870 string characters out of 3130261
- 1255704 words of memory out of 3000000
- 35838 multiletter control sequences out of 15000+200000
+ 32900 strings out of 493312
+ 781073 string characters out of 3130261
+ 1256059 words of memory out of 3000000
+ 35848 multiletter control sequences out of 15000+200000
  60645 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,11n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,10n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
 <C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/eu
 ler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
@@ -1809,9 +1870,9 @@ rier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/
 utopia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/adobe/utopia/putri8a.pfb>
-Output written on HIO.pdf (13 pages, 117959 bytes).
+Output written on HIO.pdf (18 pages, 136208 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

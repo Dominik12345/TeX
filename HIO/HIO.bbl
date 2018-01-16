@@ -19,48 +19,26 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{Barabasi_k-walk}{article}{}
+    \entry{BergerIlchmann}{article}{}
       \name{author}{1}{}{%
-        {{hash=67de5c53a973596982cb6e9b63626719}{%
-           family={Gao},
-           familyi={G\bibinitperiod},
-           given={J.\bibnamedelimi et\bibnamedelima al.},
-           giveni={J\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+        {{hash=929e9e63151c06f5a7083405ad52947e}{%
+           family={Thomas\bibnamedelima Berger},
+           familyi={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Achim\bibnamedelima Ilchmann},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
       }
-      \strng{namehash}{67de5c53a973596982cb6e9b63626719}
-      \strng{fullhash}{67de5c53a973596982cb6e9b63626719}
-      \strng{bibnamehash}{67de5c53a973596982cb6e9b63626719}
-      \strng{authorbibnamehash}{67de5c53a973596982cb6e9b63626719}
-      \strng{authornamehash}{67de5c53a973596982cb6e9b63626719}
-      \strng{authorfullhash}{67de5c53a973596982cb6e9b63626719}
-      \field{sortinit}{G}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \strng{namehash}{929e9e63151c06f5a7083405ad52947e}
+      \strng{fullhash}{929e9e63151c06f5a7083405ad52947e}
+      \strng{bibnamehash}{929e9e63151c06f5a7083405ad52947e}
+      \strng{authorbibnamehash}{929e9e63151c06f5a7083405ad52947e}
+      \strng{authornamehash}{929e9e63151c06f5a7083405ad52947e}
+      \strng{authorfullhash}{929e9e63151c06f5a7083405ad52947e}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Nat. Commun.}
-      \field{title}{Target control of complex networks}
-      \field{year}{2014}
-    \endentry
-    \entry{Luenberg}{book}{}
-      \name{author}{1}{}{%
-        {{hash=1a79ec540a9c2c28e79ddd3c74c9b4b3}{%
-           family={Luenberg},
-           familyi={L\bibinitperiod},
-           given={David\bibnamedelima G.},
-           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-      }
-      \strng{namehash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \strng{fullhash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \strng{bibnamehash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \strng{authorbibnamehash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \strng{authornamehash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \strng{authorfullhash}{1a79ec540a9c2c28e79ddd3c74c9b4b3}
-      \field{sortinit}{L}
-      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Introduction to Dynamic Systems}
-      \field{year}{1979}
+      \field{title}{Zero dynamics of time-varying linear systems}
+      \field{year}{2010}
     \endentry
   \enddatalist
 \endrefsection

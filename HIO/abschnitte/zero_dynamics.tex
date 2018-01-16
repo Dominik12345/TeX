@@ -1,27 +1,66 @@
 \section{Zero Dynamics}
-We follow the ideas of \cite{•}. The zero dynamics of a linear system $(A,B,C)$ is a set of 
-triplets $(x,u,y):[0,T]\to \mathbb{R}^n\times \mathbb{R}^m \times \mathbb{R}^p$ that solve the 
-system equations and $y\equiv 0$. Assuming we have found such an triplet $(x^*,u^*,0)$, due to 
-linearity we can perturb any other triplet $(x,u,y)$ that solves the system equations since
-$(x+x^*,u+u^*,y)$ again solves the systems equations and produces the same output $y$ as the 
-unperturbed system.
-\begin{definition}{}{}
-	A subset $V$ of $\mathbb{R}^n$ is called $(A,B)$ invariant if
-	\begin{equation}
-	A V \subseteq V + \text{Im}\, B \quad .
-	\end{equation}
-	For the largest $(A,B)$ invariant $V$ we write
-	\begin{equation}
-	\mathfrak{V} = V \cap \kernel{C}\quad .
-	\end{equation}
-\end{definition}
+We follow the ideas of \cite{BergerIlchmann}. 
+The \textit{zero dynamics (ZD)} of a linear system $(A,D,C)$ is a set of 
+triplets $(x,w,y):[0,T]\to \mathbb{R}^n\times \mathbb{R}^m \times \mathbb{R}^p$ that solve 
+the system equations and produce $y\equiv 0$.\\
 
+Assume we have found such an triplet 
+$(x^*,w^*,0)$. Due to linearity we can perturb any other triplet $(x,w,y)$ that solves the 
+system equations by a ZD triplet, since
+$(x+x^*,w+w^*,y)$ again solves the system equations and produces the same output $y$ as 
+the unperturbed system. \\
+
+%\begin{corollary}{}{}
+%	Let $(A,B,C,D)$ the matrices of a dynamical system
+%	\begin{equation}
+%	\dot{x} = Ax + Bu + Dw \tab{,} x(0)=x_0 \tab{,}
+%	y = Cx \quad .
+%	\end{equation}
+%	Let $\Delta x$, $\Delta w$ and $\Delta y$ denote the differences between 
+%	two systems with the same known input $u$ and initial value $x_0$, then 
+%	\begin{equation}
+%	\Delta \dot{x} = A\Delta x + D \Delta w \tab{,} \Delta x(0)=0 \tab{,} \Delta y = 
+%	C \Delta x \quad .
+%	\end{equation}
+%	Obviously		
+%	\begin{equation}
+%	D \quad \text{not injective} \quad \Rightarrow\quad \text{not HIO and nontrivial 
+%	zero dynamics}
+%	\end{equation} 
+%	
+%\end{corollary}
+
+\begin{definition}{}{}
+	A subset $V$ of $\mathbb{R}^n$ is called $(A,D)$ invariant if
+	\begin{equation}
+	A V \subseteq V + \text{Im}\, D \quad .
+	\end{equation}
+	For the largest $(A,D)$ invariant $V$ we write
+	\begin{equation}
+	\mathfrak{V} := V \cap \kernel{C}\quad .
+	\end{equation}
+	We say a system has \textit{trivial zero dynamics}, if the only triplet $(x,w,y)$ with 
+	zero output is $(0,0,0)$. 
+\end{definition}
+\begin{corollary}{}{}
+	If the matrix $D$ is not injective, then the ZD cannot be trivial. This is 
+	clear because we can always choose $x=0\in\mathfrak{V}$ and $w\in\kernel{D}$ which 
+	produces zero output.\\
+
+	If $\kernel{C}\cap \kernel{A} \neq \{0\}$, then the ZD cannot be trivial. To see this, 
+	choose $V=\kernel{C}\cap \kernel{A}$. This is clearly $(A,D)$-invariant and subset of 
+	$\kernel{C}$.	\\
+	
+	If $D$ is not injective, the system is not HIO and has nontrivial ZD.	
+\end{corollary}
 \begin{proposition}{}{}
 	A trajectory $x:[0,T]\to \mathfrak{V}$ that solves the system 
 	equations is part of the zero dynamics of the 
-	corresponding system.
+	corresponding system, i.e. if we have an initial value $x_0\in \mathfrak{V}$, it is 
+	possible to find an input $u$ such that $x(t)\in\mathfrak{V}$ at all times.
 \end{proposition}
-\begin{proof}
+\begin{proof} We do not give a rigorous proof but only make the proposition plausible. A 
+	more comprehensive treatment can be found in \cite{BergerIlchmann}.\\
 	Assume $x(0)\in\mathfrak{V}$. We define recursively
 	\begin{align*}
 	A x(0) &= \gamma_0 + \lambda_0 \\
@@ -92,7 +131,7 @@ unperturbed system.
 \end{proof}
 	
 \subsection{Zero Dynamics vs. HIO}
-In the following example we see, that HIO and zero dynamics are closely 
+In the following example we see, that HIO and ZD are closely 
 related but not equivalent.
 
 \begin{example}{}{}
@@ -136,77 +175,70 @@ related but not equivalent.
 	system is HIO and thus zero output should imply zero hidden intput.
 \end{example}
 
-As illustrated by the example, HIO does not imply trivial zero dynamics. 
-The reason for that is, HIO is independent of the initial value 
-$x^*(0)$, whereas the hidden input $w^*$ of the zero dynamics may only 
-work for specific initial values $x^*(0)$. If, for instance, in the above 
-example $x^*(0)$ would not have zeroes in the first two components, 
-it is not possible to find a nontrivial hidden input.
+As illustrated by the example, HIO does not imply trivial ZD but it is easy to 
+see that trivial ZD imply HIO.
+%
+%Consider the following example
+%\begin{example}{}{}
+%	A dynamic system with the matrices
+%	\begin{equation}
+%	A = \begin{pmatrix}
+%	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+%	\end{pmatrix}		 \tab{,}
+%	B = \begin{pmatrix}
+%	1 & 0 \\ 0 & 1 \\ 0 & 0
+%	\end{pmatrix}
+%	\tab{and} C =
+%	\begin{pmatrix}
+%	0 & 1 & 0 \\ 0 & 0 & 1
+%	\end{pmatrix} \quad .
+%	\end{equation}
+%	We find
+%	\begin{equation}
+%	\text{Im}\,B = \text{span} \left\{
+%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,
+%	\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
+%	\right\} \tab{and}
+%	\kernel{C} = \text{span} \left\{
+%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
+%	\right\}  \quad .
+%	\end{equation}
+%	We notice 
+%	\begin{equation}
+%	A \kernel{C} \subseteq \text{Im}\, B
+%	\end{equation}	
+%	and therefore clearly see that $\kernel{C}$ is $(A,B)$-invariant.\\
+%	The system is not HIO for $CB$ has rank $1$.
+%	\end{example}
+%	As one can see in the above example, as soon as the image of $A$ restricted to the 
+%	kernel of $C$ is a subset of the image of $B$ is nonempty, the zero dynamics are 
+%	nontrivial. In the following proposition we show that for not HIO systems this will 
+%	always be the case.
 
-Consider the following example
-\begin{example}{}{}
-	A dynamic system with the matrices
-	\begin{equation}
-	A = \begin{pmatrix}
-	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
-	\end{pmatrix}		 \tab{,}
-	B = \begin{pmatrix}
-	1 & 0 \\ 0 & 1 \\ 0 & 0
-	\end{pmatrix}
-	\tab{and} C =
-	\begin{pmatrix}
-	0 & 1 & 0 \\ 0 & 0 & 1
-	\end{pmatrix} \quad .
-	\end{equation}
-	We find
-	\begin{equation}
-	\text{Im}\,B = \text{span} \left\{
-	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,
-	\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
-	\right\} \tab{and}
-	\kernel{C} = \text{span} \left\{
-	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
-	\right\}  \quad .
-	\end{equation}
-	We notice 
-	\begin{equation}
-	A \kernel{C} \subseteq \text{Im}\, B
-	\end{equation}	
-	and therefore clearly see that $\kernel{C}$ is $(A,B)$-invariant.\\
-	The system is not HIO for $CB$ has rank $1$.
-	\end{example}
-	As one can see in the above example, as soon as the image of $A$ restricted to the 
-	kernel of $C$ is a subset of the image of $B$ is nonempty, the zero dynamics are 
-	nontrivial. In the following proposition we show that for not HIO systems this will 
-	always be the case.
 
-\begin{proposition}{HIO is necessary for Trivial Zero Dynamics}{}
-	For a linear system of $(A,B,C)$ 
+
+\begin{proposition}{HIO is necessary for Trivial ZD}{}
+	For a linear system $(A,D,C)$ 
 	\begin{equation}
-	\text{trivial zero dynamics} \quad \Rightarrow \quad \text{HIO} \quad
-	\end{equation}	
-	or equivalently
-	\begin{equation}
-	\mathfrak{V} = \{0\} \quad \Rightarrow \quad CA^kB\quad \text{injective}
+	\text{trivial ZD} \quad \Rightarrow \quad \text{HIO} \quad .
 	\end{equation}
-	for the first nonvanishing $CA^kB$.
 \end{proposition}
 \begin{proof}
-	We show that $\neg$HIO leads to nontrivial zero dynamics.\\
-	Assume for simplicity that $CB \neq 0$ and $B$ injective. 
-	\begin{enumerate}
-	\item $B$ cannot be $0$. Thus $\text{Im}\,B\supset \{0\}$ while $\kernel{B}=\{0\}$. 
-	\item Since $\kernel{CB}\supset
-	\{0\}$ we know that $\text{Im}\, B \cap \kernel{C}\supset \{0\}$. \\
-	Therefore $\kernel{C}\supset \{0\}$.
-	\item If $A$ has full rank, then $\dim{\kernel{CA} }=\dim{\kernel{C}}>0$.\\
-	If $A$ has rank less than $n$, $A$ is not injective hence $CA$ is not 
-	injective. \\
-	In either case $\kernel{CA}\supset \{0\}$. 
-\end{enumerate}		
-	If we now choose
+	Since we assume trivial ZD, by corollary 3 we know that $D$ is injective.\\
+	If $\kernel{A}\cap \kernel{C}$ is nontrivial, the ZD would again be nontrivial.\\
+	By the definition of $\mathfrak{V}$ we know that
 	\begin{equation}
-	i
+	\forall \quad x \in \mathfrak{V} \quad \exists \quad  (\tilde{x}, w)\in\mathfrak{V}
+	\times \mathbb{R}^m \quad | \quad  Ax = \tilde{x} + D w \quad .
 	\end{equation}
-	
+	We make the assumption that $CD$ is not injective. Then $\kernel{C}\cap \text{Im}\, D
+	\supset \{0\}$. That means
+	\begin{equation}
+	\exists \quad w \neq 0 \in\mathbb{R}^m \quad | \quad Dw \neq 0 \tab{and} CDw = 0
+	 \quad .
+	\end{equation}
+	If we now chose such an $w$ and set $\xi := Dw$ and $V=\text{span}\,\xi$ we know 
+	\begin{equation}
+	A \xi = B w
+	\end{equation}
 \end{proof}

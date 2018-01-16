@@ -14,17 +14,24 @@ of $w$ and $y$ at $t=0$ and $t=T$ makes sense. To denote this idea without
 introducing $\epsilon$ we use the notation $[0^-,T^+]$.
 \\
 
+It is clear, that if $D$ is not injective, we can find nonzero $w\in\kernel{D}$ that 
+produce zero output. For this, we will only consider injective $D$. Furthermore if 
+$C$ is not surjective, we can reduce the number of observables since $(p-\rank{C})$ 
+observables are redundant. Thus we will only consider surjective $C$. Then also 
+$p \leq n$ and  $p \leq n$.\\
+
 We firstly rewrite the problem by expanding \eqref{eq:y}, 
 \begin{equation}
 y(t) = \sum\limits_{k=0}^\infty CA^kD \int\limits_0^t \frac{(t-\tau)^k}{k!} w(\tau) \, \td 
 \tau \quad .
 \end{equation}
-Writing $(CA^kD)_{.\mu}$ means the $\mu$-th column and $w_\mu$ the $\mu$-th component. We 
-get 
-\begin{equation}
-y(t) = \sum\limits_{k=0}^\infty \sum\limits_{\mu=1}^m \int\limits_0^t \frac{(t-\tau)^k}{k!}
-w_\mu(\tau) \, \td \tau (CA^kD)_{.\mu} 
-\end{equation} 
+Writing $(CA^kD)_{.\mu}$ means the $\mu$-th column and $w_\mu$ the $\mu$-th component
+%. We 
+%get 
+%\begin{equation}
+%y(t) = \sum\limits_{k=0}^\infty \sum\limits_{\mu=1}^m \int\limits_0^t \frac{(t-\tau)^k}{k!}
+%w_\mu(\tau) \, \td \tau (CA^kD)_{.\mu} 
+%\end{equation} 
 and if we only consider the $\nu$-th component of $y$ we get 
 \begin{equation}
 y_\nu(t) = \sum\limits_{k=0}^\infty \sum\limits_{\mu=1}^m \int\limits_0^t 
@@ -43,8 +50,8 @@ convergent.\\
 \subsection{Basic Properties}
 It is now convenient to introduce some operators.
 \begin{definition}{}{}
-	Let $v\in L^2$ be a function and $(c_k)_{k\in\mathbb{N}_0}$. For the sake of 
-	readability we write 
+	Let $v\in L^2$ be a function and $(c_k)_{k\in\mathbb{N}_0}$ a real-valued sequence. 
+	For the sake of readability we write 
 	$c=(c_k)_{k\in\mathbb{N}_0}$ for sequences. 
 	\begin{enumerate}
 	\item $\phi_k[v](t):= \int_0^t \frac{(t-\tau)^k}{k!} v(\tau) \, \td \tau $
@@ -201,7 +208,7 @@ and if $v^{(0)}=0$, i.e. the diagonal at the top vanishes.
 	Formally this can again be handled as an inductive proof to show, that $v$ must 
 	vanish on each interval.\\
 	
-	A SISO-system is HIO if and only if there is an $k\in\mathbb{N}_0$ such that 
+	A SISO-system is HIO if and only if there is an $k\in\mathbb{N}_0$  
 	$CA^kD \neq 0$. 
 \end{corollary}
 
@@ -240,6 +247,7 @@ w_\nu^{(q)} = 0 \quad \forall q\in\mathbb{N}_0 \tab{for} \nu = 1,2,\ldots , n \q
 As argued in corollary 1, if we assume that each $w_\mu$ can be represented by a 
 Taylor series, we know, that this system is hidden input observable. \\
 
+\subsubsection{Directly Observed Hidden Inputs}
 To generalize the idea of an fully observed system we find the following lemma in analogy 
 to lemma 2.
 \begin{lemma}{Induction Step}{}
@@ -261,7 +269,7 @@ to lemma 2.
 	$\rank{CA^KD} = m$ this implies $w^{(r)}(0)=0\in\mathbb{R}^m$.
 \end{proof}
 
-\begin{theorem}{Observed Hidden Inputs}{}
+\begin{theorem}{Directly Observed Hidden Inputs}{}
 	Let $w\in L^2([0,T])^{\otimes m}\cap C^\infty(0^-,0^+)^{\otimes m}$ and $(A,C,D)$ the 
 	matrices of 
 	\eqref{eq:y} and assume that $CA^KD$ is the first nonvanishing coefficient matrix.\\ If 
@@ -284,26 +292,248 @@ to lemma 2.
 	complete the proof.
 \end{proof}
 
-We complete this section with the last corollary in analogy to corollary 1 and some 
-examples.
+\subsubsection{Indirectly Observed Hidden Inputs}
+In the following example you can see a composition of two HIO systems. Though it should 
+again be HIO, we cannot prove this by using theorem 2.
+\begin{example}{}{}
+	Consider the obviously HIO system
+	\begin{equation}
+	A = 0 \tab{,} D = 1 \tab{,} C = 1 \quad .
+	\end{equation}
+	Furthermore consider the system
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 0 \\ 1 & 0
+	\end{pmatrix}
+	\quad
+	D = \begin{pmatrix}
+	1 \\ 0
+	\end{pmatrix}
+	\quad 
+	C = \begin{pmatrix}
+	0 & 1
+	\end{pmatrix}
+	\end{equation}
+ 	which yields $CD = 0$ and $CAD=1$ and therefore is also HIO.
+ 	If we simply write these two systems into one system
+	\begin{equation}
+	A = \begin{pmatrix}
+	0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0
+	\end{pmatrix}
+	\quad
+	D = \begin{pmatrix}
+	1  & 0\\ 0 & 1 \\ 0 & 0
+	\end{pmatrix}
+	\quad 
+	C = \begin{pmatrix}
+	1&0&0\\0 &0 & 1
+	\end{pmatrix}
+	\end{equation}
+ 	we get $\rank{CD}=1$ which means we cannot apply theorem 2 to prove HIO.
+\end{example}
+
+To get an extension of theorem 2 we need a new construct. 
+\begin{definition}{}{}
+	Consider $CA^kD$ and define an index set $\mathcal{I}^k$ for each $k\in\mathbb{N}_0$
+	by 
+	\begin{equation}
+	\mu \in\{1,2,\ldots,m\} \tab{is element of} \mathcal{I}^k \quad \Leftrightarrow 
+	\quad  (CA^kD)_{. \mu} \neq 0  \quad . 
+\end{equation}		
+	Here $(CA^kD)_{.i}$ denotes the $i$-th column. \\
+	
+	For a better readability $\mathcal{R}^k:= 
+	\mathcal{I}^k\backslash (\mathcal{I}^{k-1}\cup \ldots \cup \mathcal{I}^0)$.\\
+
+	The \textit{reduced matrices} $(CA^kD)^*$ are defined by
+	\begin{equation}
+	(CD)^* = \left[ CD_{.\mu} \right]_{\mu \in \mathcal{I}^0}
+	\end{equation}
+	and 
+	\begin{equation}
+	(CA^kD)^* = \left[ (CA^{k-1}D)^* \left[ CA^kD_{.\mu}  \right]_{\mu\in\mathcal{R}^k} 
+	\right]	 \quad .
+	\end{equation}
+	The square brackets mean the composition of columns to a new matrix.
+\end{definition}
+
+\begin{example}{}{}
+	Let us again consider the latter example.
+	\begin{equation}
+	CD = \begin{pmatrix}
+	1 & 0 \\ 0 & 0
+	\end{pmatrix}
+	\tab{,} CAD = \begin{pmatrix}
+	0 & 0 \\ 0 & 1
+	\end{pmatrix} 
+	\end{equation}
+	We find $\mathcal{I}^0=\{1\}$ and $\mathcal{I}^1 =\{2\}$. The reduced matrices are
+	\begin{equation}
+	(CD)^* = \begin{pmatrix}
+	1 \\ 0
+	\end{pmatrix}
+	\tab{,} 
+	(CAD)^* = \begin{pmatrix}
+	1 & 0 \\ 0 & 1
+	\end{pmatrix}
+	\end{equation}
+	The first matrix contains only the nonzero columns of $CD$.
+	The second matrix is the composition of $(CD)^*$ and the columns of $(CAD)$ with index 
+	in $\mathcal{I}^1\backslash\mathcal{I}^0 =\{2\}$. In this example it is the composition 
+	of the first column of $CD$ and the second column of $CAD$. \\
+	We can see that both reduced matrices have full column rank and that the reduced 
+	matrix of the highest power, $(CAD)^*$, has rank $m$. 
+\end{example}
+
+Using this construct we can generalize theorem 2.
+\begin{theorem}{Indirectly Observed Hidden Inputs}{}
+	Let $w:[0^-,T^+]\to \mathbb{R}^m$ be element of $L^2([0,T])^{\otimes m}\cap C^\infty 
+	(0^-,0^+)^{\otimes m}$ and let $(A,C,D)$ be the matrices of a linear dynamic system 
+	\eqref{eq:y}. \\
+	If each reduced matrix $(CA^kD)^*$ is injective, i.e. has full column rank, and if 
+	there is an integer $K$ such that $(CA^KD)^*$ has rank $m$, then
+	\begin{equation}
+	y\equiv 0 \quad \Rightarrow \quad w_\mu^{(q)} (0) = 0 \quad \forall q \in \mathbb{N}_0 
+	\quad .
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Once more we prove by induction. Writing $w_\mu^{(q)}$ always means evaluated 
+	at $t=0$. Let us set $y\equiv 0$.
+	\begin{enumerate}
+	\item	Proposition 2 with $q=0$ yields 
+			\begin{equation}
+			\sum\limits_{\mu=1}^m c_0^{\mu \nu} w_\mu^{(0)} = 0  \,\, \forall \nu 
+			\tab{which implies}
+			 \sum\limits_{\mu=1}^m w_\mu^{(0)} CD_{.\mu}  = 0 \quad .
+			\end{equation}
+			By definition of $\mathcal{I}^0$ we get
+			\begin{equation}
+			\sum\limits_{\mu\in\mathcal{I}^0} w_\mu^{(0)} (CD)_{.\mu} = 0 \quad .
+			\end{equation}
+			Since this is a linear combination of the columns of an injective matrix
+			$(CD)^*$ we get
+			\begin{equation}
+			w_\mu^{(0)} = 0 \quad \forall \mu \in \mathcal{I}^0 \quad .
+			\end{equation}
+	\item	Before we do the induction step, let us use proposition 2 with $q=1$ to get
+			\begin{equation}
+			\sum\limits_{\mu \in \mathcal{I}^0} c_0^{\mu\nu} w_\mu^{(1)} + 
+			\sum\limits_{\mu\in\mathcal{R}^1} c_1^{\mu\nu} w_\mu^{(0)} = 0 \quad \forall
+			\nu \quad .
+			\end{equation}
+			Again written as a vector equation this is equivalent to
+			\begin{equation}
+			\sum\limits_{\mu \in \mathcal{I}^0} w_\mu^{(1)} (CD)_{.\mu} + 
+			\sum\limits_{\mu\in\mathcal{R}^1}  w_\mu^{(0)} (CAD)_{.\mu} = 0  \quad .
+			\end{equation}
+			This again is a linear combination of columns of $(CAD)^*$. Since $(CAD)^*$ is 
+			injective we get
+			\begin{equation}
+			w_\mu^{(0)} = 0 \quad \forall \mu \in \mathcal{I}^0\cup \mathcal{R}^1 
+			\tab{and} w_\mu^{(1)} = 0 \quad \forall\mu \in \mathcal{I}^0	\quad .
+			\end{equation}
+			We note that $\mathcal{R}^i \cup \mathcal{I}^{i-1}\cup \ldots\cup 
+			\mathcal{I}^0$ is 
+			equal to $\mathcal{I}^i \cup \mathcal{I}^{i-1}\cup \ldots \cup \mathcal{I}^0$.
+	\item Following the idea of step 2 we do the induction step:\\ Assume we have found an 
+			integer $r$ such that
+			\begin{align*}
+			w_\mu^{(0)} &= 0 \,\,
+			\forall \mu \in \bigcup\limits_{\rho =0}^r \mathcal{I}^\rho  \\
+			w_\mu^{(1)} &= 0 \, \,
+			\forall \mu \in \bigcup\limits_{\rho =0}^{r-1} \mathcal{I}^\rho 
+			\\	
+			&\vdots
+			 \\
+			w_\mu^{(r)} & = 0 \, \,
+			\forall \mu \in  \mathcal{I}^0
+			\end{align*}
+			then use proposition 2 with $q=r+1$ to get for all $\nu$
+			\begin{equation}
+			\sum\limits_{\mu=1}^m c_0^{\mu\nu} w_\mu^{(r+1)} + 
+			\sum\limits_{\mu \not\in\mathcal{I}^0} c_1^{\mu\nu} w_\mu^{(r)} + 
+			\ldots + 
+			\sum\limits_{\mu\not\in\mathcal{I}^0\cup\ldots\cup \mathcal{I}^{r}} 
+			c_{r+1}^{\mu\nu} w_\mu^{(0)} = 0		\quad .	 
+			\end{equation}
+			As a vector equation we get
+			\begin{equation}
+			\sum\limits_{\mu=1}^m w_\mu^{(r+1)} (CD)_{.\mu} + 
+			\sum\limits_{\mu\not\in\mathcal{I}^0} w_\mu^{(r)} (CAD)_{.\mu}+ 
+			\ldots + 
+			\sum\limits_{\mu\not\in\mathcal{I}^0\cup\ldots\cup \mathcal{I}^{r}} 
+			w_\mu^{(0)} (CA^{r+1}D)_{.\mu} = 0		\quad .	 
+			\end{equation}						
+			We easily see that the combination $\mu\in\mathcal{I}^{\rho+1}$ and $\mu\not\in 
+			\mathcal{I}^\rho\cup\ldots\cup \mathcal{I}^0$ is the same as $\mu\in
+			\mathcal{R}^{q+1}$. Using the knowledge of zero columns we get
+			\begin{equation}
+			\sum\limits_{\mu\in\mathcal{I}^0}^m w_\mu^{(r+1)} (CD)_{.\mu} + 
+			\sum\limits_{\mu\in\mathcal{R}^1} w_\mu^{(r)} (CAD)_{.\mu}+ 
+			\ldots + 
+			\sum\limits_{\mu\in\mathcal{R}^{r+1}} 
+			w_\mu^{(0)} (CA^{r+1}D)_{.\mu} = 0		\quad .	 
+			\end{equation}
+			This is a linear combination of columns of $(CA^{r+1}D)^*$ which is injective. 
+			Therefore
+			\begin{align*}
+			w_\mu^{(0)} &= 0 \,\,
+			\forall \mu \in \bigcup\limits_{\rho =0}^{r+1} \mathcal{I}^\rho  \\
+			w_\mu^{(1)} &= 0 \, \,
+			\forall \mu \in \bigcup\limits_{\rho =0}^{r} \mathcal{I}^\rho 
+			\\	
+			&\vdots
+			 \\
+			w_\mu^{(r)} & = 0 \, \,
+			\forall \mu \in  \bigcup\limits_{\rho =0}^{1} \mathcal{I}^\rho \\
+			w_\mu^{(r+1)} & = 0 \, \,
+			\forall \mu \in  \mathcal{I}^0 
+			\end{align*}				
+			This completes the induction.
+	\item	Finally we show that the maximum $\bigcup_\rho \mathcal{I}^\rho = \{1,2,
+			\ldots,m\}$ is always reached.  \\
+			Assume there is an $m'<m$ such that $|\bigcup_\rho \mathcal{I}^\rho| = m'$ for 
+			all $\rho \geq \rho_0$ but there is no $\rho$ such that $|\bigcup_\rho 
+			\mathcal{I}^\rho| > m'$. Here $|.|$ denotes the number of elements. 
+			\begin{enumerate}
+			\item	By construction $(CD)^*$ has $|\mathcal{I}^0|$ columns.
+			\item 	Then $(CAD)^*$ has exactly $|\mathcal{I}^0| + |\mathcal{R}^1|$ columns.
+			\item  $(CA^{k}D)^*$ has exactly $|\mathcal{I}^0| + |\mathcal{R}^1|+\ldots 
+			+ |\mathcal{R}^k|$ columns.
+			\item 	There is an integer $K$ such that $(CA^KD)^*$ has column rank $m$. 
+					This means $|\mathcal{R}^{K+1}|=0$.
+			\end{enumerate}
+			
+	\end{enumerate}		
+
+\end{proof}
+
+
+
+
+
+
+We complete the MIMO-systems with the last corollary in analogy to corollary 1.
 \begin{corollary}{}{}
 	If there are a disjoint unions $[0^-,T^+]=I^\mu_1\dot{\cap} I_2^\mu\dot{\cap}\ldots$ 
-	such that each $w_\mu$ such that $w_\mu$ can be represented by its Taylor-expansion on 
-	each interval $I_j^\mu=((t_{j-1}^\mu)^- ,(t_j^\mu)^\+)$ and if the first nonvanishing 
-	$CA^kD$ has rank $m$, then the MIMO-system is HIO. \\
+	such that each $w_\mu$ can be represented by its Taylor-expansion on 
+	each interval $I_j^\mu=((t_{j-1}^\mu)^- ,(t_j^\mu)^+)$ and if theorem 2 or theorem 3 
+	holds, then the MIMO-system is HIO. \\
 	
-	Obviously a not injective $D$ will not allow an injective $CA^kD$. For that reason
-	we will only consider injective $D$. 
+	To have any $CA^kD$ of rank $m$, we need $p\geq m$.
 \end{corollary}
+
+\subsubsection{Examples}
 
 \begin{example}{}{}
 	\begin{equation}
 	A = \begin{pmatrix}
-	1 & 1 \\ 0 & 1
+	1 & 0 \\ 1 & 1
 	\end{pmatrix}
 	\quad
 	D = \begin{pmatrix}
-	0 \\ 1
+	1 \\ 0
 	\end{pmatrix}
 	\quad 
 	C = \begin{pmatrix}
@@ -315,11 +545,11 @@ examples.
 \begin{example}{}{}
 	\begin{equation}
 	A = \begin{pmatrix}
-	1 & 1 \\ 0 & 1
+	1 & 0 \\ 1 & 1
 	\end{pmatrix}
 	\quad
 	D = \begin{pmatrix}
-	1 \\ 0
+	0 \\ 1
 	\end{pmatrix}
 	\quad 
 	C = \begin{pmatrix}
@@ -342,5 +572,5 @@ examples.
 	1 & 0 & 0 \\ 0 & 1 & 0
 	\end{pmatrix}
 	\end{equation}
-	A MIMO-system and $CD$ is the $2\times 2$ unity matrix. Thus it is HIO.
+	A MIMO-system and $CD$ is the $2\times 2$ identity matrix. Thus it is HIO.
 \end{example}
