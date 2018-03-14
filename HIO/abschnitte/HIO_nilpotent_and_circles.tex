@@ -1,0 +1,63 @@
+
+%Especially in high-dimensional problems it may result in a very work-intensive task to 
+%rigorously show that there exists or does not exist $\mathfrak{O}=\{0\}$ or $\mathfrak{V}_d=\emptyset$.
+%Is possible to derive a couple of simplified versions of the HIO theorem, that may 
+%lack a necessary condition, but instead can be computed within a finite number of steps.
+%
+%\clearpage
+%\subsection{Special Cases - Circles and Cascades}
+%Consider a biological system that you can fully describe by a mathematical dynamic 
+%system and imagine you perturb one state variable $x_1$ for a very short interval of time. 
+%As the perturbation is passed to the other state variables, as governed by the system 
+%equations, we can differentiate two archetypes of propagation. Firstly there are 
+%\textit{cascades}, i.e. $A_{i,j}=\delta_{i+1 \, i}$.  Secondly there are \textit{circles}, 
+%i.e. a cascade with $A_{1n}\neq 0$. In the case of circles, $x_1$ passes the perturbation 
+%to $x_2$ and so on until $x_n$ passes the perturbation back to $x_1$. The obvious question 
+%is, will the perturbation be amplified or will it die out? Furthermore, if we measure 
+%one (or some) of the state variables, is it possible to say whether two measured 
+%perturbations are actually one perturbation that overlaps itself after one circle? 
+%In the case of cascades however this is simpler, since even if the perturbation is 
+%amplified, it will abruptly die out after at most $n$ steps.
+%
+%\paragraph*{Nilpotent Systems}
+%	We straightforwardly define a \textit{nilpotent system} as a system such that 
+%	\begin{equation}
+%	\exists\quad N \in \mathbb{N} \quad \big{|} \quad 
+%	A^{N+1} = 0 \quad ,
+%	\end{equation}
+%	i.e. $A$ is a nilpotent matrix. We directly see that cascades are the simplest examples 
+%	of nilpotent systems. We see that
+%	\begin{equation}
+%	M_{N'} = [(CD)(CAD)\ldots (CA^ND)(0)(0)\ldots] \quad \Rightarrow \quad 
+%	V_{N'} = V_N \times \mathbb{R}^{(N'-N)m}
+%	\end{equation}
+%	for all $N'>N$. Due to that $P^{N'}V_{N'}=\mathbb{R}^m$ and
+%	\begin{equation}
+%	\mathfrak{O}_0 = \mathfrak{O}_{N,0} = V_0 \cap PV_1 \cap \ldots \cap P^N V_N \quad ,
+%	\end{equation}
+%	which means checking $\mathfrak{O}_0 =\{0\}$ reduces to computing the overlap of 
+%	finitely many kernels.
+%	
+%\paragraph*{Cycles}
+%	As a generalisation of a circle we define \textit{cycles} as systems with the 
+%	property
+%	\begin{equation}
+%	\exists\quad N \in \mathbb{N} \text{ and } F\in\mathbb{R} \quad \big{|} \quad 
+%	A^{N+1} = F\mathbb{1} \quad .
+%	\end{equation}
+%	We get 
+%	\begin{equation}
+%	M_{N'} = [ (CD)(CAD)(CA^2D)\ldots (CA^{N}D) (F CD)(FCAD)\ldots  ]
+%	\end{equation}
+%	for appropriate $N'>N$. If we write $\hat{M}$ for $[(CD)(CAD)\ldots (CA^{N}D)]$ 
+%	we get to 
+%	\begin{equation}
+%	M_{N'} = [(\hat{M})(F\hat{M}^2)(F^2 \hat{M}^3)\ldots] \quad .
+%	\end{equation}
+%	That means for integers $r$
+%	\begin{equation}
+%	\mathfrak{O}_{rN,0} \supseteq \left( \mathfrak{O}_{N,0} \right)^{\times r}
+%	\end{equation}
+%	 and thus $\mathfrak{O}_{N,0}\neq \{0\}$ is sufficient to say that the system 
+%	 is not HIO. Combining this with lemma 2 we see that it is also necessary. Thus again 
+%	 the problem is reduced to computing a finite number of kernels and their overlaps.

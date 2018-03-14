@@ -115,7 +115,7 @@ and discuss some properties.
 %	$k\to k-1$ shows\\ $v + \sum_{k=0}^\infty \phi_k[v]=v+\Phi_c[v]=v\equiv 0$.
 %\end{proof}
 \subsection{SISO-System}
-We start with a \textit{Single Input Single Output (SISO)}-System. That means
+We start with a \textit{Single Input Single Output (SISO)}-system. That means
 \eqref{eq:y_Phi} simplifies to
 \begin{equation}
 	y(t) = \Phi_c[v](t)
@@ -208,14 +208,15 @@ and if $v^{(0)}=0$, i.e. the diagonal at the top vanishes.
 	Formally this can again be handled as an inductive proof to show, that $v$ must 
 	vanish on each interval.\\
 	
-	A SISO-system is HIO if and only if there is an $k\in\mathbb{N}_0$  
-	$CA^kD \neq 0$. 
+	A SISO-system is HIO if and only if there is an $K\in\mathbb{N}_0$ such that   
+	$CA^KD \neq 0$. 
 \end{corollary}
 
 \subsection{MIMO-Systems}
 As equation \eqref{eq:y_Phi} shows, we usually do not have a simple $y(t)=\Phi_c[v](t)$ 
-relation but a sum with different sequences $c^{\mu\nu}$ and functions $w_\mu$. Since 
-summation and differentiation are linear operations, we directly get the following 
+relation but a sum with different sequences $c^{\mu\nu}$ and functions $w_\mu$.
+Such a system is called \textit{Multiple Inputs Multiple Outputs (MIMO)}-system.
+Since summation and differentiation are linear operations, we directly get the following 
 extension of proposition 1.
 \begin{proposition}{}{}
 	Let $w_\mu$ integrable on $[0^-,T^+]$ for $\mu=1,2,\ldots , m$ and let 
@@ -340,7 +341,7 @@ To get an extension of theorem 2 we need a new construct.
 	\mu \in\{1,2,\ldots,m\} \tab{is element of} \mathcal{I}^k \quad \Leftrightarrow 
 	\quad  (CA^kD)_{. \mu} \neq 0  \quad . 
 \end{equation}		
-	Here $(CA^kD)_{.i}$ denotes the $i$-th column. \\
+	Here $(CA^kD)_{.\mu}$ denotes the $\mu$-th column. \\
 	
 	For a better readability $\mathcal{R}^k:= 
 	\mathcal{I}^k\backslash (\mathcal{I}^{k-1}\cup \ldots \cup \mathcal{I}^0)$.\\
@@ -491,40 +492,339 @@ Using this construct we can generalize theorem 2.
 			\forall \mu \in  \mathcal{I}^0 
 			\end{align*}				
 			This completes the induction.
-	\item	Finally we show that the maximum $\bigcup_\rho \mathcal{I}^\rho = \{1,2,
-			\ldots,m\}$ is always reached.  \\
-			Assume there is an $m'<m$ such that $|\bigcup_\rho \mathcal{I}^\rho| = m'$ for 
-			all $\rho \geq \rho_0$ but there is no $\rho$ such that $|\bigcup_\rho 
-			\mathcal{I}^\rho| > m'$. Here $|.|$ denotes the number of elements. 
+	\item	Due to the induction we know that 
+			\begin{equation}
+			w_\mu^{(q)} = 0\quad \forall \mu \in \bigcup\limits_{\rho=0}^r \mathcal{I}^\rho
+			\end{equation}
+			for all $q\in \mathbb{N}_0$ and for all $r\in\mathbb{N}_0$.
+			We finally show that we can find an integer $r$ such that the latter 
+			expression holds for all $\mu\in\{1,2,\ldots,m\}$.
 			\begin{enumerate}
-			\item	By construction $(CD)^*$ has $|\mathcal{I}^0|$ columns.
-			\item 	Then $(CAD)^*$ has exactly $|\mathcal{I}^0| + |\mathcal{R}^1|$ columns.
-			\item  $(CA^{k}D)^*$ has exactly $|\mathcal{I}^0| + |\mathcal{R}^1|+\ldots 
-			+ |\mathcal{R}^k|$ columns.
-			\item 	There is an integer $K$ such that $(CA^KD)^*$ has column rank $m$. 
-					This means $|\mathcal{R}^{K+1}|=0$.
+			\item Since by assumption there is an integer $K$ such that $(CA^KD)^*$ has 
+			column rank $m$, we know that
+			\begin{equation}
+			\forall \mu \in \{1,2,\ldots,m\} \quad  \exists \quad \rho(\mu) \leq K 
+			\quad | \quad \mu\in 
+			\mathcal{I}^{\rho(\mu)} \quad .
+			\end{equation}
+			If this was not true, $(CA^KD)^*$ would have less than $m$ columns and 
+			therefore could not have rank $m$. \\
+			\item As a consequence we know that 
+			\begin{equation}			
+			\{0,1,2,\ldots, K\} \supseteq \{\rho(1),
+			\rho(2),\ldots,\rho(m)\} \quad ,
+			\end{equation} 
+			hence
+			\begin{equation}
+			\bigcup\limits_{\rho=0}^K \mathcal{I}^\rho = \{1,2,\ldots,m\} \quad .
+			\end{equation}
 			\end{enumerate}
-			
 	\end{enumerate}		
-
 \end{proof}
 
 
-
-
-
-
-We complete the MIMO-systems with the last corollary in analogy to corollary 1.
+We complete the MIMO-systems with the last corollary in analogy to the SISO-system.
 \begin{corollary}{}{}
 	If there are a disjoint unions $[0^-,T^+]=I^\mu_1\dot{\cap} I_2^\mu\dot{\cap}\ldots$ 
 	such that each $w_\mu$ can be represented by its Taylor-expansion on 
 	each interval $I_j^\mu=((t_{j-1}^\mu)^- ,(t_j^\mu)^+)$ and if theorem 2 or theorem 3 
 	holds, then the MIMO-system is HIO. \\
 	
-	To have any $CA^kD$ of rank $m$, we need $p\geq m$.
+	Theorem 2 is a special case of theorem 3: \\
+	If $CD=\ldots=CA^{K-1}D=0$ and $CA^KD$ injective, this is equivalent to $\mathcal{I}^0=
+	\ldots =
+	\mathcal{I}^{K-1} =\{0\}$ and $\mathcal{I}^K=\{1,2,\ldots,m\}$ which means 
+	$(CD)^*=\ldots=(CA^{K-1}D)^*=0$ and $(CA^KD)^*=CA^KD$. \\	
+	
+	To have any $(CA^kD)^*$ of rank $m$, we need $p\geq m$.
 \end{corollary}
 
-\subsubsection{Examples}
+\subsubsection{Hidden Input Observality with Overlapping Kernels}
+The sufficient conditions we have found can be checked by calculating the rank of 
+matrices. There is one more extension of theorem 3 possible. For that we need a new 
+formalism.
+%\begin{definition}{}{}
+%	We define matrices 
+%	\begin{equation}
+%	M_k := \begin{bmatrix} CD & CAD & \ldots & CA^kD \end{bmatrix} \quad .
+%	\end{equation}
+%	Furthermore we write 
+%	\begin{equation}	
+%	\mathcal{K}^k := \kernel{CA^kD}
+%	\end{equation}
+%	and 
+%	\begin{equation}
+%	\mathcal{K}^k_* := \mathcal{K}^k \cap \mathcal{K}^{k-1} \cap \ldots \cap \mathcal{K}^0
+%	 = \mathcal{K}^k \cap \mathcal{K}^{k-1}_* \quad .
+%	\end{equation}
+%	We will also need
+%	\begin{equation}
+%	\mathcal{K}^* := \lim_{k\to\infty} \mathcal{K}^k_* \quad .  
+%	\end{equation}
+%	It is convenient to write
+%	\begin{equation}
+%	\mathcal{N}^k := \mathcal{K}^0_* \oplus \mathcal{K}^1_* \oplus \ldots \oplus
+%	\mathcal{K}^k_*  
+%	\end{equation}
+%	and
+%	\begin{equation}
+%	W^{(q)} = \begin{bmatrix}
+%	w^{(q)} \\ w^{(q-1)} \\ \vdots \\ w^{(0)} 
+%	\end{bmatrix}\quad .
+%	\end{equation}		
+%\end{definition}
+%\begin{remark}{}{}
+%	\begin{enumerate}
+%	\item In this formalism it is convenient to write proposition 2 as
+%		\begin{equation}
+%		M_q W^{(q)} = 0 \quad \forall q\in\mathbb{N}_0	 \quad .
+%		\end{equation}
+%	\end{enumerate}
+%\end{remark}
+%\begin{lemma}{Induction Step}{}
+%	If proposition 2 holds
+%	\begin{equation}
+%	W^{(r)}(0) \in \mathcal{N}^r\quad\Rightarrow\quad W^{(r+1)}(0) \in \mathcal{N}^{r+1}
+%	\quad .  
+%	\end{equation}
+%\end{lemma}
+%\begin{proof}
+%	$W^{(r)}$ evaluated at $t=0$ is understood. By the assumption we know that
+%	\begin{equation}
+%	w^{(r)} \in \mathcal{K}^0_* \tab{,} w^{(r-1)} \in \mathcal{K}^1_* \tab{,} \ldots
+%	\tab{,} w^{(0)} \in \mathcal{K}^r_* \quad .
+%	\end{equation}
+%	By proposition 2 we also know $W^{(r+1)} \in \kernel{M_{r+1}} $, that is
+%	\begin{equation}
+%	w^{(r+1)} \in \mathcal{K}^0 \tab{,} w^{(r)} \in \mathcal{K}^1 \tab{,} 
+%	w^{(r-1)} \in \mathcal{K}^2 \tab{,} \ldots
+%	\tab{,} w^{(0)} \in \mathcal{K}^{r+1} \quad .
+%	\end{equation}
+%	For every $q<r$ that means $w^{(q)}\in\mathcal{K}^k\cap \mathcal{K}^{k-1}_* = 
+%	\mathcal{K}^k_*$. Also $w^{(r+1)}\in\mathcal{K}^0=\mathcal{K}^0_*$. So we found
+%	\begin{equation}
+%	\left( w^{(r+1)}, w^{(r)},\ldots,w^{(0)}\right) \in \mathcal{K}^0_* \oplus
+%	 \mathcal{K}^1_* 
+%	\oplus \ldots \oplus \mathcal{K}^{r+1}_* \tab{i.e}
+%	W^{(r+1)} \in \mathcal{N}^{r+1} \quad .
+%	\end{equation}
+%\end{proof}
+%
+%\begin{theorem}{Overlapping Kernels}{}
+%	Let $w:[0^-,T^+]\to \mathbb{R}^m$ be functions as before and $(A,C,D)$ the matrices 
+%	of a linear dynamic system \eqref{eq:y}.
+%	\begin{equation}
+%	y\equiv 0 \quad \Rightarrow \quad w^{(q)}(0) \in \mathcal{K}^* \quad \forall q\in 
+%	\mathbb{N}_0 \quad .
+%	\end{equation}
+%\end{theorem}
+%\begin{proof}
+%	As always we prove by induction and evaluate $W^{(q)}$ at $t=0$.
+%	\begin{enumerate}
+%	\item We can use proposition 2 with $q=0$ to get
+%		\begin{equation}
+%		M_0 W^{(0)} = 0 \quad \Rightarrow \quad W^{(0)}\in\kernel{M_0} = \mathcal{K}^0_*
+%		= \mathcal{N}^0 \quad .
+%		\end{equation}
+%	\item Lemma 4 carries the induction step out.
+%	\item That means for any integer $q$ we get 
+%		\begin{equation}
+%		w^{(q)} \in \mathcal{K}^k_* \quad \forall k\in\mathbb{N}_0
+%		\end{equation}		  
+%		which exactly means $w^{(q)}\in\mathcal{K}^*$.
+%	\end{enumerate}
+%\end{proof}
+
+\begin{definition}{}{}
+	We write
+	\begin{align*}
+	M_k &:= \begin{bmatrix} CD & CAD & \ldots & CA^kD \end{bmatrix} \\
+	V_k &:= \kernel{M_k} \quad .
+	\end{align*}
+	We note that $M_k:\mathbb{R}^{(k+1)m} \to \mathbb{R}^p$ and $V_k\subseteq 
+	\mathbb{R}^{(k+1)m}$. We define an inverse 
+	projection $P$ that maps a (sub)vectorspace $V$ of $\mathbb{R}^{(k+1)m}$ to 
+	$\mathbb{R}^{(k+2)m}$ by
+	\begin{equation}
+	P V = \left\{ \left. \begin{pmatrix}
+	v \\ \hat{v}
+	\end{pmatrix}
+	\right| v\in\mathbb{R}^m \tab{and} \hat{v}\in V \right\} \quad .
+	\end{equation}
+	Furthermore we write
+	\begin{equation}
+	\Delta_k = V_k \cap P\Delta_{k-1} \tab{,} \Delta_0 = V_0
+	\end{equation}
+	and
+	\begin{equation}
+	W^{(q)} = \begin{bmatrix}
+	w^{(q)} \\ w^{(q-1)} \\ \vdots \\ w^{(0)} 
+	\end{bmatrix} \tab{,}
+	W^{(q,r)} = \begin{bmatrix}
+	w^{(q)} \\ w^{(q-1)} \\ \vdots \\ w^{(r)} 
+	\end{bmatrix} \quad .
+	\end{equation}
+\end{definition}
+\begin{lemma}{}{}
+	\begin{enumerate}
+	\item $W^{(q)} = [w^{(q)},W^{(q-1)}]^\text{T}$.
+	\item It is convenient to rewrite proposition 2 in terms of the new definitions as
+		\begin{equation}
+		M_q W^{(q)} = 0 \quad \forall q\in\mathbb{N}_0	 \quad .
+		\end{equation}
+	\item If proposition 2 holds 
+		\begin{equation}
+		y \equiv 0 \Rightarrow W^{(0)} \in \Delta_0  \quad .
+		\end{equation}
+	\item If proposition 2 holds and $W^{(q)} \in \Delta_q$ then 
+	$W^{(q+1)} \in \Delta_{q+1}$. 
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	The first and second proof is just re-inserting the definitions.\\
+	Using proposition with $q=0$ yields
+	\begin{equation}
+	M_0 W^{(0)} = 0 \quad \Rightarrow \quad W^{(0)} \in V_0 = \Delta_0 \quad . 
+	\end{equation}\\
+	Now assume $W^{(r)}\in\Delta_r$. Proposition 2 with $q=r+1$ yields
+	\begin{equation}
+	M_{r+1} W^{(r+1)} = 0 \quad \Rightarrow \quad W^{(r+1)} \in V_{r+1} \quad .
+	\end{equation}
+	That means 
+	\begin{equation}	
+	W^{(r+1)}=\left[w^{(q+1)},W^{(q)}\right] 
+	\in V_{r+1} \cap (\mathbb{R}^m \times \Delta_r)
+	= V_{r+1} \cap P\Delta_r = \Delta_{r+1} \quad .
+	\end{equation}
+\end{proof}
+\begin{theorem}{}{}
+	As a trivial consequence of lemma 4 but in analogy to the previous theorems
+	\begin{equation}
+	y\equiv 0 \quad \Rightarrow\quad W^{(q)}(0) \in \Delta_q \quad \forall q\in\mathbb{N}_0
+	\quad .
+	\end{equation}
+	If for an integer $K$ we find $\Delta_K=\{0\}$, then $w^{(q)}(0)=0$ for all $q
+	\in\mathbb{N}_0$. 
+\end{theorem}
+\begin{proof}
+	The first implication is trivial using lemma 4. \\
+	\begin{enumerate}
+	\item 
+		Assume we found such an integer $(K-1)$, then 
+		\begin{equation}
+		W^{(K-1)} \in \Delta_{K-1} \quad \Rightarrow \quad W^{(K-1)}=0
+		\end{equation}
+		is obvious. Now using proposition 2 with $q=r+K$ yields
+		\begin{equation}
+		M_{r+K} W^{(r+K)} = M_{r} W^{(r+K,K)} = 0\quad \forall r\in\mathbb{N}_0
+		\end{equation}
+		since all other terms will vanish. In complete analogy to what we found before
+		\begin{equation}
+		W^{(r+K,K)} \in \Delta_r \quad \forall r\in\mathbb{N}_0 \quad .
+		\end{equation}
+		Again setting $r=K-1$ we found $W^{(2K-1,K)}=0$ thus we can summarize
+		\begin{equation}
+		W^{(2K-1)} = 0 \quad .
+		\end{equation}
+	\item Assume $W^{(NK-1)}=0$ for some integer $N$. Choosing $q=r+NK$ in
+		proposition 2 yields
+		\begin{equation}
+		M_r W^{(r+NK,NK)} = 0 \quad \forall r \in \mathbb{N}_0 \quad \Rightarrow \quad 
+		 W^{(r+NK,NK)} \in \Delta_r \forall r\in \mathbb{N}_0
+		\end{equation}
+		and setting $r=K-1$ to get $W^{((N+1)K -1,NK)}=0$ and $W^{(N+1)K-1}=0$ completes 
+		the inductive proof.
+	\item Obviously $W^{(q)}=0$ for all $q\in\mathbb{N}_0$ implies $w^{(q)}=0$ for all $q$.
+	\end{enumerate}
+\end{proof}
+
+
+\begin{corollary}{}{}
+	In analogy to corollary 2, if all $w_\mu$ can be expressed by their Taylor-expansion, 
+	the latter theorem is sufficient to prove HIO. \\
+	
+	Theorem 4 is an extension of theorem 3. We write $e_\mu$ for the vector with $1$ at 
+	place $\mu$ and $0$ everywhere else. We find $\Delta_0=\text{span}\{e_\mu\}$ for $\mu$ 
+	not in $\mathcal{I}^0$. Due to the condition that all reduced matrices are injective 
+	we get $\Delta_1 =\text{span} \{e_\mu\}$ for $\mu$ not in $\mathcal{I}^1\cup 
+	\mathcal{I}^0$ and so on. We already saw, that as $k$ increases, the union of 
+	$\mathcal{I}^k$ reaches the 
+	largest possible set $\{1,2,\ldots,m\}$ and therefore $\Delta_k$ reaches the smallest 
+	possible vector space $\{0\}$.
+\end{corollary}
+
+
+\clearpage
+\subsection{Hidden Input Observability Theorems}
+Yet we found four theorems to proof a sufficient condition for HIO. Indeed, using the 
+formalism of overlapping kernels we find the following necessary and sufficient conditions.
+\begin{theorem}{Hidden Input Observability}{}
+	Consider a linear dynamic system over an interval of time $[0^-,T^+]$
+	\begin{equation*}
+	\dot{x} = Ax + Bu + Dw  \tab{,}
+	y=Cx \tab{,}
+	x(0) = x_0 
+	\end{equation*}
+	with hidden inputs $w:[0^-,T^+]\to \mathbb{R}^m$. \\
+	We restrict $w$ to be differentiable on subintervals of $[0^-,T^+]$ with a 
+	Taylor-expansion that converges to $w$. 
+	\begin{enumerate}
+	\item
+	The system is hidden input observable, if and only if there is an integer $K$ such that 
+	$\Delta_K=\{0\}$.
+	\item
+	If for each $k\in\mathbb{N}_0$ the reduced matrix $(CA^kD)^*$ is injective,
+	the system is hidden input observable if and only if
+	there is an integer $K$ such that $(CA^KD)^*$ has rank $m$. 
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	
+	The sufficiency of this theorem is provided by theorem 4 and theorem 3, 
+	respectively.
+	\begin{enumerate}
+	\item Assume there is no such integer $K$. We define $\Delta=\lim_{k\to\infty}$ which 
+	is a nonempty subset of an infinite dimensional Hilbert space.\\
+	 Choosing $W\in\Delta$ we get
+		\begin{equation}
+		W = \begin{bmatrix}
+		\vdots \\ w^{(2)} \\w^{(1)} \\ w^{(0)}
+		\end{bmatrix}
+		\end{equation}
+		Now we find
+		\begin{equation}
+		w(t) = \sum\limits_{k=0}^\infty \frac{t^k}{k!} w^{(k)}
+		\end{equation}
+		is a nontrivial hidden input that is mapped to $y\equiv 0$.
+	
+	\item We start with the second condition. Assume there is no integer $K$ that produces 
+		$\rank{(CA^KD)^*}=m$. That means there is at least one $\mu'\in\{1,2,\ldots,m\}$ 
+		with 
+		\begin{equation}
+		(CA^kD)_{.\mu'} = 0 \quad \forall k\in\mathbb{N}_0 \quad .
+		\end{equation}			
+		Without loss of generality say $m'=m$. This means 
+		\begin{equation}		
+		c_k^{m \nu}=0 \quad \forall k\in\mathbb{N}_0 \tab{and} \forall \nu\in\{1,2,
+		\ldots,p\} \quad .
+		\end{equation}
+		We remember
+		\begin{equation}
+		y_\nu = \sum\limits_{\mu = 1}^m \Phi_{c^{\mu\nu}}[w_\mu] = 
+		 \sum\limits_{\mu = 1}^m \sum\limits_{k=0}^\infty c_k^{\mu\nu}\phi_k[w_\mu]
+		\end{equation}
+		and since the latter equation holds for all $\nu$,
+		\begin{equation}
+		y_\nu = \sum\limits_{\mu = 1}^{m-1} \sum\limits_{k=0}^\infty c_k^{\mu\nu}\phi_k[w_
+		\mu] \quad .
+		\end{equation}
+		This shows that $w_m$ has completely no influence on $y$ and therefore can be 
+		chosen arbitrarily, which means the system is surely not HIO.	 
+	\end{enumerate}
+\end{proof}
+
+\clearpage
+\subsection{Examples}
 
 \begin{example}{}{}
 	\begin{equation}

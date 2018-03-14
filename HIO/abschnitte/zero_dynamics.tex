@@ -42,145 +42,100 @@ the unperturbed system. \\
 	We say a system has \textit{trivial zero dynamics}, if the only triplet $(x,w,y)$ with 
 	zero output is $(0,0,0)$. 
 \end{definition}
-\begin{corollary}{}{}
-	If the matrix $D$ is not injective, then the ZD cannot be trivial. This is 
-	clear because we can always choose $x=0\in\mathfrak{V}$ and $w\in\kernel{D}$ which 
-	produces zero output.\\
-
-	If $\kernel{C}\cap \kernel{A} \neq \{0\}$, then the ZD cannot be trivial. To see this, 
-	choose $V=\kernel{C}\cap \kernel{A}$. This is clearly $(A,D)$-invariant and subset of 
-	$\kernel{C}$.	\\
-	
-	If $D$ is not injective, the system is not HIO and has nontrivial ZD.	
-\end{corollary}
-\begin{proposition}{}{}
-	A trajectory $x:[0,T]\to \mathfrak{V}$ that solves the system 
-	equations is part of the zero dynamics of the 
-	corresponding system, i.e. if we have an initial value $x_0\in \mathfrak{V}$, it is 
-	possible to find an input $u$ such that $x(t)\in\mathfrak{V}$ at all times.
-\end{proposition}
-\begin{proof} We do not give a rigorous proof but only make the proposition plausible. A 
-	more comprehensive treatment can be found in \cite{BergerIlchmann}.\\
-	Assume $x(0)\in\mathfrak{V}$. We define recursively
-	\begin{align*}
-	A x(0) &= \gamma_0 + \lambda_0 \\
-	A\gamma_{i} &= \gamma_{i+1} + \lambda_{i+1}
-	\end{align*}
-	where each $\gamma_i\in\mathfrak{V}$ and each $\lambda_i\in\text{Im}\, B$. By the 
-	definition of $\mathfrak{V}$ we know that this is possible.
-	We do a short inductive proof to show
-	\begin{equation}
-	A^k (\gamma_0+\lambda_0) = \gamma_k + \sum\limits_{l=0}^k A^l \lambda_{k-l} \quad .
-	\end{equation}		
-	\begin{enumerate}
-		\item $k=0$ is trivial.
-		\item Assume the statement is correct.
-		\begin{align*}
-		A^{k+1}(\gamma_0+\lambda_0) &= A \,A^k(\gamma_0+\lambda_0)
-		= A \left(\gamma_k +\sum\limits_{l=0}^k A^l\lambda_{k-l} \right) 
-		\\
-		&= \gamma_{k+1} + \lambda_{k+1} + \sum\limits_{l=0}^k A^{l+1}\lambda_{k-l} 
-		= \gamma_{k+1} +\lambda_{k+1} + \sum\limits_{l=1}^{k+1} A^{l} 
-		\lambda_{k-(l-1)} \\
-		&= \gamma_{k+1} + \sum\limits_{l=0}^{k+1} A^l \lambda_{k+1-l}
-		\tab{q.e.d.}
-		\end{align*}
-	\end{enumerate}
-
-	Furthermore we know that
-	\begin{equation}
-	x(t) = \e^{At}x(0) + \int\limits_{0}^t \e^{A(t-\tau)} B w(\tau) \, \td \tau 
-	\quad .
-	\end{equation}
-	Expanding the exponentials and shifting the index in the $x(0)$-term yields
-	\begin{equation}
-	x(t) = x(0) + \sum\limits_{k=0}^\infty A^k \left( 
-	\frac{t^{k+1}}{(k+1)!} (\gamma_0+\lambda_0) + \int\limits_0^t \frac{(t-\tau)^k}{k!}
-	Bw(\tau) \, \td\tau
-	\right)
-	\end{equation}
-	and using the letter statement
-	\begin{equation}
-	x(t)=x(0) + \sum\limits_{k=0}^\infty 
-	\left\{ \frac{t^{k+1}}{(k+1)!} 
-	\left( \gamma_k
-	+\sum\limits_{l=0}^k A^l\lambda_{k-l}
-	\right) 
-	+ A^k \int\limits_0^t \frac{(t-\tau)^k}{k!} Bw(\tau) \, \td \tau
-	\right\} \quad .
-	\end{equation}
-	Applying $C$ leads to
-	\begin{equation}
-	y(t) =C\sum\limits_{k=0}^\infty  \left\{ 
-	\frac{t^{k+1}}{(k+1)!}
-	\sum\limits_{l=0}^k A^l \lambda_{k-l} + A^k\int\limits_0^t 
-	\frac{(t-\tau)^k}{k!} B w(\tau) \, \td \tau
-	\right\}
-	\end{equation}
-	At order $C A^{k'}$ we have
-	\begin{equation}
-	\sum\limits_{r=0}^\infty \frac{t^{k'+1+r}}{(k'+1+r)!} \lambda_{r} +
-	\int\limits_0^t 
-	\frac{(t-\tau)^{k'}}{k'!} B w(\tau) \, \td \tau \quad .
-	\end{equation}
-	Since each $\lambda_r$ is element of $\text{Im}\,B$ we may find a 
-	$w$ that suppresses each term in the summation separately. Without 
-	proof we assume that this is always possible.\\
-	As a special case we consider $\text{Im}\, B \subseteq \kernel{C}$, 
-	which makes the problem trivial.
-\end{proof}
-	
-\subsection{Zero Dynamics vs. HIO}
-In the following example we see, that HIO and ZD are closely 
-related but not equivalent.
-
-\begin{example}{}{}
-	Consider a dynamic system with the matrices
-	\begin{equation}
-	A = \begin{pmatrix}
-	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
-	\end{pmatrix}		 \tab{,}
-	B = \begin{pmatrix}
-	1 & 0 \\ 0 & 1 \\ 0 & 0
-	\end{pmatrix}
-	\tab{and} C =
-	\begin{pmatrix}
-	1 & 0 & 0 \\ 0 & 1 & 0
-	\end{pmatrix} \quad .
-	\end{equation}
-	For $\mathfrak{V} := \text{span}\{(0,0,1)^T\}$ we find  
-	$A\mathfrak{V}=\text{span}\{(1,0,0)^T\}$ is a subset of 
-	$\text{Im}\, B$ and thus $\mathfrak{V}$ is $(A,B)$-invariant. \\
-	For instance the set
-	\begin{equation}
-	x^*(0) = \begin{pmatrix}
-	0 \\ 0 \\ a
-	\end{pmatrix}
-	\tab{and}
-	w^*(t) = \begin{pmatrix}
-	- a \\
-	0
-	\end{pmatrix}
-	\end{equation}
-	leads to a constant
-	\begin{equation}
-	x^*(t) = \begin{pmatrix}
-	0 \\ 0 \\ a
-	\end{pmatrix}
-	\end{equation}
-	which produces zero output $y=Cx^*$ with nonvanishing hidden inputs 
-	$w^*$. This 
-	shows that the zero dynamics of the system is not trivial. \\
-	At the same time we find that $CB$ is injective which means the 
-	system is HIO and thus zero output should imply zero hidden intput.
-\end{example}
-
-As illustrated by the example, HIO does not imply trivial ZD but it is easy to 
-see that trivial ZD imply HIO.
+%\begin{corollary}{}{}
+%	If the matrix $D$ is not injective, then the ZD cannot be trivial. This is 
+%	clear because we can always choose $x=0\in\mathfrak{V}$ and $w\in\kernel{D}$ which 
+%	produces zero output.\\
 %
-%Consider the following example
+%	If $\kernel{C}\cap \kernel{A} \neq \{0\}$, then the ZD cannot be trivial. To see this, 
+%	choose $V=\kernel{C}\cap \kernel{A}$. This is clearly $(A,D)$-invariant and subset of 
+%	$\kernel{C}$.	\\
+%	
+%	If $D$ is not injective, the system is not HIO and has nontrivial ZD.	
+%\end{corollary}
+%\begin{proposition}{}{}
+%	A trajectory $x:[0,T]\to \mathfrak{V}$ that solves the system 
+%	equations is part of the zero dynamics of the 
+%	corresponding system, i.e. if we have an initial value $x_0\in \mathfrak{V}$, it is 
+%	possible to find an input $u$ such that $x(t)\in\mathfrak{V}$ at all times.
+%\end{proposition}
+%\begin{proof} We do not give a rigorous proof but only make the proposition plausible. A 
+%	more comprehensive treatment can be found in \cite{BergerIlchmann}.\\
+%	Assume $x(0)\in\mathfrak{V}$. We define recursively
+%	\begin{align*}
+%	A x(0) &= \gamma_0 + \lambda_0 \\
+%	A\gamma_{i} &= \gamma_{i+1} + \lambda_{i+1}
+%	\end{align*}
+%	where each $\gamma_i\in\mathfrak{V}$ and each $\lambda_i\in\text{Im}\, B$. By the 
+%	definition of $\mathfrak{V}$ we know that this is possible.
+%	We do a short inductive proof to show
+%	\begin{equation}
+%	A^k (\gamma_0+\lambda_0) = \gamma_k + \sum\limits_{l=0}^k A^l \lambda_{k-l} \quad .
+%	\end{equation}		
+%	\begin{enumerate}
+%		\item $k=0$ is trivial.
+%		\item Assume the statement is correct.
+%		\begin{align*}
+%		A^{k+1}(\gamma_0+\lambda_0) &= A \,A^k(\gamma_0+\lambda_0)
+%		= A \left(\gamma_k +\sum\limits_{l=0}^k A^l\lambda_{k-l} \right) 
+%		\\
+%		&= \gamma_{k+1} + \lambda_{k+1} + \sum\limits_{l=0}^k A^{l+1}\lambda_{k-l} 
+%		= \gamma_{k+1} +\lambda_{k+1} + \sum\limits_{l=1}^{k+1} A^{l} 
+%		\lambda_{k-(l-1)} \\
+%		&= \gamma_{k+1} + \sum\limits_{l=0}^{k+1} A^l \lambda_{k+1-l}
+%		\tab{q.e.d.}
+%		\end{align*}
+%	\end{enumerate}
+%
+%	Furthermore we know that
+%	\begin{equation}
+%	x(t) = \e^{At}x(0) + \int\limits_{0}^t \e^{A(t-\tau)} B w(\tau) \, \td \tau 
+%	\quad .
+%	\end{equation}
+%	Expanding the exponentials and shifting the index in the $x(0)$-term yields
+%	\begin{equation}
+%	x(t) = x(0) + \sum\limits_{k=0}^\infty A^k \left( 
+%	\frac{t^{k+1}}{(k+1)!} (\gamma_0+\lambda_0) + \int\limits_0^t \frac{(t-\tau)^k}{k!}
+%	Bw(\tau) \, \td\tau
+%	\right)
+%	\end{equation}
+%	and using the letter statement
+%	\begin{equation}
+%	x(t)=x(0) + \sum\limits_{k=0}^\infty 
+%	\left\{ \frac{t^{k+1}}{(k+1)!} 
+%	\left( \gamma_k
+%	+\sum\limits_{l=0}^k A^l\lambda_{k-l}
+%	\right) 
+%	+ A^k \int\limits_0^t \frac{(t-\tau)^k}{k!} Bw(\tau) \, \td \tau
+%	\right\} \quad .
+%	\end{equation}
+%	Applying $C$ leads to
+%	\begin{equation}
+%	y(t) =C\sum\limits_{k=0}^\infty  \left\{ 
+%	\frac{t^{k+1}}{(k+1)!}
+%	\sum\limits_{l=0}^k A^l \lambda_{k-l} + A^k\int\limits_0^t 
+%	\frac{(t-\tau)^k}{k!} B w(\tau) \, \td \tau
+%	\right\}
+%	\end{equation}
+%	At order $C A^{k'}$ we have
+%	\begin{equation}
+%	\sum\limits_{r=0}^\infty \frac{t^{k'+1+r}}{(k'+1+r)!} \lambda_{r} +
+%	\int\limits_0^t 
+%	\frac{(t-\tau)^{k'}}{k'!} B w(\tau) \, \td \tau \quad .
+%	\end{equation}
+%	Since each $\lambda_r$ is element of $\text{Im}\,B$ we may find a 
+%	$w$ that suppresses each term in the summation separately. Without 
+%	proof we assume that this is always possible.\\
+%	As a special case we consider $\text{Im}\, B \subseteq \kernel{C}$, 
+%	which makes the problem trivial.
+%\end{proof}
+%	
+%\subsection{Zero Dynamics vs. HIO}
+%In the following example we see, that HIO and ZD are closely 
+%related but not equivalent.
+%
 %\begin{example}{}{}
-%	A dynamic system with the matrices
+%	Consider a dynamic system with the matrices
 %	\begin{equation}
 %	A = \begin{pmatrix}
 %	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
@@ -190,55 +145,101 @@ see that trivial ZD imply HIO.
 %	\end{pmatrix}
 %	\tab{and} C =
 %	\begin{pmatrix}
-%	0 & 1 & 0 \\ 0 & 0 & 1
+%	1 & 0 & 0 \\ 0 & 1 & 0
 %	\end{pmatrix} \quad .
 %	\end{equation}
-%	We find
+%	For $\mathfrak{V} := \text{span}\{(0,0,1)^T\}$ we find  
+%	$A\mathfrak{V}=\text{span}\{(1,0,0)^T\}$ is a subset of 
+%	$\text{Im}\, B$ and thus $\mathfrak{V}$ is $(A,B)$-invariant. \\
+%	For instance the set
 %	\begin{equation}
-%	\text{Im}\,B = \text{span} \left\{
-%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,
-%	\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
-%	\right\} \tab{and}
-%	\kernel{C} = \text{span} \left\{
-%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
-%	\right\}  \quad .
+%	x^*(0) = \begin{pmatrix}
+%	0 \\ 0 \\ a
+%	\end{pmatrix}
+%	\tab{and}
+%	w^*(t) = \begin{pmatrix}
+%	- a \\
+%	0
+%	\end{pmatrix}
 %	\end{equation}
-%	We notice 
+%	leads to a constant
 %	\begin{equation}
-%	A \kernel{C} \subseteq \text{Im}\, B
-%	\end{equation}	
-%	and therefore clearly see that $\kernel{C}$ is $(A,B)$-invariant.\\
-%	The system is not HIO for $CB$ has rank $1$.
-%	\end{example}
-%	As one can see in the above example, as soon as the image of $A$ restricted to the 
-%	kernel of $C$ is a subset of the image of $B$ is nonempty, the zero dynamics are 
-%	nontrivial. In the following proposition we show that for not HIO systems this will 
-%	always be the case.
-
-
+%	x^*(t) = \begin{pmatrix}
+%	0 \\ 0 \\ a
+%	\end{pmatrix}
+%	\end{equation}
+%	which produces zero output $y=Cx^*$ with nonvanishing hidden inputs 
+%	$w^*$. This 
+%	shows that the zero dynamics of the system is not trivial. \\
+%	At the same time we find that $CB$ is injective which means the 
+%	system is HIO and thus zero output should imply zero hidden intput.
+%\end{example}
+%
+%As illustrated by the example, HIO does not imply trivial ZD but it is easy to 
+%see that trivial ZD imply HIO.
+%%
+%%Consider the following example
+%%\begin{example}{}{}
+%%	A dynamic system with the matrices
+%%	\begin{equation}
+%%	A = \begin{pmatrix}
+%%	0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+%%	\end{pmatrix}		 \tab{,}
+%%	B = \begin{pmatrix}
+%%	1 & 0 \\ 0 & 1 \\ 0 & 0
+%%	\end{pmatrix}
+%%	\tab{and} C =
+%%	\begin{pmatrix}
+%%	0 & 1 & 0 \\ 0 & 0 & 1
+%%	\end{pmatrix} \quad .
+%%	\end{equation}
+%%	We find
+%%	\begin{equation}
+%%	\text{Im}\,B = \text{span} \left\{
+%%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} ,
+%%	\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
+%%	\right\} \tab{and}
+%%	\kernel{C} = \text{span} \left\{
+%%	\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
+%%	\right\}  \quad .
+%%	\end{equation}
+%%	We notice 
+%%	\begin{equation}
+%%	A \kernel{C} \subseteq \text{Im}\, B
+%%	\end{equation}	
+%%	and therefore clearly see that $\kernel{C}$ is $(A,B)$-invariant.\\
+%%	The system is not HIO for $CB$ has rank $1$.
+%%	\end{example}
+%%	As one can see in the above example, as soon as the image of $A$ restricted to the 
+%%	kernel of $C$ is a subset of the image of $B$ is nonempty, the zero dynamics are 
+%%	nontrivial. In the following proposition we show that for not HIO systems this will 
+%%	always be the case.
+%
+%
 
 \begin{proposition}{HIO is necessary for Trivial ZD}{}
-	For a linear system $(A,D,C)$ 
+	For a linear system $(A,C,D)$ 
 	\begin{equation}
 	\text{trivial ZD} \quad \Rightarrow \quad \text{HIO} \quad .
 	\end{equation}
 \end{proposition}
 \begin{proof}
-	Since we assume trivial ZD, by corollary 3 we know that $D$ is injective.\\
-	If $\kernel{A}\cap \kernel{C}$ is nontrivial, the ZD would again be nontrivial.\\
-	By the definition of $\mathfrak{V}$ we know that
+	We show that $\neg$HIO leads to nontrivial ZD.
+	Let $\mathfrak{V}$ be the largest $(A,D)$-invariant subset included in $\kernel{C}$. 
+	By definition
 	\begin{equation}
-	\forall \quad x \in \mathfrak{V} \quad \exists \quad  (\tilde{x}, w)\in\mathfrak{V}
-	\times \mathbb{R}^m \quad | \quad  Ax = \tilde{x} + D w \quad .
+	\forall x\in \mathfrak{V} \quad \exists (x_0,w_0) \in \mathfrak{V}\times \mathbb{R}^m 
+	\quad | \quad Ax = x_0 + Dw_0 \quad .
 	\end{equation}
-	We make the assumption that $CD$ is not injective. Then $\kernel{C}\cap \text{Im}\, D
-	\supset \{0\}$. That means
+	Since $x_0$ is again element of $\mathfrak{V}$ we can find $(x_1,w_1)$ solving the 
+	analogous equation. Thus if we multiply the latter equation with $CA^n$,
+	$n\in\mathbb{N}_0$, and recursively insert $(x_k,w_k)$ and $Cx_k=0$ we get
 	\begin{equation}
-	\exists \quad w \neq 0 \in\mathbb{R}^m \quad | \quad Dw \neq 0 \tab{and} CDw = 0
-	 \quad .
+	CA^{k+1} x = M_k W_k
 	\end{equation}
-	If we now chose such an $w$ and set $\xi := Dw$ and $V=\text{span}\,\xi$ we know 
-	\begin{equation}
-	A \xi = B w
-	\end{equation}
+	where $W_k = [w_k,w_{k-1},\ldots,w_0]^\text{T}$. We notice the similarity to the last 
+	HIO theorem and define $\Delta_k$ as before. Assume we cannot find an integer $K$ that 
+	makes $\Delta_K$ trivial ($\neg$HIO). Then  
+	we can find a sequence $(\hat{w}_k)_{k\in\mathbb{N}_0}$ such that each 
+	$\hat{W}_k\in\kernel{M_k}$ and therefore the zero dynamics is nontrivial.
 \end{proof}

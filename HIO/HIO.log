@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  16 JAN 2018 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  13 MAR 2018 16:28
 entering extended mode
 **./HIO.tex
 (HIO.tex
@@ -1382,6 +1382,15 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@out=\write6
 \tcb@record@out=\write7
 )
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty
+"
+\wrapoverhang=\dimen152
+\WF@size=\dimen153
+\c@WF@wrappedlines=\count307
+\WF@box=\box43
+\WF@everypar=\toks41
+Package: wrapfig 2003/01/31  v 3.6
+)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.s
 ty"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplots
@@ -1406,10 +1415,10 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.
 code.tex")
-\pgffor@iter=\dimen152
-\pgffor@skip=\dimen153
-\pgffor@stack=\toks41
-\pgffor@toks=\toks42
+\pgffor@iter=\dimen154
+\pgffor@skip=\dimen155
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
 ))
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\tikz.code.tex"
@@ -1418,32 +1427,32 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pgf
 libraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count307
-\pgfplotmarksize=\dimen154
+\pgf@plot@mark@count=\count308
+\pgfplotmarksize=\dimen156
 )
-\tikz@lastx=\dimen155
-\tikz@lasty=\dimen156
-\tikz@lastxsaved=\dimen157
-\tikz@lastysaved=\dimen158
-\tikzleveldistance=\dimen159
-\tikzsiblingdistance=\dimen160
-\tikz@figbox=\box43
-\tikz@figbox@bg=\box44
-\tikz@tempbox=\box45
-\tikz@tempbox@bg=\box46
-\tikztreelevel=\count308
-\tikznumberofchildren=\count309
-\tikznumberofcurrentchild=\count310
-\tikz@fig@count=\count311
+\tikz@lastx=\dimen157
+\tikz@lasty=\dimen158
+\tikz@lastxsaved=\dimen159
+\tikz@lastysaved=\dimen160
+\tikzleveldistance=\dimen161
+\tikzsiblingdistance=\dimen162
+\tikz@figbox=\box44
+\tikz@figbox@bg=\box45
+\tikz@tempbox=\box46
+\tikz@tempbox@bg=\box47
+\tikztreelevel=\count309
+\tikznumberofchildren=\count310
+\tikznumberofcurrentchild=\count311
+\tikz@fig@count=\count312
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfmo
 dulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count312
-\pgfmatrixcurrentcolumn=\count313
-\pgf@matrix@numberofcolumns=\count314
+\pgfmatrixcurrentrow=\count313
+\pgfmatrixcurrentcolumn=\count314
+\pgf@matrix@numberofcolumns=\count315
 )
-\tikz@expandcount=\count315
+\tikz@expandcount=\count316
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -1453,12 +1462,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 .code.tex"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplots
 core.code.tex"
-\t@pgfplots@toka=\toks43
-\t@pgfplots@tokb=\toks44
-\t@pgfplots@tokc=\toks45
-\pgfplots@tmpa=\dimen161
-\c@pgfplots@coordindex=\count316
-\c@pgfplots@scanlineindex=\count317
+\t@pgfplots@toka=\toks44
+\t@pgfplots@tokb=\toks45
+\t@pgfplots@tokc=\toks46
+\pgfplots@tmpa=\dimen163
+\c@pgfplots@coordindex=\count317
+\c@pgfplots@scanlineindex=\count318
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfp
 lotssysgeneric.code.tex"))
@@ -1474,7 +1483,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 mpatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfco
 mpatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count318
+\c@pgfmathroundto@lastzeros=\count319
 ))
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pgf
 plotsutil.code.tex"
@@ -1484,14 +1493,14 @@ cture\pgfplotsliststructure.code.tex")
 cture\pgfplotsliststructureext.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count319
+\c@pgfplotsarray@tmp=\count320
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsmatrix.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numtable
 \pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count320
-\t@pgfplotstable@a=\toks46
+\c@pgfplotstable@counta=\count321
+\t@pgfplotstable@a=\toks47
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststru
 cture\pgfplotsdeque.code.tex")
@@ -1503,7 +1512,7 @@ plotsbinary.data.code.tex"))
 plotsutil.verb.code.tex")
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pgf
 librarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count321
+\c@pgfplotslibrarysurf@no=\count322
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfl
 ibrarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -1535,16 +1544,16 @@ ticks.code.tex")
 \tikz\libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfmo
 duledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen162
-\pgfdecoratedremainingdistance=\dimen163
-\pgfdecoratedinputsegmentcompleteddistance=\dimen164
-\pgfdecoratedinputsegmentremainingdistance=\dimen165
-\pgf@decorate@distancetomove=\dimen166
-\pgf@decorate@repeatstate=\count322
-\pgfdecorationsegmentamplitude=\dimen167
-\pgfdecorationsegmentlength=\dimen168
+\pgfdecoratedcompleteddistance=\dimen164
+\pgfdecoratedremainingdistance=\dimen165
+\pgfdecoratedinputsegmentcompleteddistance=\dimen166
+\pgfdecoratedinputsegmentremainingdistance=\dimen167
+\pgf@decorate@distancetomove=\dimen168
+\pgf@decorate@repeatstate=\count323
+\pgfdecorationsegmentamplitude=\dimen169
+\pgfdecorationsegmentlength=\dimen170
 )
-\tikz@lib@dec@box=\box47
+\tikz@lib@dec@box=\box48
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
@@ -1554,13 +1563,13 @@ orations\pgflibrarydecorations.pathmorphing.code.tex"))
 \tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\dec
 orations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count323
-\pgfplots@xmin@reg=\dimen169
-\pgfplots@xmax@reg=\dimen170
-\pgfplots@ymin@reg=\dimen171
-\pgfplots@ymax@reg=\dimen172
-\pgfplots@zmin@reg=\dimen173
-\pgfplots@zmax@reg=\dimen174
+\pgfplots@numplots=\count324
+\pgfplots@xmin@reg=\dimen171
+\pgfplots@xmax@reg=\dimen172
+\pgfplots@ymin@reg=\dimen173
+\pgfplots@ymax@reg=\dimen174
+\pgfplots@zmin@reg=\dimen175
+\pgfplots@zmax@reg=\dimen176
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
 \tikz\libraries\tikzlibraryplotmarks.code.tex"
@@ -1569,19 +1578,39 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pgf
 libraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
-)))) (../header/derivatives.tex)
-(../header/environments.tex
+)))
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktabs.s
+ty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen177
+\lightrulewidth=\dimen178
+\cmidrulewidth=\dimen179
+\belowrulesep=\dimen180
+\belowbottomsep=\dimen181
+\aboverulesep=\dimen182
+\abovetopsep=\dimen183
+\cmidrulesep=\dimen184
+\cmidrulekern=\dimen185
+\defaultaddspace=\dimen186
+\@cmidla=\count325
+\@cmidlb=\count326
+\@aboverulesep=\dimen187
+\@belowrulesep=\dimen188
+\@thisruleclass=\count327
+\@lastruleclass=\count328
+\@thisrulewidth=\dimen189
+)) (../header/derivatives.tex) (../header/environments.tex
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcbtheore
 ms.code.tex"
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.11'
 )
-\c@tcb@cnt@theorem=\count324
-\c@tcb@cnt@definition=\count325
-\c@tcb@cnt@proposition=\count326
-\c@tcb@cnt@corollary=\count327
-\c@tcb@cnt@lemma=\count328
-\c@tcb@cnt@remark=\count329
-\c@tcb@cnt@example=\count330
+\c@tcb@cnt@theorem=\count329
+\c@tcb@cnt@definition=\count330
+\c@tcb@cnt@proposition=\count331
+\c@tcb@cnt@corollary=\count332
+\c@tcb@cnt@lemma=\count333
+\c@tcb@cnt@remark=\count334
+\c@tcb@cnt@example=\count335
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1593,7 +1622,8 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\englis
 h.lbx"
 File: english.lbx 2017/11/05 v3.8a biblatex localization (PK/JW/AB)
-) (HIO.aux)
+) (HIO.aux (bilder/fig_Sufficient1_Graph.aux)
+(bilder/fig_Sufficient1_Graph.aux))
 \openout1 = `HIO.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1654,17 +1684,17 @@ Package biblatex Info: Reference segment=0 on input line 7.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
-\scratchdimen=\dimen175
-\scratchbox=\box48
-\nofMPsegments=\count332
-\nofMParguments=\count333
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count334
-\MPscratchDim=\dimen176
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count336
+\scratchdimen=\dimen190
+\scratchbox=\box49
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen191
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks49
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
 ase.sty"
@@ -1691,12 +1721,8 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into
 your preamble.
  on input line 7.
 
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 8.
-(HIO.toc
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 5.
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 7.
+(abschnitte/HIO_abstract.tex
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 4.
 
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd
@@ -1704,33 +1730,103 @@ LaTeX Font Info:    Try loading font information for FML+futmi on input line 7.
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 7.
+(Font)              scaled to size 13.24796pt on input line 4.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 7.
+(Font)              scaled to size 9.19998pt on input line 4.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 7.
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+(Font)              scaled to size 7.35999pt on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 7.
+(Font)              scaled to size 13.24796pt on input line 4.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 7.
+(Font)              scaled to size 9.19998pt on input line 4.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 7.
+(Font)              scaled to size 7.35999pt on input line 4.
+
+
+LaTeX Warning: No \author given.
+
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 7.
+[1
+
+{C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 21.
+ (HIO.toc
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 9.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 9.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 9.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 9.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 9.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 9.
 )
 \tf@toc=\write8
 \openout8 = `HIO.toc'.
 
- [1
+) [1
 
-{C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(abschnitte/HIO_simple.tex
+] (abschnitte/HIO_introduction_alt3.tex [2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 51.
+
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
+Overfull \hbox (46.35422pt too wide) in paragraph at lines 54--56
+[]\T1/futs/m/n/12 The ob-ser-va-tion func-tion could be wrong, namely [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 70.
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 83--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--96
+
+ []
+
+[4]) [5] (abschnitte/HIO_short.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
@@ -1740,139 +1836,143 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--16
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
-
- []
-
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 50.
-[2
-
-] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--210
-
- []
-
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 246--249
-
- []
-
-[7]
-Overfull \hbox (3.95097pt too wide) in paragraph at lines 296--333
-\T1/futs/m/n/12 In the fol-low-ing ex-am-ple you can see a com-po-si-tion of tw
-o HIO sys-tems. Though
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--347
-
- []
-
-[8] [9] [10]
-Overfull \hbox (3.62427pt too wide) detected at line 467
-[] \FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (\FML/futmi/m/it/12 CD\T1/futs/m/n/12 
-)[] \FMS/futm/m/n/12 Ä [] \FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (\FML/futmi/m/i
-t/12 CAD\T1/futs/m/n/12 )[] \FMS/futm/m/n/12 Ä [] Ä [] \FML/futmi/m/it/12 w[]\T
-1/futs/m/n/12 (\FML/futmi/m/it/12 CA[]D\T1/futs/m/n/12 )[] \FMS/futm/m/n/12 Å \
-T1/futs/m/n/12 0 \FML/futmi/m/it/12 :
- []
-
-
-Overfull \hbox (0.79166pt too wide) in paragraph at lines 494--499
-[]\T1/futs/m/n/12 Finally we show that the max-i-mum $[][] \FMS/futm/m/n/12 I[]
- Å f\T1/futs/m/n/12 1\FML/futmi/m/it/12 ; \T1/futs/m/n/12 2\FML/futmi/m/it/12 ;
- [] ; m\FMS/futm/m/n/12 g$ \T1/futs/m/n/12 is al-ways reached. 
- []
-
-[11]
-Underfull \hbox (badness 1490) in paragraph at lines 519--523
-[]\T1/futs/m/n/12 If there are a dis-joint unions $[0[]\FML/futmi/m/it/12 ; T[]
-\T1/futs/m/n/12 ] \FMS/futm/m/n/12 Å \FML/futmi/m/it/12 I[][]I[][] []$ \T1/futs
-/m/n/12 such that each
- []
-
-
-Underfull \hbox (badness 3942) in paragraph at lines 519--523
-\FML/futmi/m/it/12 w[]$ \T1/futs/m/n/12 can be rep-re-sented by its Taylor-expa
-nsion on each in-ter-val
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--523
-
- []
-
-) [12] [13] (abschnitte/zero_dynamics.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--12
-
- []
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 40.
+LaTeX Font Info:    Try loading font information for U+euf on input line 36.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+[6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 67--69
+
+ []
+
+[7] [8] [9]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 166.
+ [10
+
+]
+Overfull \hbox (1.62611pt too wide) in paragraph at lines 310--313
+[]\T1/futs/m/n/12 Let $\FML/futmi/m/it/12 y \FMS/futm/m/n/12  \T1/futs/m/n/12 
+0$ and as-sume we have found in-te-gers $\FML/futmi/m/it/12 d[]$ \T1/futs/m/n/1
+2 and $\FML/futmi/m/it/12 N$ \T1/futs/m/n/12 such that $\U/euf/m/n/12 O[] \FMS/
+futm/m/n/12 Å
+ []
+
+\openout2 = `bilder/fig_Sufficient1_Graph.aux'.
+
+(bilder/fig_Sufficient1_Graph.tex
+<bilder/Sufficient1_Graph.png, id=48, 354.57469pt x 322.95656pt>
+File: bilder/Sufficient1_Graph.png Graphic file (type png)
+<use bilder/Sufficient1_Graph.png>
+Package pdftex.def Info: bilder/Sufficient1_Graph.png  used on input line 3. on
+ input line 3.
+Package pdftex.def Info: Requested size: 212.74644pt x 193.77542pt on input lin
+e 3.
+) [11] [12
+
+
+ <./bilder/Sufficient1_Graph.png>]
+Overfull \hbox (3.3989pt too wide) in paragraph at lines 409--412
+\T1/futs/m/n/12 we get $\FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (0) \FMS/futm/m/n
+/12 Å \FML/futmi/m/it/12 v[]$ \T1/futs/m/n/12 and $\FML/futmi/m/it/12 W[]\T1/fu
+ts/m/n/12 (0) \FMS/futm/m/n/12 Å \T1/futs/m/n/12 [\FML/futmi/m/it/12 v[]; v[]; 
+[] ; v[]\T1/futs/m/n/12 ] \FMS/futm/m/n/12 2 \FML/futmi/m/it/12 V[]$\T1/futs/m/
+n/12 . If we ex-pand $\FML/futmi/m/it/12 y\T1/futs/m/n/12 (\FML/futmi/m/it/12 t
+\T1/futs/m/n/12 )$ around
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
+
+ []
+
+[13
+
+] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 439--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 458--461
 
  []
 
-[14
 
-] [15] [16] [17]) [18] (HIO.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 462--465
+
+ []
+
+[15
+
+]) [16] (abschnitte/HIO_graphisch.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--31
+
+ []
+
+[17
+
+] [18] [19] [20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+[21
+
+]
+\openout2 = `bilder/fig_Sufficient1_Graph.aux'.
+
+ (bilder/fig_Sufficient1_Graph.tex
+File: bilder/Sufficient1_Graph.png Graphic file (type png)
+<use bilder/Sufficient1_Graph.png>
+Package pdftex.def Info: bilder/Sufficient1_Graph.png  used on input line 3. on
+ input line 3.
+Package pdftex.def Info: Requested size: 212.74644pt x 193.77542pt on input lin
+e 3.
+)) [22
+
+] [23
+
+
+] (HIO.aux
+(bilder/fig_Sufficient1_Graph.aux) (bilder/fig_Sufficient1_Graph.aux))
 Package logreq Info: Writing requests to 'HIO.run.xml'.
 \openout1 = `HIO.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32900 strings out of 493312
- 781073 string characters out of 3130261
- 1256059 words of memory out of 3000000
- 35848 multiletter control sequences out of 15000+200000
- 60645 words of font info for 80 fonts, out of 3000000 for 9000
+ 33163 strings out of 493312
+ 785851 string characters out of 3130261
+ 1253366 words of memory out of 3000000
+ 36063 multiletter control sequences out of 15000+200000
+ 119981 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,10n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
-<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/eu
-ler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/fourier/fourier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/fourier/fourier-mcl.pfb><C:/Users/kahl/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb>
-<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fou
-rier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/
-utopia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/adobe/utopia/putri8a.pfb>
-Output written on HIO.pdf (18 pages, 136208 bytes).
+ 64i,12n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\kahl\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+css1200.pk>{C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/bas
+e/8r.enc}<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/euler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/fourier/fourier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/
+Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier
+-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utop
+ia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adob
+e/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/adobe/utopia/putri8a.pfb>
+Output written on HIO.pdf (24 pages, 161938 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 147 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
