@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  13 MAR 2018 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  19 MAR 2018 10:46
 entering extended mode
 **./HIO.tex
 (HIO.tex
@@ -1622,8 +1622,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\englis
 h.lbx"
 File: english.lbx 2017/11/05 v3.8a biblatex localization (PK/JW/AB)
-) (HIO.aux (bilder/fig_Sufficient1_Graph.aux)
-(bilder/fig_Sufficient1_Graph.aux))
+) (HIO.aux (bilder/fig_Sufficient1_Graph.aux))
 \openout1 = `HIO.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1908,12 +1907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 462--465
 [15
 
 ]) [16] (abschnitte/HIO_graphisch.tex
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--31
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
  []
 
@@ -1922,41 +1916,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 ] [18] [19] [20
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
+Underfull \hbox (badness 10000) in paragraph at lines 389--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--416
 
  []
 
 [21
 
 ]
-\openout2 = `bilder/fig_Sufficient1_Graph.aux'.
+Overfull \hbox (6.78406pt too wide) detected at line 453
+\FML/futmi/m/it/12 M[] \FMS/futm/m/n/12 Å []
+ []
 
- (bilder/fig_Sufficient1_Graph.tex
-File: bilder/Sufficient1_Graph.png Graphic file (type png)
-<use bilder/Sufficient1_Graph.png>
-Package pdftex.def Info: bilder/Sufficient1_Graph.png  used on input line 3. on
- input line 3.
-Package pdftex.def Info: Requested size: 212.74644pt x 193.77542pt on input lin
-e 3.
-)) [22
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 472--476
 
-] [23
+ []
 
-
-] (HIO.aux
-(bilder/fig_Sufficient1_Graph.aux) (bilder/fig_Sufficient1_Graph.aux))
+) [23] (HIO.aux (bilder/fig_Sufficient1_Graph.aux))
 Package logreq Info: Writing requests to 'HIO.run.xml'.
 \openout1 = `HIO.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33163 strings out of 493312
- 785851 string characters out of 3130261
- 1253366 words of memory out of 3000000
- 36063 multiletter control sequences out of 15000+200000
+ 33155 strings out of 493312
+ 785534 string characters out of 3130261
+ 1254366 words of memory out of 3000000
+ 36061 multiletter control sequences out of 15000+200000
  119981 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,12n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,14n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\kahl\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 css1200.pk>{C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc}<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
@@ -1970,7 +1968,7 @@ Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier
 ia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adob
 e/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/adobe/utopia/putri8a.pfb>
-Output written on HIO.pdf (24 pages, 161938 bytes).
+Output written on HIO.pdf (24 pages, 163187 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

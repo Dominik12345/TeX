@@ -2,35 +2,15 @@
 
 Consider a dynamic system with matrices $A$, $B$, $C$ and $D$ with $n$ state variables, 
 $p$ observables and $m$ hidden inputs. As before we neglect the known inputs via $B$. 
-Now assume each hidden input affects only one state variable directly and we observe only 
-single state variables, i.e.
-\begin{equation}
-	D = \begin{pmatrix}
-	 e_{i_1} & e_{i_2} & \hdots &  e_{i_m}
-	\end{pmatrix} \tab {and}
-	C = \begin{pmatrix}
-	e_{j_1} & e_{j_2} & \hdots & e_{j_p}
-	\end{pmatrix}^\text{T}
-\end{equation}
-where $e_i$ denotes the $i$-th canonical vector of length $n$. Without loss of generality 
-we can assume that $i_1<i_2<\ldots < i_m$ and $j_1<j_2<\ldots < j_p$. Furthermore we can 
-identify $D$ and $C$ with the sorted index sets $\hat{D}=\{i_1,\ldots,i_m\}$ and 
-$\hat{C}=\{j_1,\ldots,j_p\}$, respectively.
+Now assume each hidden input affects the state variables $x_{i_1},x_{i_2},\ldots$ 
+directly, that means the 
+$\alpha$-th column of $D$ corresponds to $w_\alpha$ and can be represented by index set 
+$\hat{D}_\alpha$ such that $a\in \hat{D}_\alpha$ means $w_\alpha$ hits $x_a$. 
+The observable $y_\beta$ corresponds to the $\beta$-th row of $C$. For that we can write 
+$y_\beta = \sum_{b\in\hat{C}_\beta}$ for an index set $\hat{C}_\beta$. \\
 
-\begin{definition}{}{}	
-	We call a system \textit{structural hidden input observable} if almost each systems 
-	that we can create by changing the numerical values of the nonzero elements of $A$ are 
-	hidden input observable.
-\end{definition}
-
-We will derive a theorem of the form:\\
-
-	A system is structural hidden input observable, if each input knot has its own 
-	observed knot such that there is a shortest path from input to output knot that 
-	includes no other input knots.\\
-	
-Before we can prove this we have to make some definitions and prove some graph theoretical 
-lemmas.
+Before we deal with graphical HIO we collect basics of graph theory together with 
+definitions convenient for HIO.
 
 \subsection{Basics of Graph Theory}
 
@@ -189,228 +169,321 @@ lemmas.
 \clearpage
 
 \subsection{Structural Dynamic Networks}
-Now we prove some lemmas to connect the rank conditions of reduced matrices with graphical 
-properties.
+%It is possible to get information about the matrices $M_q$ just by the properties of the network graph. We 
+%firstly derive some pure qualitative properties, after that the complete information about $M_q$ will be given 
+%in terms of paths and path factors.
+%%
+%%\begin{lemma}{}{}
+%%	Consider $\gamma(x_a,x_b) = (x_a=x_{l_0},x_{l_1},
+%%	\ldots,x_{l_{K-1}},x_{l_K} =x_b) $. Then
+%%	\begin{equation}
+%%	A^2_{l_{j}l_i} =\sum\limits_{\mu} A_{l_j \mu} A_{\mu l_i} =A_{l_j l_{i+1}} 
+%%	A_{l_{i+1} l_i}
+%%	  \left\{ \begin{matrix}
+%%	\neq 0 \tab{if } j=i+2 \\ = 0 \tab{else}
+%%\end{matrix}	\right. \quad .
+%%	\end{equation}
+%%\end{lemma}
+%%\begin{proof}
+%%	If there is a $\mu$ such that $x_{l_i}\sim x_\mu$ and 
+%%	$x_\mu\sim x_{l_j}$ then consider \\$\pi = \gamma(x_a,x_{l_i}) \oplus (x_{l_i},x_\mu, 
+%%	x_{l_j}) \oplus \gamma(x_{l_j},x_b)$. If and only if $\mu = l_{i+1} = l_{j-1}$ this is
+%%	consistent with $\gamma(x_a,x_b)$ being the shortest path. \\
+%%	
+%%	Consider $j=i+2$. Then by the above argument only $\mu = l_{i+1}$ leads to\\ 
+%%	$A_{l_j\mu}A_{\mu l_i} \neq 0$.\\
+%%	
+%%	Consider $j\neq i+2$. Then by the above argument for each $\mu$ we get \\ 
+%%	$A_{l_j\mu}A_{\mu l_i} =0$.
+%%\end{proof}
+%\subsubsection*{Qualitative Properties}
 %
 %\begin{lemma}{}{}
-%	Consider $\gamma(x_a,x_b) = (x_a=x_{l_0},x_{l_1},
-%	\ldots,x_{l_{K-1}},x_{l_K} =x_b) $. Then
+%	Let $k\in\mathbb{N}$ and $x_a$, $x_b$ knots of a network. We consider $A$ as a 
+%	structural matrix, i.e. we ignore special cases, in which different elements of 
+%	$A$ exactly neutralise each other. Then
 %	\begin{equation}
-%	A^2_{l_{j}l_i} =\sum\limits_{\mu} A_{l_j \mu} A_{\mu l_i} =A_{l_j l_{i+1}} 
-%	A_{l_{i+1} l_i}
-%	  \left\{ \begin{matrix}
-%	\neq 0 \tab{if } j=i+2 \\ = 0 \tab{else}
-%\end{matrix}	\right. \quad .
+%	A^k_{ba} \neq 0 \quad \Leftrightarrow \quad \exists \text{ a path from } x_a 
+%	\text{ to } x_b \text{ of length }k \quad .
 %	\end{equation}
 %\end{lemma}
 %\begin{proof}
-%	If there is a $\mu$ such that $x_{l_i}\sim x_\mu$ and 
-%	$x_\mu\sim x_{l_j}$ then consider \\$\pi = \gamma(x_a,x_{l_i}) \oplus (x_{l_i},x_\mu, 
-%	x_{l_j}) \oplus \gamma(x_{l_j},x_b)$. If and only if $\mu = l_{i+1} = l_{j-1}$ this is
-%	consistent with $\gamma(x_a,x_b)$ being the shortest path. \\
-%	
-%	Consider $j=i+2$. Then by the above argument only $\mu = l_{i+1}$ leads to\\ 
-%	$A_{l_j\mu}A_{\mu l_i} \neq 0$.\\
-%	
-%	Consider $j\neq i+2$. Then by the above argument for each $\mu$ we get \\ 
-%	$A_{l_j\mu}A_{\mu l_i} =0$.
+%	We write 
+%	\begin{equation}
+%	A^k_{ba} = \sum\limits_{l_1,l_2,\ldots,l_{k-1}=1}^n A_{b l_{k-1}} \ldots A_{l_2 l_1} 
+%	A_{l_1 a} = \sum\limits_{\pi\in\Gamma_k(x_a,x_b)} F(\pi)
+%	 \quad .
+%	\end{equation}		
+%	\begin{itemize}
+%	\item If $\Gamma_k(x_a,x_b)=\emptyset$ then $A^k_{ba}=0$ since there is nothing to sum.
+%	\item If $\Gamma_k(x_a,x_b)\neq\emptyset$ then there is at least one $F(\pi)\neq 0$ and 
+%	since we consider structural properties this is sufficient to show that $A^k_{ba}\neq 
+%	0$.
+%	\end{itemize}		
 %\end{proof}
-
-\begin{lemma}{}{}
-	Let $k\in\mathbb{N}$ and $x_a$, $x_b$ knots of a network. We consider $A$ as a 
-	structural matrix, i.e. we ignore special cases, in which different elements of 
-	$A$ exactly neutralise each other. Then
-	\begin{equation}
-	A^k_{ba} \neq 0 \quad \Leftrightarrow \quad \exists \text{ a path from } x_a 
-	\text{ to } x_b \text{ of length }k \quad .
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	We write 
-	\begin{equation}
-	A^k_{ba} = \sum\limits_{l_1,l_2,\ldots,l_{k-1}=1}^n A_{b l_{k-1}} \ldots A_{l_2 l_1} 
-	A_{l_1 a} = \sum\limits_{\pi\in\Gamma_k(x_a,x_b)} F(\pi)
-	 \quad .
-	\end{equation}		
-	\begin{itemize}
-	\item If $\Gamma_k(x_a,x_b)=\emptyset$ then $A^k_{ba}=0$ since there is nothing to sum.
-	\item If $\Gamma_k(x_a,x_b)\neq\emptyset$ then there is at least one $F(\pi)\neq 0$ and 
-	since we consider structural properties this is sufficient to show that $A^k_{ba}\neq 
-	0$.
-	\end{itemize}		
-\end{proof}
-
-
-\begin{lemma}{}{}
-	Assume there exists a shortest path \\ 
-	$\gamma(x_a,x_b) = (x_a=x_{l_0},x_{l_1},\ldots,x_{l_{K-1}},x_{l_K} =x_b) $ 
-	from $x_a$ to $x_b$. \\
-	Then for each $k \leq K $
-	\begin{equation}
-	A^\kappa_{l_k a}  = 0  \quad \text{if }\kappa <k \tab{and} A^k_{l_k a} \neq 0
-	\quad .
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	Note that each $\gamma(x_a,x_{l_k})\subset \gamma(x_a,x_b)$ hence it is a 
-	shortest path of length $k$. \\
-	\begin{itemize}
-	\item
-	Consider $\kappa < k$ and assume $A^\kappa_{l_k a}\neq 0$. Then by the previous 
-	lemma there exists a path from $x_a$ to $x_{l_k}$ of length $\kappa <k=
-	||\gamma(x_a,x_{l_k})||$, 
-	which is not possible, since $\gamma(x_a,x_{l_k})$ already is the shortest path.
-	 Therefore $A^\kappa_{l_k a}=0$.
-	\item	
-	Consider $\kappa = k$. Then we know that $\gamma(x_a,x_{l_k})$ is a path from 
-	$x_a$ to $x_{l_k}$ of length $k$, thus by the previous lemma $A^k_{l_k a}\neq 0$.  
-	\end{itemize}
-\end{proof}
-
-
-\clearpage
 %
-%\begin{proposition}{First nonzero column}{}
-%	Choose one $a\in \hat{D}$ and assume that
+%
+%\begin{lemma}{}{}
+%	Assume there exists a shortest path \\ 
+%	$\gamma(x_a,x_b) = (x_a=x_{l_0},x_{l_1},\ldots,x_{l_{K-1}},x_{l_K} =x_b) $ 
+%	from $x_a$ to $x_b$. \\
+%	Then for each $k \leq K $
 %	\begin{equation}
-%	b = \text{arg} \underset{b'\in\hat{D}}{\min} || \gamma(x_{a},x_{b'}) || 
+%	A^\kappa_{l_k a}  = 0  \quad \text{if }\kappa <k \tab{and} A^k_{l_k a} \neq 0
+%	\quad .
 %	\end{equation}
-%	exists. Since $a\in\hat{D}$ we know that $a=i_\alpha$ and $b=j_\beta$. 
-%	By construction the $\alpha$-th column of $D$ is $e_a$ and the $\beta$-th row of 
-%	$C$ is $e_b^\text{T}$. \\
-%	
-%	Then for each $\kappa < ||\gamma(x_a,x_b)||$
-%	\begin{equation}
-%	(CA^\kappa D)_{\mu \alpha} = 0 \quad \forall \mu\in\{1,2,\ldots,p \}
-%	\end{equation}
-%	and if $\kappa=||\gamma(x_a,x_b)||$ at least the component $\mu=\beta$ is nonzero.
-%\end{proposition}
+%\end{lemma}
 %\begin{proof}
-%	Let $x_a$ and $x_b$ be knots as defined above and $K:=||\gamma(x_a,x_b)||$.
-%	We write down
-%	\begin{equation}
-%	(CA^\kappa D)_{\mu \alpha} = \sum\limits_{\lambda, \rho=1}^n C_{\mu\lambda} 
-%	A^\kappa_{\lambda \rho} 
-%	D_{\rho \alpha} \quad .
-%	\end{equation}
-%	Note that $D_{\rho\alpha}$ is the Kronecker-delta $\delta_{\rho a}$ and that 
-%	the $\mu$-th row of $C$ is $e_{j_\mu}^\text{T}$, i.e. $C_{\mu \lambda} = 
-%	\delta_{\lambda {j_\mu}}$, thus
-%	\begin{equation}
-%	(CA^\kappa D)_{\mu \alpha} = A^\kappa_{j_\mu a}  \quad .
-%	\end{equation}
+%	Note that each $\gamma(x_a,x_{l_k})\subset \gamma(x_a,x_b)$ hence it is a 
+%	shortest path of length $k$. \\
 %	\begin{itemize}
 %	\item
-%	Consider $\kappa <k$ and assume there is a $\mu$ such that $A^\kappa_{j_\mu a}\neq 0$. 
-%	Then there is a path from $x_a$ to the observed knot $x_{j_\mu}$ of length $\kappa$. 
-%	This is in contradiction to $\gamma(x_a,x_b)$ being the shortest path from $x_a$ to an 
-%	observed knot. Therefore $(CA^\kappa D)_{\mu\alpha}=0$.\\
-%	\item
-%	Now consider $\kappa = K$. Then the existence of $\gamma(x_a,x_b)$ ensures $A^k_{ba}
-%	\neq 0$ and since we can choose $\mu=\beta$ which means $j_\mu = b$ we know 
-%	that $A^k_{b a}\neq 0$ and therefore $(CA^kD)_{\beta\alpha}\neq 0$.
+%	Consider $\kappa < k$ and assume $A^\kappa_{l_k a}\neq 0$. Then by the previous 
+%	lemma there exists a path from $x_a$ to $x_{l_k}$ of length $\kappa <k=
+%	||\gamma(x_a,x_{l_k})||$, 
+%	which is not possible, since $\gamma(x_a,x_{l_k})$ already is the shortest path.
+%	 Therefore $A^\kappa_{l_k a}=0$.
+%	\item	
+%	Consider $\kappa = k$. Then we know that $\gamma(x_a,x_{l_k})$ is a path from 
+%	$x_a$ to $x_{l_k}$ of length $k$, thus by the previous lemma $A^k_{l_k a}\neq 0$.  
 %	\end{itemize}
 %\end{proof}
 %
 %
-%\begin{proposition}{First nonzero row}{}
-%	Choose one $b\in \hat{C}$ and assume that
+%\clearpage
+%%
+%%\begin{proposition}{First nonzero column}{}
+%%	Choose one $a\in \hat{D}$ and assume that
+%%	\begin{equation}
+%%	b = \text{arg} \underset{b'\in\hat{D}}{\min} || \gamma(x_{a},x_{b'}) || 
+%%	\end{equation}
+%%	exists. Since $a\in\hat{D}$ we know that $a=i_\alpha$ and $b=j_\beta$. 
+%%	By construction the $\alpha$-th column of $D$ is $e_a$ and the $\beta$-th row of 
+%%	$C$ is $e_b^\text{T}$. \\
+%%	
+%%	Then for each $\kappa < ||\gamma(x_a,x_b)||$
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\mu \alpha} = 0 \quad \forall \mu\in\{1,2,\ldots,p \}
+%%	\end{equation}
+%%	and if $\kappa=||\gamma(x_a,x_b)||$ at least the component $\mu=\beta$ is nonzero.
+%%\end{proposition}
+%%\begin{proof}
+%%	Let $x_a$ and $x_b$ be knots as defined above and $K:=||\gamma(x_a,x_b)||$.
+%%	We write down
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\mu \alpha} = \sum\limits_{\lambda, \rho=1}^n C_{\mu\lambda} 
+%%	A^\kappa_{\lambda \rho} 
+%%	D_{\rho \alpha} \quad .
+%%	\end{equation}
+%%	Note that $D_{\rho\alpha}$ is the Kronecker-delta $\delta_{\rho a}$ and that 
+%%	the $\mu$-th row of $C$ is $e_{j_\mu}^\text{T}$, i.e. $C_{\mu \lambda} = 
+%%	\delta_{\lambda {j_\mu}}$, thus
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\mu \alpha} = A^\kappa_{j_\mu a}  \quad .
+%%	\end{equation}
+%%	\begin{itemize}
+%%	\item
+%%	Consider $\kappa <k$ and assume there is a $\mu$ such that $A^\kappa_{j_\mu a}\neq 0$. 
+%%	Then there is a path from $x_a$ to the observed knot $x_{j_\mu}$ of length $\kappa$. 
+%%	This is in contradiction to $\gamma(x_a,x_b)$ being the shortest path from $x_a$ to an 
+%%	observed knot. Therefore $(CA^\kappa D)_{\mu\alpha}=0$.\\
+%%	\item
+%%	Now consider $\kappa = K$. Then the existence of $\gamma(x_a,x_b)$ ensures $A^k_{ba}
+%%	\neq 0$ and since we can choose $\mu=\beta$ which means $j_\mu = b$ we know 
+%%	that $A^k_{b a}\neq 0$ and therefore $(CA^kD)_{\beta\alpha}\neq 0$.
+%%	\end{itemize}
+%%\end{proof}
+%%
+%%
+%%\begin{proposition}{First nonzero row}{}
+%%	Choose one $b\in \hat{C}$ and assume that
+%%	\begin{equation}
+%%	a = \text{arg} \underset{a'\in\hat{D}}{\min} || \gamma(x_{a'},x_{b}) || 
+%%	\end{equation}
+%%	exists, i.e. there exists at least one path from at least the hidden input knot to the 	
+%%	observed knot $x_b$. Since $a\in\hat{D}$ we know that $a=i_\alpha$ and $b=j_\beta$. 
+%%	By construction the $\alpha$-th column of $D$ is $e_a$ and the $\beta$-th row of 
+%%	$C$ is $e_b^\text{T}$. \\
+%%	
+%%	Then for each $\kappa < ||\gamma(x_a,x_b)||$
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\beta\mu} = 0 \quad \forall \mu\in\{1,2,\ldots,m \}
+%%	\end{equation}
+%%	and if $\kappa=||\gamma(x_a,x_b)||$ at least the component $\mu=\alpha$ is nonzero.
+%%\end{proposition}
+%%\begin{proof}
+%%	The proof is analogous to the latter proof. \\
+%%	
+%%	Let $x_a$ and $x_b$ be knots as defined above and $K:=||\gamma(x_a,x_b)||$.
+%%	We write down
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\beta \mu} = \sum\limits_{\lambda, \rho=1}^n C_{\beta\lambda} 
+%%	A^\kappa_{\lambda \rho} 
+%%	D_{\rho \mu} \quad .
+%%	\end{equation}
+%%	Note that this time $C_{\beta\lambda}$ is the Kronecker-delta $\delta_{b \lambda}$ and 
+%%	that the $\mu$-th column of $D$ is $e_{i_\mu}^\text{T}$, i.e. $D_{\rho \mu} = 
+%%	\delta_{\rho {i_\mu}}$, thus
+%%	\begin{equation}
+%%	(CA^\kappa D)_{\mu \alpha} = A^\kappa_{b i_\mu}  \quad .
+%%	\end{equation}
+%%	\begin{itemize}
+%%	\item
+%%	Consider $\kappa <k$ and assume there is a $\mu$ such that $A^\kappa_{b i_\mu}\neq 0$. 
+%%	Then there is a path from the input knot $x_{i_\mu}$ to $x_b$ of length $\kappa$. 
+%%	This is in contradiction to $\gamma(x_a,x_b)$ being the shortest path from an input 
+%%	knot to $x_b$. Therefore $(CA^\kappa D)_{\beta\mu}=0$.\\
+%%	\item
+%%	Now consider $\kappa = K$. Then the existence of $\gamma(x_a,x_b)$ ensures $A^k_{ba}
+%%	\neq 0$ and since we can choose $\mu=\alpha$ which means $i_\mu = a$ we know 
+%%	that $A^k_{b a}\neq 0$ and therefore $(CA^kD)_{\beta\alpha}\neq 0$. 
+%%	\end{itemize}
+%%\end{proof}
+%
+%\begin{proposition}{}{}
+%	Let $x_a$ and $x_b$ be a hidden input knot and an observed knot, respectively. We can 
+%	write $a=i_\alpha$ and $b=j_\beta$ for an $\alpha\in\{1,2,\ldots,m\}$ and 
+%	$\beta\in\{1,2,\ldots,p\}$.\\
+%	Then
 %	\begin{equation}
-%	a = \text{arg} \underset{a'\in\hat{D}}{\min} || \gamma(x_{a'},x_{b}) || 
+%	(CA^kD)_{\beta\alpha} \neq 0 \quad \Leftrightarrow \quad \exists \text{ a path from }
+%	x_a \text{ to } x_b \text{ of length }k \quad . 
+%\end{equation}		
+%	As a corollary, assume $\gamma(x_a,x_b)$ exists and is of length $K$.
+%	\begin{equation}
+%	(CA^kD)_{\beta\alpha} = 0 \quad \text{for }k<K \tab{and} (CA^KD)_{\beta\alpha}\neq 0 
+%	\quad .
 %	\end{equation}
-%	exists, i.e. there exists at least one path from at least the hidden input knot to the 	
-%	observed knot $x_b$. Since $a\in\hat{D}$ we know that $a=i_\alpha$ and $b=j_\beta$. 
-%	By construction the $\alpha$-th column of $D$ is $e_a$ and the $\beta$-th row of 
-%	$C$ is $e_b^\text{T}$. \\
 %	
-%	Then for each $\kappa < ||\gamma(x_a,x_b)||$
-%	\begin{equation}
-%	(CA^\kappa D)_{\beta\mu} = 0 \quad \forall \mu\in\{1,2,\ldots,m \}
-%	\end{equation}
-%	and if $\kappa=||\gamma(x_a,x_b)||$ at least the component $\mu=\alpha$ is nonzero.
 %\end{proposition}
 %\begin{proof}
-%	The proof is analogous to the latter proof. \\
-%	
-%	Let $x_a$ and $x_b$ be knots as defined above and $K:=||\gamma(x_a,x_b)||$.
-%	We write down
+%	We write as a sum
 %	\begin{equation}
-%	(CA^\kappa D)_{\beta \mu} = \sum\limits_{\lambda, \rho=1}^n C_{\beta\lambda} 
-%	A^\kappa_{\lambda \rho} 
-%	D_{\rho \mu} \quad .
+%	(CA^k D)_{\beta\alpha} = \sum\limits_{\lambda,\rho=1}^n C_{\beta \lambda} A^k_{\lambda
+%	\rho} D_{\rho \alpha} = A^k_{ba} \quad .
 %	\end{equation}
-%	Note that this time $C_{\beta\lambda}$ is the Kronecker-delta $\delta_{b \lambda}$ and 
-%	that the $\mu$-th column of $D$ is $e_{i_\mu}^\text{T}$, i.e. $D_{\rho \mu} = 
-%	\delta_{\rho {i_\mu}}$, thus
-%	\begin{equation}
-%	(CA^\kappa D)_{\mu \alpha} = A^\kappa_{b i_\mu}  \quad .
-%	\end{equation}
-%	\begin{itemize}
-%	\item
-%	Consider $\kappa <k$ and assume there is a $\mu$ such that $A^\kappa_{b i_\mu}\neq 0$. 
-%	Then there is a path from the input knot $x_{i_\mu}$ to $x_b$ of length $\kappa$. 
-%	This is in contradiction to $\gamma(x_a,x_b)$ being the shortest path from an input 
-%	knot to $x_b$. Therefore $(CA^\kappa D)_{\beta\mu}=0$.\\
-%	\item
-%	Now consider $\kappa = K$. Then the existence of $\gamma(x_a,x_b)$ ensures $A^k_{ba}
-%	\neq 0$ and since we can choose $\mu=\alpha$ which means $i_\mu = a$ we know 
-%	that $A^k_{b a}\neq 0$ and therefore $(CA^kD)_{\beta\alpha}\neq 0$. 
-%	\end{itemize}
+%	Now we can simply apply lemma 7 and lemma 8 to finish the proof.
 %\end{proof}
 
+Our aim is to get information about the matrices $M_q$ and the sets $V_q$, so that we can 
+apply the HIO theorem, just by properties of the influence graph.
 \begin{proposition}{}{}
-	Let $x_a$ and $x_b$ be a hidden input knot and an observed knot, respectively. We can 
-	write $a=i_\alpha$ and $b=j_\beta$ for an $\alpha\in\{1,2,\ldots,m\}$ and 
-	$\beta\in\{1,2,\ldots,p\}$.\\
-	Then
+	In the situation described above
 	\begin{equation}
-	(CA^kD)_{\beta\alpha} \neq 0 \quad \Leftrightarrow \quad \exists \text{ a path from }
-	x_a \text{ to } x_b \text{ of length }k \quad . 
-\end{equation}		
-	As a corollary, assume $\gamma(x_a,x_b)$ exists and is of length $K$.
-	\begin{equation}
-	(CA^kD)_{\beta\alpha} = 0 \quad \text{for }k<K \tab{and} (CA^KD)_{\beta\alpha}\neq 0 
-	\quad .
+	(CA^kD)_{\beta\alpha} = F\left( \Gamma_k(w_\alpha,y_\beta) 
+	\right)
 	\end{equation}
-	
+	where the path factor $F$ of a set is understood as the sum over the path factors of all 
+	elements and $\Gamma_k(w_\alpha,y\beta)$ is understood as the set of all paths in 
+	$\Gamma_k(x_a,x_b)$ where $a\in\hat{D}_\alpha$ and $b\in\hat{C}_\beta$.
 \end{proposition}
 \begin{proof}
-	We write as a sum
+	At first note that
 	\begin{equation}
-	(CA^k D)_{\beta\alpha} = \sum\limits_{\lambda,\rho=1}^n C_{\beta \lambda} A^k_{\lambda
-	\rho} D_{\rho \alpha} = A^k_{ba} \quad .
+	A^k_{ba} = \sum\limits_{\pi\in\Gamma_k(x_a,x_b) } F(\pi) \quad .
 	\end{equation}
-	Now we can simply apply lemma 7 and lemma 8 to finish the proof.
+	This becomes obvious when we write
+	\begin{equation}
+	A^k_{ba} = \sum\limits_{l_1,l_2,\ldots,l_{k-1}=1}^n
+	A_{bl_{k-1}} \ldots A_{l_2,l_1}  A_{l_1a}
+	\end{equation}
+	and note that the right hand side is just the sum over $F((x_a,x_{l_1},\ldots ,x_b))$ 
+	with all possible values of $l_1,\ldots,l_{k-1}$. As already seen $F(\pi)=0$ is zero 
+	if $\pi$ is not a path. Thus all sequences $(x_a,\ldots,x_b)$ that give a nonzero 
+	path factor are paths of length $k$.\\
+	
+	For simplicity we assume that $w_\alpha$ hits $x_a$. We find
+	\begin{equation}
+	(CA^kD)_{\beta\alpha} = \sum\limits_{\lambda,\rho = 1}^n C_{\beta\lambda}A^k_{\lambda\rho} 
+	D_{\rho\alpha} 
+	= \sum\limits_{a\in\hat{D}_\alpha}\sum\limits_{b\in\hat{C}_\beta} A^k_{ba} \quad .
+	\end{equation}
+	By construction the $\alpha$-th column of $D$ is $1$ if $\rho\in \hat{D}_\alpha$ 
+	and $0$ else. The $\beta$-th row of $C$ gives 
+	$C_{\beta\lambda}=1$ if $\lambda\in\hat{C}_\beta$ and zero else.\\
+	
+	Finally
+	\begin{equation}
+	(CA^kD)_{\beta\alpha} =\sum\limits_{a\in\hat{D}_\alpha}
+	 \sum\limits_{b\in\hat{C}_\beta}\sum\limits_{\pi\in\Gamma_k(x_a,x_b)} F(\pi) 
+	\end{equation}
+	which is the right hand side of the proposition.
 \end{proof}
 
-With this proposition we are able to get the structure of the matrices $M_q$ by graphical criterions. As always 
-we set the dimension of state space, observation space and hidden input space to be $n$, $p$ and $m$, 
-respectively, and take a fixed integer $K$. Then the $\beta$-th row of $M_K$ reads
-\begin{equation}
-	\begin{bmatrix}
-	\Gamma_0(x_{i_1},x_b) & \ldots &  \Gamma_0(x_{i_m},x_b)  & \dots  &
- 	\Gamma_K(x_{i_1},x_b) & \ldots &  \Gamma_K(x_{i_m},x_b) 
-	\end{bmatrix} \label{eq:M_q_beta}
-\end{equation}
-where $i_1,\ldots,i_m$ are the indices of $\hat{D}$ and $x_b$ is the associated knot of $\beta\in\hat{C}$. 
-In the latter equation and henceforth we use the sets $\Gamma_k$ as 
-indicators, i.e. it they represent the value $0$ if $\Gamma_k(x_{i,1},x_b)=\emptyset$ and $1$ if not.
-\begin{example}{}{}
-	We again consider the network depicted below, where the red dots represent hidden input knots and the blue 
-	ones represent observables.
-	We easily see that
+Note that this proposition can easily be extended to the case of general matrices $D$ and 
+$C$ by multiplying $F$ with some factors. On the other hand we can simplify the proposition 
+by using $F$ as the indicator that gives $0$ if the set is empty and $1$ if not.\\
+
+
+\begin{definition}{}{}
+	Define 
 	\begin{equation}
-	M_q = \begin{bmatrix}
-	0 & 0 &   1 & 0 &  0 & 1 &  0 & 0 & 0 & 0  \quad \dots \quad \\
-	0 & 0 &   0 & 0 &  0 & 0 &  0 & 1 & 0 & 0  \quad \dots \quad 
-	\end{bmatrix}
+	K_i := \min\limits_{\alpha\in\{1,\ldots,m\}} d(w_\alpha,y_i)
 	\end{equation}
-	for an arbitrary big $q$. Since 
+	i.e. the length of the shortest path from any knot that is affected by a hidden input 
+	to a knot that affects the observable $y_i$. Furthermore
 	\begin{equation}
-	\max\limits_{\pi \in \Gamma(x_a,x_b)\, ,\,a\in \hat{D}\, ,\,b\in\hat{C}} \, ||\pi|| = 3 
-	\quad ,
+	\Xi := \begin{pmatrix}
+	F\left(\Gamma_{K_1}(w_1,y_1) \right) & F\left(\Gamma_{K_1}(w_2,y_1) \right) & \ldots \\
+	F\left(\Gamma_{K_2}(w_1,y_2) \right) & F\left(\Gamma_{K_2}(w_2,y_2) \right) & \ldots \\
+	\vdots & \ddots & \ddots
+	\end{pmatrix} \quad .
 	\end{equation}
-	which simply means the longest possible path from any input to any output is $3$, the rightmost components 
-	of $M_q$ will be zero for all $q>3$.
-	\include{bilder/fig_Sufficient1_Graph}	
-\end{example}
+	If $\Xi$ is injective, then the system is called \textit{structural hidden input 
+	observable}.
+\end{definition}
+
+\begin{theorem}{}{}
+	If a system is structural HIO, then it is HIO for almost all parameter settings.
+\end{theorem}
+\begin{proof}
+	Without loss of generality $K_1\leq K_2 \leq \ldots\leq K_p$. We write the 
+	matrices $M_k$ in rows for an appropriate $k$,
+	\begin{equation}
+	M_k = \begin{bmatrix}
+	\begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots \end{pmatrix} &
+	\begin{pmatrix} \hdots \\ \hdots \\ \hdots \\ \vdots \end{pmatrix}&
+	\begin{pmatrix} (CA^{K_1}D)_{1.} \\ 0 \\ 0 \\ \vdots \end{pmatrix} &
+		\begin{pmatrix} \hdots \\ \hdots \\ \hdots \\ \vdots \end{pmatrix} & 
+	\begin{pmatrix} (C A^{K_2} D)_{1.} \\ (CA^{K_2}D)_{2.} \\ 0 \\ \vdots \end{pmatrix} &
+		\begin{pmatrix} \hdots \\ \hdots \\ \hdots \\ \vdots \end{pmatrix} &
+	\begin{pmatrix} (CA^{K_3}D)_{1.} \\ (CA^{K_3}D)_{2.} \\ (CA^{K_3}D)_{3.} 
+	\\ \vdots \end{pmatrix} &
+	\end{bmatrix} \label{eq:M_q_in_rows}
+	\end{equation}
+	We deduce 
+	\begin{equation}
+	V_0 = \mathbb{R}^m \tab{and} V_k = \mathbb{R}^{(k+1)m} \quad \text{for}\, k<K_1
+	\end{equation}
+	since $M_k$ consists only of zeroes. Then from the first row we get
+	\begin{equation}
+	V_{K_1} = \mathbb{R}^{K_1m} \times \left\{\xi\in \mathbb{R}^m \big| \sum\limits_{l=1}^m 
+	\xi_l (CA^{K_1}D)_{1l} = 0 \right\}
+	\end{equation}
+	and 
+	\begin{equation}
+	P^{K_1} V_{K_1} = \left\{\xi\in \mathbb{R}^m \big| \sum\limits_{l=1}^m 
+	\xi_l F\left(\Gamma_{K_1}(w_l,y_1)\right) = 0 \right\} .
+	\end{equation}
+	From the second row we get 
+	\begin{equation}
+	P^{K_2}V_{K_2} \subseteq \left\{\xi\in \mathbb{R}^m \big| \sum
+	\limits_{l=1}^m \xi_l F\left( \Gamma_{K_2}(w_l,y_2) \right) = 0 \right\}
+	\end{equation}
+	and so on. Note that we neglect the information in the $(\hdots)$ parts of equation 
+	\eqref{eq:M_q_in_rows}, therefore the condition we get will be sufficient but not 
+	necessary.\\
+	
+	Now we see that 
+	\begin{equation}
+	\mathfrak{O}_0 \subseteq  \bigcap\limits_{r=1}^p P^{K_r}V_{K_r} \subseteq \bigcap_{r=1}^p 
+	\left\{\xi\in \mathbb{R}^m \big| \sum\limits_{l=1}^m 
+	\xi_l F\left( \Gamma_{K_r} (w_l,y_r) \right) = 0 \right\}
+	\end{equation}
+	and the right hand side of the latter equation is exactly
+	\begin{equation}
+	\left\{\xi\in \mathbb{R}^m \big| \sum\limits_{l=1}^m 
+	\Xi \xi = 0 \right\} \quad .
+	\end{equation}
+	Thus $\Xi$ is injective leads to $\mathfrak{O}_0=\{0\}$ which is sufficient for HIO.
+\end{proof}
