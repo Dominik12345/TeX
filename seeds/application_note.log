@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  20 MAR 2018 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.20)  20 MAR 2018 14:59
 entering extended mode
-**./HIO.tex
-(HIO.tex
+**./application_note.tex
+(application_note.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
-(../header/simple_header.tex
+(../header/application_note_header.tex
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -671,13 +671,6 @@ Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\was\upgreek.sty"
-Package: upgreek 2003/02/12 v2.0 (WaS)
-Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
-\symugrf@m=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
-(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
-)
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty
 "
 Package: amsmath 2017/09/02 v2.17a AMS math features
@@ -741,8 +734,8 @@ LaTeX Info: Redefining \] on input line 2818.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.s
 ty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
@@ -963,7 +956,7 @@ LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
 (Font)              `letters' in the math version `bold' on input line 59.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 (Font)                  OML/cmm/b/it --> FML/futmi/m/it on input line 59.
-\symotherletters=\mathgroup7
+\symotherletters=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 (Font)                  FML/futmi/m/it --> FML/futmi/b/it on input line 61.
 LaTeX Font Info:    Overwriting symbol font `otherletters' in version `bold'
@@ -1068,7 +1061,7 @@ LaTeX Font Info:    Redeclaring math accent \check on input line 253.
 LaTeX Font Info:    Redeclaring math accent \hat on input line 254.
 LaTeX Font Info:    Redeclaring math accent \dot on input line 255.
 LaTeX Font Info:    Redeclaring math accent \mathring on input line 256.
-\symUfutm=\mathgroup8
+\symUfutm=\mathgroup7
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcolorbox
 .sty"
@@ -1599,19 +1592,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisruleclass=\count327
 \@lastruleclass=\count328
 \@thisrulewidth=\dimen189
-)) (../header/derivatives.tex) (../header/environments.tex
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcbtheore
-ms.code.tex"
-Library (tcolorbox): 'tcbtheorems.code.tex' version '4.11'
-)
-\c@tcb@cnt@theorem=\count329
-\c@tcb@cnt@definition=\count330
-\c@tcb@cnt@proposition=\count331
-\c@tcb@cnt@corollary=\count332
-\c@tcb@cnt@lemma=\count333
-\c@tcb@cnt@remark=\count334
-\c@tcb@cnt@example=\count335
-)
+))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1622,49 +1603,49 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\englis
 h.lbx"
 File: english.lbx 2017/11/05 v3.8a biblatex localization (PK/JW/AB)
-) (HIO.aux (bilder/fig_Sufficient1_Graph.aux))
-\openout1 = `HIO.aux'.
+) (application_note.aux)
+\openout1 = `application_note.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 7.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 5.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 5.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutm.fd"
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 7.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 5.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 5.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmsfutm.fd
 "
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 7.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 5.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 5.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmxfutm.fd"
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 7.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 5.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\t1futs.fd"
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -1672,27 +1653,27 @@ File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `HIO.bcf'.
+\openout4 = `application_note.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'HIO.bbl' found.
-(HIO.bbl)
-Package biblatex Info: Reference section=0 on input line 7.
-Package biblatex Info: Reference segment=0 on input line 7.
+Package biblatex Info: ... file 'application_note.bbl' found.
+(application_note.bbl)
+Package biblatex Info: Reference section=0 on input line 5.
+Package biblatex Info: Reference segment=0 on input line 5.
  ABD: EveryShipout initializing macros
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
+\scratchcounter=\count329
 \scratchdimen=\dimen190
 \scratchbox=\box49
-\nofMPsegments=\count337
-\nofMParguments=\count338
+\nofMPsegments=\count330
+\nofMParguments=\count331
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count339
+\MPscratchCnt=\count332
 \MPscratchDim=\dimen191
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
 \everyMPtoPDFconversion=\toks49
 )
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
@@ -1718,259 +1699,127 @@ G,.JBIG2,.JB2,.eps]
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
- on input line 7.
+ on input line 5.
 
-(abschnitte/HIO_abstract.tex
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 4.
+(abschnitte/seeds_package_abstract.tex
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 7.
 
+("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 2--10
+ \T1/futs/b/n/12 Mo-ti-va-tioin: \T1/futs/m/n/12 Dy-namic Sys-tems have
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--10
+\T1/futs/m/n/12 un-der-stand-ing bi-o-log-i-cal pro-cesses and
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 2--10
+\T1/futs/m/n/12 model and si-mul-ta-ne-ously es-ti-mate the
+ []
+
+) (abschnitte/seeds_package_introduction.tex
+Underfull \hbox (badness 1521) in paragraph at lines 2--5
+\T1/futs/m/n/12 Cell bi-ol-ogy, chem-i-cal re-ac-tions and me-
+ []
+
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 5.
 
 ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd
 "
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 4.
+(Font)              scaled to size 11.03998pt on input line 5.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 4.
+(Font)              scaled to size 8.27998pt on input line 5.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 4.
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+(Font)              scaled to size 6.43999pt on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
  ("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 4.
+(Font)              scaled to size 11.03998pt on input line 5.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 4.
+(Font)              scaled to size 8.27998pt on input line 5.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 4.
+(Font)              scaled to size 6.43999pt on input line 5.
+)
+Underfull \hbox (badness 1127) in paragraph at lines 13--11
+\T1/futs/m/n/12 cesses or mea-sure-ment noise, the known
+ []
 
-
-LaTeX Warning: No \author given.
-
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 7.
-[1
+(abschnitte/seeds_package_methods.tex [1
 
 {C:/Users/kahl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 21.
- (HIO.toc
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 5.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 9.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 9.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 9.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 9.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 9.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 9.
-)
-\tf@toc=\write8
-\openout8 = `HIO.toc'.
-
-) [1
-
-] (abschnitte/HIO_introduction_alt3.tex [2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 38--41
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
 
  []
 
+) (abschnitte/seeds_package_example.tex (figures/example.tex
+<figures/uvb.png, id=13, 1716.4125pt x 767.86874pt>
+File: figures/uvb.png Graphic file (type png)
+<use figures/uvb.png>
+Package pdftex.def Info: figures/uvb.png  used on input line 3. on input line 3
+.
+Package pdftex.def Info: Requested size: 205.96062pt x 92.14027pt on input line
+ 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--48
-
+Underfull \hbox (badness 1253) in paragraph at lines 6--6
+\T1/futs/m/n/12 pre-dic-tions us-ing the es-ti-mated un-known
  []
 
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 51.
-
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
-Overfull \hbox (46.35422pt too wide) in paragraph at lines 54--56
-[]\T1/futs/m/n/12 The ob-ser-va-tion func-tion could be wrong, namely [],
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
-
- []
-
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 70.
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 83--87
-
+)) (abschnitte/seeds_package_conclusion.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+\T1/futs/m/n/12 in-ter-ac-tions in or-di-nary dif-fer-en-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--96
-
- []
-
-[4]) [5] (abschnitte/HIO_short.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--9
-
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+\T1/futs/m/n/12 equation-based math-e-mat-i-cal mod-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--16
-
+Underfull \hbox (badness 1158) in paragraph at lines 19--19
+\T1/futs/m/n/12 els. In: \T1/futs/m/it/12 Jour-nal of The Royal So-ci-ety
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 36.
-("C:\Users\kahl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-[6
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
-
- []
-
-[7] [8] [9]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 166.
- [10
-
-]
-Overfull \hbox (1.62611pt too wide) in paragraph at lines 310--313
-[]\T1/futs/m/n/12 Let $\FML/futmi/m/it/12 y \FMS/futm/m/n/12  \T1/futs/m/n/12 
-0$ and as-sume we have found in-te-gers $\FML/futmi/m/it/12 d[]$ \T1/futs/m/n/1
-2 and $\FML/futmi/m/it/12 N$ \T1/futs/m/n/12 such that $\U/euf/m/n/12 O[] \FMS/
-futm/m/n/12 Å
- []
-
-\openout2 = `bilder/fig_Sufficient1_Graph.aux'.
-
-(bilder/fig_Sufficient1_Graph.tex
-<bilder/Sufficient1_Graph.png, id=48, 354.57469pt x 322.95656pt>
-File: bilder/Sufficient1_Graph.png Graphic file (type png)
-<use bilder/Sufficient1_Graph.png>
-Package pdftex.def Info: bilder/Sufficient1_Graph.png  used on input line 3. on
- input line 3.
-Package pdftex.def Info: Requested size: 212.74644pt x 193.77542pt on input lin
-e 3.
-) [11] [12
-
-
- <./bilder/Sufficient1_Graph.png>]
-Overfull \hbox (3.3989pt too wide) in paragraph at lines 409--412
-\T1/futs/m/n/12 we get $\FML/futmi/m/it/12 w[]\T1/futs/m/n/12 (0) \FMS/futm/m/n
-/12 Å \FML/futmi/m/it/12 v[]$ \T1/futs/m/n/12 and $\FML/futmi/m/it/12 W[]\T1/fu
-ts/m/n/12 (0) \FMS/futm/m/n/12 Å \T1/futs/m/n/12 [\FML/futmi/m/it/12 v[]; v[]; 
-[] ; v[]\T1/futs/m/n/12 ] \FMS/futm/m/n/12 2 \FML/futmi/m/it/12 V[]$\T1/futs/m/
-n/12 . If we ex-pand $\FML/futmi/m/it/12 y\T1/futs/m/n/12 (\FML/futmi/m/it/12 t
-\T1/futs/m/n/12 )$ around
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
-
- []
-
-[13
-
-] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 439--442
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--461
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--465
-
- []
-
-[15
-
-]) [16] (abschnitte/HIO_graphisch.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--11
-
- []
-
-[17
-
-] [18] [19] [20
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 389--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--404
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--416
-
- []
-
-[21
-
-]
-Overfull \hbox (6.78406pt too wide) detected at line 453
-\FML/futmi/m/it/12 M[] \FMS/futm/m/n/12 Å []
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 472--476
-
- []
-
-) [23] (HIO.aux (bilder/fig_Sufficient1_Graph.aux))
-Package logreq Info: Writing requests to 'HIO.run.xml'.
-\openout1 = `HIO.run.xml'.
+[2 <./figures/uvb.png>] (application_note.aux)
+Package logreq Info: Writing requests to 'application_note.run.xml'.
+\openout1 = `application_note.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33155 strings out of 493312
- 785534 string characters out of 3130261
- 1254366 words of memory out of 3000000
- 36061 multiletter control sequences out of 15000+200000
- 119981 words of font info for 150 fonts, out of 3000000 for 9000
+ 32638 strings out of 493312
+ 775080 string characters out of 3130261
+ 1237675 words of memory out of 3000000
+ 35589 multiletter control sequences out of 15000+200000
+ 55812 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,14n,96p,868b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\kahl\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-css1200.pk>{C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/bas
-e/8r.enc}<C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/euler/eufm10.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/fourier/fourier-bb.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/kahl/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Users/kahl/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/
-Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fourier/fourier
--ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utop
-ia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adob
-e/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/adobe/utopia/putri8a.pfb>
-Output written on HIO.pdf (24 pages, 163189 bytes).
+ 64i,8n,96p,891b,1567s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
+ <C:\Users\kahl\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecs
+s1200.pk><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fo
+urier/fourier-mlit.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/fourier/fourier-ms.pfb><C:/Users/kahl/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/kahl/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/kahl/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on application_note.pdf (2 pages, 1496658 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
+ 48 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
