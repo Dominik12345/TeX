@@ -1,0 +1,64 @@
+% This is a most basic header
+
+% article with standard layout
+\documentclass[12pt,a4paper]{article}
+
+%encoding text
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%bibliography package
+\usepackage{csquotes}
+\usepackage[backend = biber]{biblatex} 
+
+
+%fond
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+
+% math formulas
+%\usepackage{amsmath}	% standard math equations
+\usepackage[fleqn]{amsmath} % left aligned equations
+
+\usepackage{amsthm}		% theorem environments
+%%%
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+%%%
+
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{nicefrac}	% make nicefracs ( 1/2 with smaller slash )
+
+% math fond
+\usepackage{fourier}
+
+%graphics
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{pgfplots} % to simply input matplotlib results
+
+%tables
+\usepackage{booktabs}
+
+%layout
+\setlength{\parindent}{0pt}
+
+
+
+%%% MAKROS 
+\newcommand{\statespace}{\mathcal{X}}
+\newcommand{\knowninputspace}{\mathcal{U}}
+\newcommand{\unknowninputspace}{\mathcal{W}}
+\newcommand{\timeinterval}{\mathcal{T}}
+\newcommand{\observationspace}{\mathcal{Y}}
+\newcommand{\data}{\mathbb{D}}
+
+\newcommand{\td}{\ensuremath{\text{d}}}
+
+\newenvironment{task}[1]{\par\begingroup \leftskip4em \rightskip\leftskip #1 \\ \par\endgroup}{}
